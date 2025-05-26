@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    .mini_logo {
+        margin-right: 10px;
+    }
+    div.index {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .title {
+            font-size: $font-size-base * 2;
+            margin: 0 20px;
+            flex-grow: 1;
+        }
+        div.subtitles {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .subtitle {
+                font-size: $font-size-base;
+                margin: 0 10px;
+            }
+        }
+    }
+    .menu {
+        margin-right: 10px;
+    }
+}
