@@ -24,5 +24,6 @@ header("Content-Security-Policy:
             <img src="https://picsum.photos/400/600" alt="Main Image" />
         </div>
     </main>
+    <?php include_once 'includes/footer.php'; ?>
 </body>
 </html>

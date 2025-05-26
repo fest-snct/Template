@@ -36,7 +36,32 @@ header {
     }
     .menu {
         margin-right: 10px;
-    }}
+    }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    div.footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size-base*1.2;
+        div.subtitles {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .subtitle {
+                font-size: $font-size-base*1.2;
+                margin: 0 10px;
+            }
+        }
+    }
+}
 
 main {
     display: flex;
