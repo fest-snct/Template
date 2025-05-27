@@ -1,0 +1,76 @@
+header {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+header .mini_logo {
+  margin-right: 10px;
+}
+header div.index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header div.index .title {
+  font-size: 32px;
+  margin: 0 20px;
+  flex-grow: 1;
+}
+header div.index div.subtitles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header div.index div.subtitles .subtitle {
+  font-size: 16px;
+  margin: 0 10px;
+}
+header .menu {
+  margin-right: 10px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+footer div.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19.2px;
+}
+footer div.footer-content div.subtitles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer div.footer-content div.subtitles .subtitle {
+  font-size: 19.2px;
+  margin: 0 10px;
+}
+
+body {
+  background-color: #f2ebd1;
+  overflow-y: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  padding-top: 10px;
+}
+main div.main_logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
