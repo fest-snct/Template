@@ -9,6 +9,8 @@ sudo apt install ruby-sass
 ```
 scssコンパイルしてcssにする感じでよろ
 
+詳しくは https://github.com/fest-snct/fest-snct_HP2025/issues/3 を参照してくれ
+
 # 開発の大まかな流れ
 1. ワイヤーフレーム(ページデザインの基礎)を作る
 2. ページごとの役割分担を行う
