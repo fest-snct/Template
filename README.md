@@ -3,7 +3,7 @@
 
 # document
 
-[documentフォルダ](https://github.com/fest-snct/fest-snct_HP2025/document)を参照してください。
+[documentフォルダ](https://github.com/fest-snct/fest-snct_HP2025/tree/main/document)を参照してください。
 
 # 開発の大まかな流れ
 1. <del>ワイヤーフレーム(ページデザインの基礎)を作る</del>
