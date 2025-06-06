@@ -21,7 +21,7 @@ header("Content-Security-Policy:
     <?php include_once 'includes/header.php'; ?>
     <main>
         <div class="main_logo">
-            <img src="https://picsum.photos/400/600" alt="Main Image" />
+            <img src="/images/icon.png" alt="Main Image" />
         </div>
     </main>
     <?php include_once 'includes/footer.php'; ?>

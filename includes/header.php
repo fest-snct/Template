@@ -15,6 +15,6 @@
         </div>
     </div>
     <div class="menu">
-        <img src="https://picsum.photos/80" alt="Menu Icon" />
+        <img src="/images/menu.png" alt="Menu Icon" />
     </div>
 </header>
