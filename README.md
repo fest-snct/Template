@@ -1,20 +1,9 @@
 # fest-snct_HP2025
 仙台高専高専祭2025のHPのリポジトリ
 
-# 必ず読め
+# document
 
-**SCSSの設定**
-- SCSS
-```bash
-sudo apt install ruby-sass
-```
-scssコンパイルしてcssにする感じでよろ
-
-詳しくは https://github.com/fest-snct/fest-snct_HP2025/issues/3 を参照してくれ
-
-**PHPの設定**
-
-詳しくは　を参照してくれ
+[documentフォルダ](https://github.com/fest-snct/fest-snct_HP2025/document)を参照してください。
 
 # 開発の大まかな流れ
 1. <del>ワイヤーフレーム(ページデザインの基礎)を作る</del>
