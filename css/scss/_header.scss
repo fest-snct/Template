@@ -1,12 +1,18 @@
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     display: flex;
     padding: 0;
     margin: 0;
     width: 100%;
+    height: $header-height;
     align-items: center;
     justify-content: space-between;
+    background-color: white;
     .mini_logo {
-        margin-right: 10px;
+        margin: 0 20px;
     }
     .menu {
         width: 40px;

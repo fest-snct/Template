@@ -1,35 +1,50 @@
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   display: flex;
   padding: 0;
   margin: 0;
   width: 100%;
+  height: 5rem;
   align-items: center;
-  justify-content: space-between; }
-  header .mini_logo {
-    margin-right: 10px; }
-  header .menu {
-    width: 40px;
-    height: 40px; }
-    header .menu img {
-      width: 100%;
-      height: 100%; }
-  header div.index {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    header div.index .title {
-      font-size: 32px;
-      margin: 0 20px;
-      flex-grow: 1; }
-    header div.index div.subtitles {
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      header div.index div.subtitles .subtitle {
-        font-size: 16px;
-        margin: 0 10px; }
-  header .menu {
-    margin-right: 10px; }
+  justify-content: space-between;
+  background-color: white;
+}
+header .mini_logo {
+  margin: 0 20px;
+}
+header .menu {
+  width: 40px;
+  height: 40px;
+}
+header .menu img {
+  width: 100%;
+  height: 100%;
+}
+header div.index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header div.index .title {
+  font-size: 32px;
+  margin: 0 20px;
+  flex-grow: 1;
+}
+header div.index div.subtitles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header div.index div.subtitles .subtitle {
+  font-size: 16px;
+  margin: 0 10px;
+}
+header .menu {
+  margin-right: 10px;
+}
 
 footer {
   display: flex;
@@ -37,39 +52,46 @@ footer {
   justify-content: center;
   padding: 0;
   margin: 0;
-  width: 100%; }
-  footer div.footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 19.2px; }
-    footer div.footer-content div.subtitles {
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      footer div.footer-content div.subtitles .subtitle {
-        font-size: 19.2px;
-        margin: 0 10px; }
+  width: 100%;
+}
+footer div.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19.2px;
+}
+footer div.footer-content div.subtitles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer div.footer-content div.subtitles .subtitle {
+  font-size: 19.2px;
+  margin: 0 10px;
+}
 
 body {
   background-color: #f2ebd1;
-  overflow-y: auto; }
+  overflow-y: auto;
+}
 
 main {
   display: flex;
   flex-direction: column;
+  margin-top: 5rem;
   align-items: center;
   justify-content: center;
   padding: 12px;
-  padding-top: 10px; }
-  main div.main_logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 600px; }
-    main div.main_logo img {
-      width: 100%;
-      height: 100%; }
-
-/*# sourceMappingURL=home.css.map */
+  padding-top: 10px;
+}
+main div.main_logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 600px;
+}
+main div.main_logo img {
+  width: 100%;
+  height: 100%;
+}
