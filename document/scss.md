@@ -1,3 +1,8 @@
+```bash
+sudo apt install ruby-sass
+```
+でsassをインストール。
+
 vscodeの拡張機能の`Live Sass Compiler`をインストール。
 
 settings.jsonに以下を追加
