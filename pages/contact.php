@@ -14,16 +14,14 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="./css/home.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
+    <title>お問い合わせ</title>
+    <link rel="stylesheet" href="../css/contact.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
 </head>
 <body>
-    <?php include_once 'pages/includes/header.php'; ?>
+    <?php include './includes/header.php'; ?>
     <main>
-        <div class="main_logo">
-            <img src="/images/icon.png" alt="Main Image" />
-        </div>
+    vkamkerm:ab:n`O
     </main>
-    <?php include_once 'pages/includes/footer.php'; ?>
+    <?php include './includes/footer.php'; ?>
 </body>
 </html>

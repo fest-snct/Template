@@ -1,0 +1,18 @@
+@import './variables';
+@import './header';
+@import './footer';
+
+body {
+    background-color: $background-color;
+    overflow-y: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: $header-height;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-unit * 1.5;
+    padding-top: 10px;
+}
