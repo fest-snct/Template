@@ -27,7 +27,7 @@ header("Content-Security-Policy:
             <p>※詳細は<a href="">プライバシーポリシー</a>を確認してください。</p>
         </div>
         <div class="form">
-            <form action="send_mail.php" method="POST" class="contact-form">
+            <form action="./endpoint/send_mail.php" method="POST" class="contact-form">
                 <input type="hidden" name="nonce" value="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
 
                 <div class="form-group">
@@ -48,7 +48,7 @@ header("Content-Security-Policy:
                 <div class="form-actions">
                     <button type="submit">送信する</button>
                 </div>
-</form>
+            </form>
         </div>
     </main>
     <?php include './includes/footer.php'; ?>
