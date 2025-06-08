@@ -29,7 +29,7 @@ header div.index {
   justify-content: center;
 }
 header div.index .title {
-  font-size: 32px;
+  font-size: 2.5rem;
   margin: 0 20px;
   flex-grow: 1;
 }
@@ -40,6 +40,7 @@ header div.index div.subtitles {
 }
 header div.index div.subtitles .subtitle {
   font-size: 16px;
+  text-decoration: none;
   margin: 0 10px;
 }
 header .menu {

@@ -18,12 +18,12 @@ header("Content-Security-Policy:
     <link rel="stylesheet" href="./css/home.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
 </head>
 <body>
-    <?php include_once 'includes/header.php'; ?>
+    <?php include_once 'pages/includes/header.php'; ?>
     <main>
         <div class="main_logo">
             <img src="/images/icon.png" alt="Main Image" />
         </div>
     </main>
-    <?php include_once 'includes/footer.php'; ?>
+    <?php include_once 'pages/includes/footer.php'; ?>
 </body>
 </html>

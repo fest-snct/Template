@@ -27,7 +27,7 @@ header {
         align-items: center;
         justify-content: center;
         .title {
-            font-size: $font-size-base * 2;
+            font-size: $header-height * 0.5;
             margin: 0 20px;
             flex-grow: 1;
         }
@@ -37,6 +37,7 @@ header {
             justify-content: center;
             .subtitle {
                 font-size: $font-size-base;
+                text-decoration: none;
                 margin: 0 10px;
             }
         }
