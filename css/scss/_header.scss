@@ -10,7 +10,7 @@ header {
     height: $header-height;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-color: $secondary-color;
     .mini_logo {
         margin: 0 20px;
     }
