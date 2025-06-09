@@ -46,6 +46,15 @@ header div.index div.subtitles .subtitle {
 header .menu {
   margin-right: 10px;
 }
+@media (max-width: 769px) {
+  header div.index .title {
+    margin: 0 auto;
+    font-size: 2rem;
+  }
+  header div.index div.subtitles {
+    display: none;
+  }
+}
 
 footer {
   display: flex;

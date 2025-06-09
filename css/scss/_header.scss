@@ -45,4 +45,17 @@ header {
     .menu {
         margin-right: 10px;
     }
+
+    @media (max-width: ($breakpoint-tablet - 1px)){
+        div.index {
+            .title {
+                // モバイルでtitleを中央に配置するために調整
+                margin: 0 auto; // 左右マージンをautoにして中央寄せ
+                font-size: $header-height * 0.4;
+            }
+            div.subtitles {
+                display: none;
+            }
+        }
+    }
 }
