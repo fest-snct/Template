@@ -9,17 +9,23 @@ header("Content-Security-Policy:
     frame-ancestors 'none';
 ");
 
+// エラーを見やすくする
+//ini_set('display_errors', 1); // エラー表示を有効にする
+//error_reporting(E_ALL);     // すべてのエラーを表示する
+
 // PHPMailerのクラスをインポート
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Composerのオートローダーを読み込む
-require 'vendor/autoload.php';
+require '../../vendor/autoload.php';
 
 // dotenv
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
+
+$_SESSION['nonce'] = $_POST['nonce'];
 
 // --------------------------------
 // ①不正なリクエストを拒否
@@ -71,7 +77,7 @@ try {
     $mail->Username   = $_ENV['SMTP_USER'];           // ★SMTPユーザー名（あなたのメールアドレス）
     $mail->Password   = $_ENV['SMTP_PASS'];           // ★SMTPパスワード（Gmailの場合はアプリパスワード）
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  // SSLでの暗号化を有効に
-    $mail->Port       = $_ENV['SMTP_POST'];           // TCPポート
+    $mail->Port       = $_ENV['SMTP_PORT'];           // TCPポート
 
     // --- 文字コード設定 ---
     $mail->CharSet = 'UTF-8';
@@ -80,7 +86,7 @@ try {
     // 送信元（From）: ユーザー名と同じメールアドレスを推奨
     $mail->setFrom($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']);
     // 宛先（To）: あなたが受信するメールアドレス
-    $mail->addAddress($_ENV['MIAL_TO_ADDRESS'], $_ENV['MAIL_TO_NAME']);
+    $mail->addAddress($_ENV['MAIL_TO_ADDRESS'], $_ENV['MAIL_TO_NAME']);
     // 返信先（Reply-To）: フォーム入力者のメールアドレスと名前
     $mail->addReplyTo($email, $name);
 
@@ -106,7 +112,7 @@ try {
     $mail->send();
 
     // 送信成功後にサンクスページへリダイレクト
-    header('Location: thanks.html');
+    header('Location: ../thanks.html');
     exit;
 
 } catch (Exception $e) {
