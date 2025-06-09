@@ -28,8 +28,10 @@ header {
         justify-content: center;
         .title {
             font-size: $header-height * 0.5;
+            text-decoration: none;
             margin: 0 20px;
             flex-grow: 1;
+            color: $text-color;
         }
         div.subtitles {
             display: flex;
@@ -38,6 +40,7 @@ header {
             .subtitle {
                 font-size: $font-size-base;
                 text-decoration: none;
+                color: $text-color;
                 margin: 0 10px;
             }
         }
