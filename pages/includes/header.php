@@ -3,7 +3,7 @@
         <img src="https://picsum.photos/80" />
     </div>
     <div class="index">
-        <p class="title">高専祭2025</p>
+        <a class="title" href="/home.php">高専祭2025</a>
         <div class="subtitles">
             <p class="subtitle">ご挨拶</p>
             <p class="subtitle">企画一覧</p>
