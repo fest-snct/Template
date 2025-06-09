@@ -122,7 +122,7 @@ main .contact-form .required {
 main .contact-form input[type=text],
 main .contact-form input[type=email],
 main .contact-form textarea {
-  width: 100%;
+  width: 80vw;
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 5px;
