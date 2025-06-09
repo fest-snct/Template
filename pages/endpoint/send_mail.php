@@ -10,11 +10,10 @@ header("Content-Security-Policy:
 ");
 
 // エラーを見やすくする
-//ini_set('display_errors', 1); // エラー表示を有効にする
-//error_reporting(E_ALL);     // すべてのエラーを表示する
+ini_set('display_errors', 1); // エラー表示を有効にする
+error_reporting(E_ALL);     // すべてのエラーを表示する
 
 // PHPMailerのクラスをインポート
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -25,7 +24,8 @@ require '../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 
-$_SESSION['nonce'] = $_POST['nonce'];
+// ここは削除します。$_SESSION['nonce']はフォーム表示側でセットされるべきです。
+// $_SESSION['nonce'] = $_POST['nonce'];
 
 // --------------------------------
 // ①不正なリクエストを拒否
@@ -37,11 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // 必要なPOSTデータとセッションのnonceが存在するかチェック
-if (
-    !isset($_POST['name'], $_POST['email'], $_POST['message'], $_POST['nonce']) ||
-    !isset($_SESSION['nonce'])
-) {
-    exit('不正なアクセスです。必須項目が不足しています。');
+// $_SESSION['nonce'] はフォーム表示側でセットされていることを前提とします
+if (!isset($_POST['name'], $_POST['email'], $_POST['message'], $_POST['nonce'])) {
+    exit('不正なアクセスです。必須項目が不足しています。$_POSTが設定されていません。');
+}else if(!isset($_SESSION['nonce'])){
+    exit('不正なアクセスです。$_SESSION[\'nonce\']が設定されていません。');
 }
 
 // nonceの検証（CSRF対策）
@@ -67,37 +67,26 @@ if ($email === false) {
 // ③PHPMailerでメールを送信
 // --------------------------------
 
-$mail = new PHPMailer(true); // trueにすると例外をスローする
-
 try {
-    // --- サーバー設定 ---
-    $mail->isSMTP();                                  // SMTPを使用
-    $mail->Host       = $_ENV['SMTP_HOST'];           // ★SMTPサーバー名
-    $mail->SMTPAuth   = true;                         // SMTP認証を有効にする
-    $mail->Username   = $_ENV['SMTP_USER'];           // ★SMTPユーザー名（あなたのメールアドレス）
-    $mail->Password   = $_ENV['SMTP_PASS'];           // ★SMTPパスワード（Gmailの場合はアプリパスワード）
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  // SSLでの暗号化を有効に
-    $mail->Port       = $_ENV['SMTP_PORT'];           // TCPポート
+    // --- 1通目: 管理者へのメール送信 ---
+    $mail = new PHPMailer(true); // trueにすると例外をスローする
+    $mail->isSMTP();
+    $mail->Host       = $_ENV['SMTP_HOST'];
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $_ENV['SMTP_USER'];
+    $mail->Password   = $_ENV['SMTP_PASS'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SMTPS (SSL)
+    $mail->Port       = $_ENV['SMTP_PORT'];
+    $mail->CharSet    = 'UTF-8';
 
-    // --- 文字コード設定 ---
-    $mail->CharSet = 'UTF-8';
-
-    // --- 送受信者の設定 ---
-    // 送信元（From）: ユーザー名と同じメールアドレスを推奨
     $mail->setFrom($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']);
-    // 宛先（To）: あなたが受信するメールアドレス
     $mail->addAddress($_ENV['MAIL_TO_ADDRESS'], $_ENV['MAIL_TO_NAME']);
-    // 返信先（Reply-To）: フォーム入力者のメールアドレスと名前
-    $mail->addReplyTo($email, $name);
+    $mail->addReplyTo($email, $name); // フォーム入力者のメールアドレスを返信先に設定
 
-    // --- メールの内容 ---
-    $mail->isHTML(false); // メール形式をテキスト形式に設定
+    $mail->isHTML(false);
     $mail->Subject = '【お問い合わせ】' . $name . '様より';
 
-    // メールの本文
-    $body = <<<EOT
-    Webサイトからお問い合わせがありました。
-
+    $body_main = <<<EOT
     --------------------------------
     お名前： {$name}
     メールアドレス： {$email}
@@ -106,17 +95,78 @@ try {
     お問い合わせ内容：
     {$message}
     EOT;
+
+    $body = <<<EOT
+    Webサイトからお問い合わせがありました。
+
+    {$body_main}
+    EOT;
     $mail->Body = $body;
 
-    // メール送信
     $mail->send();
+    // 1通目のメール送信が完了したら、smtpClose() を呼び出すのは適切です。
+    // しかし、2通目のメールを送る場合は、PHPMailerを再設定する必要があります。
+    // $mail->smtpClose(); // ここではまだ閉じないか、閉じたら完全に新しいインスタンスを再設定する
+
+
+    // --- 2通目: ユーザーへの自動返信メール送信 ---
+    // ここで完全に新しいPHPMailerインスタンスを作成し、
+    // 再度SMTP接続設定を行う必要があります。
+    $mail2 = new PHPMailer(true);
+    $mail2->isSMTP();
+    $mail2->Host       = $_ENV['SMTP_HOST']; // .envから取得
+    $mail2->SMTPAuth   = true;
+    $mail2->Username   = $_ENV['SMTP_USER'];
+    $mail2->Password   = $_ENV['SMTP_PASS'];
+    // GmailのSMTPでは、ポート465はENCRYPTION_SMTPS、ポート587はENCRYPTION_STARTTLSが一般的です。
+    // 今回は両方を同じSMTP_USER/PASSで利用するため、同じ設定で問題ないでしょう。
+    // もし465で管理者メールが送れなかった場合、ユーザーメールも送れない可能性があります。
+    $mail2->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // 管理者メールと同じ設定を使用
+    $mail2->Port       = $_ENV['SMTP_PORT'];       // .envから取得
+
+    $mail2->CharSet    = 'UTF-8'; // 文字コードも設定
+
+    $mail2->setFrom($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']); // 送信元は管理者メールと同じ
+    $mail2->addAddress($email, $name); // ユーザーのメールアドレスへ送る
+    $mail2->addReplyTo($_ENV['MAIL_TO_ADDRESS'], $_ENV['MAIL_TO_NAME']); // 返信先は管理者
+
+    $mail2->isHTML(false);
+    $mail2->Subject = 'お問い合わせを受け付けました（自動返信）'; // 件名をわかりやすく
+
+    $user_body = <<<EOT
+    Webサイトから以下の内容でお問い合わせを受け付けました。
+    お問い合わせ内容を確認後、担当者よりご返信させていただきます。
+
+    --------------------------------
+    お名前： {$name}
+    メールアドレス： {$email}
+    --------------------------------
+
+    お問い合わせ内容：
+    {$message}
+
+    ※このメールは自動返信です。
+    EOT;
+    $mail2->Body = $user_body;
+
+    $mail2->send();
+    // 2通目のメール送信後、smtpClose() は任意ですが、しておくとリソース解放になります
+    // $mail2->smtpClose(); // こちらで閉じる
+
+    $_SESSION['body'] = $body_main;
 
     // 送信成功後にサンクスページへリダイレクト
-    header('Location: ../thanks.html');
+    header('Location: ../thanks.php');
     exit;
 
 } catch (Exception $e) {
     // エラー発生時の処理
-    // 本番環境では、詳細なエラーはログファイルに記録し、ユーザーには一般的なメッセージを表示するのが望ましい
-    echo "メッセージを送信できませんでした。メーラーエラー: {$mail->ErrorInfo}";
+    // ここで PHPMailer::ENCRYPTION_SMTPS ではなく PHPMailer::ENCRYPTION_STARTTLS を試すこともできます。
+    // Port 587 と合わせて試してください。
+    echo "メッセージを送信できませんでした。メーラーエラー: " . $e->getMessage() . "<br>";
+    echo "PHPMailer ErrorInfo: " . $mail->ErrorInfo . "<br>"; // 1通目のエラー情報
+    echo "PHPMailer2 ErrorInfo: " . $mail2->ErrorInfo . "<br>"; // 2通目のエラー情報
+    echo "<pre>";
+    print_r($e); // 開発中のみ
+    echo "</pre>";
 }

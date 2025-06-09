@@ -1,0 +1,51 @@
+@import './variables';
+@import './header';
+@import './footer';
+
+body {
+    background-color: $background-color;
+    overflow-y: auto;
+}
+
+main {
+    width: 80vw;
+    display: flex;
+    margin-top: $header-height;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: flex-start;
+    justify-content: center;
+    padding: $spacing-unit * 1.5;
+    padding: 10px;
+    text-align: left;
+    .thank-you-container {
+        text-align: center;
+        padding: 20px;
+
+        p {
+            margin-bottom: 10px;
+            &:first-of-type {
+                font-size: 1.5em;
+                font-weight: bold;
+                color: #28a745; // 送信成功のメッセージなので緑色
+            }
+        }
+    }
+
+    // お問い合わせ内容表示用のスタイル
+    .inquiry-content {
+        background-color: #2d2d2d; // コードブロックの背景色（暗め）
+        color: #f8f8f2; // コードブロックの文字色（明るめ）
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto; // 内容が長い場合に横スクロールを可能にする
+        font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace; // 等幅フォント
+        font-size: 0.95em;
+        text-align: left; // テキストは左寄せに戻す
+        white-space: pre-wrap; // preタグの改行やスペースを維持しつつ、長い行を折り返す
+        word-wrap: break-word; // 長い単語も折り返す
+        border: 1px solid #444; // 軽いボーダー
+        margin: 20px auto; // 上下の余白と中央寄せ
+        max-width: 90%; // 必要に応じて幅を調整
+    }
+}
