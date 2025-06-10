@@ -128,10 +128,10 @@ header .hamburger-menu .title:hover {
   opacity: 0.7;
 }
 header .hamburger-menu__item {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 header .hamburger-menu .title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
