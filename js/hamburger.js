@@ -1,38 +1,57 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const trigger = document.querySelector('.menu');
+    const menu = document.getElementById('hamburger-menu');
+    const body = document.body;
+    const drop = document.querySelector('.drop');
+    const wave = document.querySelector('.wave');
+    const menuItems = menu?.querySelectorAll('.hamburger-menu__item, .hamburger-menu .title');
 
-    // 各要素を取得
-    const trigger = document.querySelector('.menu'); // メニューを開閉するトリガー
-    const menu = document.getElementById('hamburger-menu'); // メニュー本体
-    const body = document.body; // 背景スクロール固定用
+    if (!trigger || !menu) return;
 
-    // トリガーまたはメニュー本体がなければ処理を終了
-    if (!trigger || !menu) {
-        return;
+    let hasPlayedDrop = false; // アニメーション再生済みかどうかのフラグ
+
+    function playOnceAnimation(el) {
+        if (!el) return;
+        el.style.display = 'block';
+        el.style.animation = 'none';
+        el.offsetHeight; // 再描画
+        el.style.animation = ''; // CSSの定義通りに戻す
+        el.style.animationPlayState = 'running'; // 再生開始
     }
 
-    // トリガーをクリックしたときの処理
-    trigger.addEventListener('click', function() {
-        // is-openクラスを付け外しして、メニューの表示/非表示を切り替える
-        menu.classList.toggle('is-open');
+    function toggleMenu() {
+        const isOpening = !menu.classList.contains('is-open');
 
-        // is-activeクラスを付け外しして、トリガーアイコンの見た目を変更可能にする（例：三本線 ⇔ ×印）
-        this.classList.toggle('is-active');
-        
-        // is-menu-openクラスを付け外しして、背景のスクロールを制御する
+        menu.classList.toggle('is-open');
+        trigger.classList.toggle('is-active');
         body.classList.toggle('is-menu-open');
+
+        if (isOpening && !hasPlayedDrop) {
+            playOnceAnimation(drop);
+            playOnceAnimation(wave);
+            hasPlayedDrop = true;
+        } else if (!isOpening) {
+            // メニューが閉じられた場合の処理（アニメーション初期化）
+            hasPlayedDrop = false;
+            drop.style.display = 'block'; // 次回に備えて再表示
+        }
+    }
+
+    drop?.addEventListener('animationend', () => {
+        drop.style.display = 'none';
     });
 
-    // メニュー内の各項目を取得
-    // PHPファイルのタイポ "hamburger-munu__item" を考慮し、両方のセレクタを指定しています。
-    const menuItems = menu.querySelectorAll('.hamburger-menu__item, .hamburger-munu__item, .hamburger-menu .title');
+    trigger.addEventListener('click', toggleMenu);
 
-    // メニュー項目がクリックされたら、メニューを閉じる
-    menuItems.forEach(function(item) {
-        item.addEventListener('click', function() {
-            // 各クラスを削除して、メニューを閉じた状態に戻す
+    menuItems?.forEach(item => {
+        item.addEventListener('click', () => {
             menu.classList.remove('is-open');
             trigger.classList.remove('is-active');
             body.classList.remove('is-menu-open');
+
+            // メニューを閉じたときにアニメーション初期化
+            hasPlayedDrop = false;
+            drop.style.display = 'block';
         });
     });
 });
