@@ -1,94 +1,4 @@
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  z-index: 100;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 5rem;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-}
-header .mini_logo {
-  margin: 0 20px;
-}
-header .menu {
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-  z-index: 901;
-  position: relative;
-}
-header .menu img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-header .menu::before, header .menu::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 60%;
-  height: 3px;
-  background-color: #333;
-  border-radius: 2px;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  opacity: 0;
-}
-header .menu::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-header .menu::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-header .menu.is-active img {
-  display: none;
-}
-header .menu.is-active::before, header .menu.is-active::after {
-  opacity: 1;
-}
-header div.index {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-header div.index .title {
-  font-size: 2.5rem;
-  text-decoration: none;
-  margin: 0 20px;
-  flex-grow: 1;
-  color: #333;
-}
-header div.index div.subtitles {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-header div.index div.subtitles .subtitle {
-  font-size: 16px;
-  text-decoration: none;
-  color: #333;
-  margin: 0 10px;
-}
-header .menu {
-  margin-right: 10px;
-}
-@media (max-width: 769px) {
-  header div.index .title {
-    margin: 0 auto;
-    font-size: 2rem;
-  }
-  header div.index div.subtitles {
-    display: none;
-  }
-}
-header .hamburger-menu {
+.hamburger-menu {
   display: flex;
   position: fixed;
   justify-content: center;
@@ -104,11 +14,11 @@ header .hamburger-menu {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-header .hamburger-menu.is-open {
+.hamburger-menu.is-open {
   opacity: 1;
   visibility: visible;
 }
-header .hamburger-menu__inner {
+.hamburger-menu__inner {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -118,19 +28,19 @@ header .hamburger-menu__inner {
   height: 100%;
   gap: 25px;
 }
-header .hamburger-menu__item,
-header .hamburger-menu .title {
+.hamburger-menu__item,
+.hamburger-menu .title {
   color: #333;
   text-decoration: none;
 }
-header .hamburger-menu__item:hover,
-header .hamburger-menu .title:hover {
+.hamburger-menu__item:hover,
+.hamburger-menu .title:hover {
   opacity: 0.7;
 }
-header .hamburger-menu__item {
+.hamburger-menu__item {
   font-size: 1.5rem;
 }
-header .hamburger-menu .title {
+.hamburger-menu .title {
   font-size: 1.7rem;
   font-weight: bold;
 }
@@ -247,6 +157,97 @@ body.is-menu-open {
     top: 60%;
   }
 }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  z-index: 100;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+header .mini_logo {
+  margin: 0 20px;
+}
+header .menu {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  z-index: 901;
+  position: relative;
+}
+header .menu img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+header .menu::before, header .menu::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+header .menu::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+header .menu::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+header .menu.is-active img {
+  display: none;
+}
+header .menu.is-active::before, header .menu.is-active::after {
+  opacity: 1;
+}
+header div.index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header div.index .title {
+  font-size: 2.5rem;
+  text-decoration: none;
+  margin: 0 20px;
+  flex-grow: 1;
+  color: #333;
+}
+header div.index div.subtitles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header div.index div.subtitles .subtitle {
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+  margin: 0 10px;
+}
+header .menu {
+  margin-right: 10px;
+}
+@media (max-width: 769px) {
+  header div.index .title {
+    margin: 0 auto;
+    font-size: 2rem;
+  }
+  header div.index div.subtitles {
+    display: none;
+  }
+}
+
 footer {
   display: flex;
   align-items: center;
