@@ -17,4 +17,5 @@
     <div class="menu">
         <img src="/images/menu.png" alt="Menu Icon" />
     </div>
+    <?php include __DIR__ . '/hamburgermenu.php' ; ?>
 </header>
