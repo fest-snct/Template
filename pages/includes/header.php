@@ -1,12 +1,12 @@
 <header>
     <div class="mini_logo">
-        <img src="https://img.skin/80x80/000/fff/?text=icon&fmt=png" />
+        <img src="https://img.skin/80x80/000/fff/?text=logo&fmt=png" />
     </div>
     <div class="index">
         <a class="title" href="/home.php">高専祭2025</a>
         <div class="subtitles">
             <p class="subtitle">ご挨拶</p>
-            <p class="subtitle">企画一覧</p>
+            <a class="subtitle" href="/pages/stores.php">企画一覧</a>
             <p class="subtitle">アクセス</p>
             <p class="subtitle">ニュース</p>
             <p class="subtitle">Q&A</p>

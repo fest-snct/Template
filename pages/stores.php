@@ -15,11 +15,11 @@ header("Content-Security-Policy:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>企画一覧 | 高専祭2025</title>
-    <link rel="stylesheet" href="./css/stores.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
-    <script src="./js/stores.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
+    <link rel="stylesheet" href="/css/stores.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
+    <script src="/js/stores.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
 </head>
 <body>
-    <?php include_once 'pages/includes/header.php'; ?>
+    <?php include_once './includes/header.php'; ?>
     <main>
         <h1>企画一覧</h1>
         <div id="s_container">
@@ -53,7 +53,7 @@ header("Content-Security-Policy:
                         企画名
                     </div>
                 </div>
-                <img src="https://img.skin/400x300?fmt=gif" id="modal_img" alt="企画名" /><br>
+                <img src="https://img.skin/420x315?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" id="modal_img" alt="企画名" /><br>
                 <div id="modal_place">
                     場所
                 </div>
@@ -63,6 +63,6 @@ header("Content-Security-Policy:
             </div>
         </div>
     </div>
-    <?php include_once 'pages/includes/footer.php'; ?>
+    <?php include_once './includes/footer.php'; ?>
 </body>
 </html>

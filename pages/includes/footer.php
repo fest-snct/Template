@@ -4,7 +4,7 @@
             <a class="title" href="/home.php">ホーム</a>
             <div class="subtitles">
                 <p class="subtitle">ご挨拶</p>
-                <p class="subtitle">企画一覧</p>
+                <a class="subtitle" href="/pages/stores.php">企画一覧</a>
                 <p class="subtitle">アクセス</p>
                 <p class="subtitle">ニュース</p>
                 <p class="subtitle">Q&A</p>
