@@ -1,6 +1,6 @@
 <header>
     <div class="mini_logo">
-        <img src="https://picsum.photos/80" />
+        <img src="https://img.skin/80x80/000/fff/?text=icon&fmt=png" />
     </div>
     <div class="index">
         <a class="title" href="/home.php">高専祭2025</a>
