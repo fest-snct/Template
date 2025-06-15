@@ -58,6 +58,25 @@ div#modal {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.modal_pn {
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 16px;
+}
+.modal_pn:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.prev {
+    left: 0;
+}
+.next{
+    right: 0;
+}
+
+
 div#modal_inner {
     position: fixed;
     top: 0;

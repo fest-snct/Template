@@ -1,3 +1,4 @@
+var glb_iIndex = 0;
 function showModal(elm, img_id) {
     const modal_img = document.getElementById("modal_img");
     const modal_title = document.getElementById("modal_title");
@@ -7,6 +8,7 @@ function showModal(elm, img_id) {
     const figs = document.getElementsByTagName("main")[0].getElementsByClassName("s_items");
     const matchRx = /[ 　]場所[:：][ 　]?\d{1,2}-\d{3}$/;
     const matchAlt = self_img.getAttribute("alt").match(matchRx);
+    glb_iIndex = img_id;
     modal_place.innerText = matchAlt != null ? matchAlt[0].replace(/^[ 　]/, "", 1) : "";
     modal_title.innerText = self_img.getAttribute("alt").replace(matchRx, "");
     modal_txt.innerText = figs[img_id].getAttribute("data-description");
@@ -23,6 +25,19 @@ function closeModal(e) {
         const modal = document.getElementById("modal");
         modal.setAttribute("class", "nodisp");
     }
+}
+function moveModal(dir){
+    const figs = document.getElementsByTagName("main")[0].getElementsByClassName("s_items");
+    glb_iIndex += dir;
+    if (glb_iIndex >= figs.length) {
+        glb_iIndex = 0;
+    } else if (glb_iIndex < 0){
+        glb_iIndex = figs.length - 1;
+    }
+    showModal(
+        figs[glb_iIndex].getElementsByTagName("a")[0],
+        glb_iIndex
+    )
 }
 //addEventListener('click', closeModal);
 //https://pote-chil.com/posts/close-dialog-by-backdrop

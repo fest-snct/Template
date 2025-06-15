@@ -61,6 +61,8 @@ header("Content-Security-Policy:
                     出店詳細
                 </div>
             </div>
+            <a class="prev modal_pn" onclick="moveModal(-1)">❮</a>
+            <a class="next modal_pn" onclick="moveModal(1)">❯</a>
         </div>
     </div>
     <?php include_once './includes/footer.php'; ?>
