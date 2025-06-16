@@ -30,6 +30,8 @@ figure.s_items {
     //box-sizing: border-box;
     flex: 0 1 auto;
     //height: auto;
+    
+    cursor: pointer;
     margin: 0.25% 1%;
     width: min(420px, 45%);
 }
@@ -69,10 +71,10 @@ div#modal {
 .modal_pn:hover{
     background-color: rgba(0, 0, 0, 0.7);
 }
-.prev {
+#prev {
     left: 0;
 }
-.next{
+#next{
     right: 0;
 }
 
