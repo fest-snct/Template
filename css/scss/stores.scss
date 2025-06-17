@@ -1,0 +1,148 @@
+@import 'variables';
+@import 'header';
+@import 'footer';
+
+body {
+    background-color: $background-color;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    margin-top: $header-height;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+div#s_container {
+    //box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    //width: 100%;
+}
+
+figure.s_items {
+    //box-sizing: border-box;
+    flex: 0 1 auto;
+    //height: auto;
+    
+    cursor: pointer;
+    margin: 0.25% 1%;
+    width: min(420px, 45%);
+}
+
+img.s_pic {
+    //box-sizing: border-box;
+    height: auto;
+    min-width: 50%;
+    width: 100%;
+}
+
+div#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1100;
+
+}
+
+#modal_bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal_pn {
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 16px;
+}
+.modal_pn:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#prev {
+    left: 0;
+}
+#next{
+    right: 0;
+}
+
+
+div#modal_inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#modal_root {
+    max-width: min(90vh, 90vw);
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.nodisp {
+    display: none;
+}
+
+div#modal_head {
+    position: relative;
+    height: 30px;
+}
+
+#modal_img {
+    width: 100%;
+}
+// begin button
+.close-button {
+    --close-btn-size: 30px;
+    --close-btn-width: 100%;
+    --close-btn-height: 2px;
+    --close-btn-color: #ccc;
+    margin: 0 0 0 auto;
+    position: absolute;
+    right: 0;
+    height: var(--close-btn-size);
+    width: var(--close-btn-size);
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.close-button__line {
+    position: absolute;
+    background: var(--close-btn-color);
+}
+
+.close-button__line:nth-child(1) {
+    left: 0;
+    top: 50%;
+    transform: translate(0%, -50%) rotate(45deg);
+    width: var(--close-btn-width);
+    height: var(--close-btn-height);
+}
+
+.close-button__line:nth-child(2) {
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0%) rotate(45deg);
+    width: var(--close-btn-height);
+    height: var(--close-btn-width);
+}
