@@ -234,6 +234,33 @@ header div.index div.subtitles .subtitle {
   text-decoration: none;
   color: #333;
   margin: 0 10px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 0;
+}
+header div.index div.subtitles .subtitle::before, header div.index div.subtitles .subtitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #0077ff;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+header div.index div.subtitles .subtitle::before {
+  top: 0;
+  transform: translateY(-4px);
+}
+header div.index div.subtitles .subtitle::after {
+  bottom: 0;
+  transform: translateY(4px);
+}
+header div.index div.subtitles .subtitle:hover::before, header div.index div.subtitles .subtitle:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 header .menu {
   margin-right: 10px;

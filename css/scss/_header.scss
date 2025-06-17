@@ -83,6 +83,39 @@ header {
                 text-decoration: none;
                 color: $text-color;
                 margin: 0 10px;
+                position: relative;
+                cursor: pointer;
+                display: inline-block;
+                padding: 8px 0;
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                    background-color: $blue-color;
+                    opacity: 0;
+                    transform: translateY(4px);
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                }
+
+                &::before {
+                    top: 0;
+                    transform: translateY(-4px); // 上に浮き上がる線
+                }
+
+                &::after {
+                    bottom: 0;
+                    transform: translateY(4px); // 下に浮き上がる線
+                }
+
+                &:hover::before,
+                &:hover::after {
+                    opacity: 1;
+                    transform: translateY(0); // 両方スッと現れる
+                }
             }
         }
     }
