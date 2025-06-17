@@ -262,6 +262,10 @@ header div.index div.subtitles .subtitle:hover::before, header div.index div.sub
   opacity: 1;
   transform: translateY(0);
 }
+header div.index div.subtitles .subtitle.is-current::before, header div.index div.subtitles .subtitle.is-current::after {
+  opacity: 1;
+  transform: translateY(0);
+}
 header .menu {
   margin-right: 10px;
 }

@@ -116,6 +116,13 @@ header {
                     opacity: 1;
                     transform: translateY(0); // 両方スッと現れる
                 }
+
+                // 現在のページは常にアニメーション表示
+                &.is-current::before,
+                &.is-current::after {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         }
     }
