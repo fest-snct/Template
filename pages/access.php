@@ -18,6 +18,7 @@ header("Content-Security-Policy:
     <title>アクセス | 高専祭2025</title>
     <link rel="stylesheet" href="/css/access.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <script src="/js/access.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
+    <script src="/js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
 
 <body>
