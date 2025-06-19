@@ -1,0 +1,38 @@
+@import 'variables';
+@import 'header';
+@import 'footer';
+
+body {
+    background-color: $background-color;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    margin-top: $header-height;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.content_title {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: x-large;
+    text-align: left;
+    width: 90vw;
+}
+
+#google_embed {
+    width: 90vw;
+    height: max(45vw, 45vh);
+    border: 0;
+}
+.a_con_span {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90vw;
+    display: block;
+    text-align: left;
+}
