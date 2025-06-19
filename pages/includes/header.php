@@ -8,7 +8,7 @@
         <div class="subtitles">
             <p class="subtitle">ご挨拶</p>
             <a class="subtitle <?= $currentPage == '/pages/stores.php' ? 'is-current' : '' ?>" href="/pages/stores.php">企画一覧</a>
-            <p class="subtitle">アクセス</p>
+            <p class="subtitle <?= $currentPage == '/pages/access.php' ? 'is-current' : '' ?>" href="/pages/access.php">アクセス</p>
             <p class="subtitle">ニュース</p>
             <p class="subtitle">Q&A</p>
             <a class="subtitle <?= $currentPage == '/pages/contact.php' ? 'is-current' : '' ?>" href="/pages/contact.php">お問い合わせ</a>
