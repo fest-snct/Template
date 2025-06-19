@@ -9,7 +9,7 @@
                 <p class="subtitle">ニュース</p>
                 <p class="subtitle">Q&A</p>
                 <a class="subtitle" href="/pages/contact.php">お問い合わせ</a>
-                <p class="subtitle">プライバシーポリシー</p>
+                <a class="subtitle" href="/pages/privacypolicy.php">プライバシーポリシー</a>
             </div>
         </div>
         <div>
