@@ -5,7 +5,7 @@
             <div class="subtitles">
                 <p class="subtitle">ご挨拶</p>
                 <a class="subtitle" href="/pages/stores.php">企画一覧</a>
-                <p class="subtitle" href="/pages/access.php">アクセス</p>
+                <a class="subtitle" href="/pages/access.php">アクセス</a>
                 <p class="subtitle">ニュース</p>
                 <p class="subtitle">Q&A</p>
                 <a class="subtitle" href="/pages/contact.php">お問い合わせ</a>
