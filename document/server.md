@@ -13,7 +13,7 @@ sudo tee /etc/apache2/sites-available/fest.localhost.conf > /dev/null <<EOF
     ServerName fest.localhost
     DocumentRoot /var/www/html/2025
     DirectoryIndex home.php
-    <Directory /var/www/html/HP2025 >
+    <Directory /var/www/html/2025 >
         Options Indexes FollowSymLinks
         AllowOverride ALL
         Require all granted
