@@ -12,7 +12,7 @@
             <p class="subtitle">ニュース</p>
             <p class="subtitle">Q&A</p>
             <a class="subtitle <?= $currentPage == '/pages/contact.php' ? 'is-current' : '' ?>" href="/pages/contact.php">お問い合わせ</a>
-            <p class="subtitle">プライバシーポリシー</p>
+            <a class="subtitle <?= $currentPage == '/pages/privacypolicy.php' ? 'is-current' : '' ?>" href="/pages/privacypolicy.php">プライバシーポリシー</a>
         </div>
     </div>
     <div class="menu">
