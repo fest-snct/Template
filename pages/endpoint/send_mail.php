@@ -79,9 +79,15 @@ try {
     $mail->Port       = $_ENV['SMTP_PORT'];
     $mail->CharSet    = 'UTF-8';
 
-    $mail->setFrom($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']);
-    $mail->addAddress($_ENV['MAIL_TO_ADDRESS'], $_ENV['MAIL_TO_NAME']);
-    $mail->addReplyTo($email, $name); // フォーム入力者のメールアドレスを返信先に設定
+    // ★ ここで名前を MIME エンコードしてから設定
+    $fromName = mb_encode_mimeheader($_ENV['MAIL_FROM_NAME'], 'UTF-8');
+    $toName   = mb_encode_mimeheader($_ENV['MAIL_TO_NAME'], 'UTF-8');
+    $replyName = mb_encode_mimeheader($name, 'UTF-8');
+
+    // From, To, Reply-To の設定（日本語を含む場合は encode 必須）
+    $mail->setFrom($_ENV['MAIL_FROM_ADDRESS'], $fromName);
+    $mail->addAddress($_ENV['MAIL_TO_ADDRESS'], $toName);
+    $mail->addReplyTo($email, $replyName);
 
     $mail->isHTML(false);
     $mail->Subject = '【お問い合わせ】' . $name . '様より';
