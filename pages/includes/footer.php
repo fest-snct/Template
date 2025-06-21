@@ -4,12 +4,12 @@
             <a class="title" href="/home.php">ホーム</a>
             <div class="subtitles">
                 <p class="subtitle">ご挨拶</p>
-                <a class="subtitle" href="/pages/stores.php">企画一覧</a>
-                <a class="subtitle" href="/pages/access.php">アクセス</a>
+                <a class="subtitle" href="./stores.php">企画一覧</a>
+                <a class="subtitle" href="./access.php">アクセス</a>
                 <p class="subtitle">ニュース</p>
                 <p class="subtitle">Q&A</p>
-                <a class="subtitle" href="/pages/contact.php">お問い合わせ</a>
-                <a class="subtitle" href="/pages/privacypolicy.php">プライバシーポリシー</a>
+                <a class="subtitle" href="./contact.php">お問い合わせ</a>
+                <a class="subtitle" href="./privacypolicy.php">プライバシーポリシー</a>
             </div>
         </div>
         <div>
