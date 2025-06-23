@@ -47,7 +47,7 @@ if (
             <a class="title" href="./home.php">高専祭2025</a>
             <div class="subtitles">
                 <p class="subtitle">ご挨拶</p>
-                <p class="subtitle">イベント企画</p>
+                <a class="subtitle <?= $currentPage == './pages/event.php' ? 'is-current' : '' ?>" href="./pages/event.php">イベント企画</a>
                 <a class="subtitle <?= $currentPage == './pages/stores.php' ? 'is-current' : '' ?>" href="./pages/stores.php">企画一覧</a>
                 <a class="subtitle <?= $currentPage == './pages/access.php' ? 'is-current' : '' ?>" href="./pages/access.php">アクセス</a>
                 <p class="subtitle">ニュース</p>
@@ -67,7 +67,7 @@ if (
             <div class="hamburger-menu__inner">
                 <a href="./home.php" class="hamburger-menu__item title">ホーム</a>
                 <a href="#" class="hamburger-menu__item">ご挨拶</a>
-                <a href="#" class="subtitle">イベント企画</a>
+                <a href="./pages/event.php" class="hamburger-menu__item">イベント企画</a>
                 <a href="./pages/stores.php" class="hamburger-menu__item">企画一覧</a>
                 <a href="./pages/access.php" class="hamburger-menu__item">アクセス</a>
                 <a href="#" class="hamburger-menu__item">ニュース</a>
@@ -130,7 +130,7 @@ if (
                 <a class="title" href="./home.php">ホーム</a>
                 <div class="subtitles">
                     <p class="subtitle">ご挨拶</p>
-                    <p class="subtitle">イベント企画</p>
+                    <a class="subtitle" href="./pages/event.php">イベント企画</a>
                     <a class="subtitle" href="./pages/stores.php">企画一覧</a>
                     <a class="subtitle" href="./pages/access.php">アクセス</a>
                     <p class="subtitle">ニュース</p>

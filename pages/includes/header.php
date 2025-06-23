@@ -7,7 +7,7 @@
         <a class="title" href="../home.php">高専祭2025</a>
         <div class="subtitles">
             <p class="subtitle">ご挨拶</p>
-            <p class="subtitle">イベント企画</p>
+            <a class="subtitle <?= $currentPage == '/2025/pages/event.php' ? 'is-current' : '' ?>" href="./event.php">イベント企画</a>
             <a class="subtitle <?= $currentPage == '/2025/pages/stores.php' ? 'is-current' : '' ?>" href="./stores.php">出店一覧</a>
             <a class="subtitle <?= $currentPage == '/2025/pages/access.php' ? 'is-current' : '' ?>" href="./access.php">アクセス</a>
             <p class="subtitle">ニュース</p>
