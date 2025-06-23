@@ -12,9 +12,27 @@ body {
 }
 
 main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
     margin-top: $header-height;
     text-align: center;
+    align-items: flex-start;
     padding: 10px 0px;
+    width: 80vw;
+
+    p.title {
+        width: 100%;
+        font: bold;
+        text-align: left;
+        font-size: $header-height * 0.35;
+        padding: 0.5rem;
+        margin: 0;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border-left: 4px solid $blue-color;
+    }
 }
 
 div#s_container {
@@ -24,7 +42,7 @@ div#s_container {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    //width: 100%;
+    width: 100%;
 }
 
 figure.s_items {
@@ -34,14 +52,14 @@ figure.s_items {
     
     cursor: pointer;
     margin: 0.25% 1%;
-    width: min(420px, 45%);
+    //width: min(420px, 45%);
 }
 
 img.s_pic {
     //box-sizing: border-box;
     height: auto;
-    min-width: 50%;
-    width: 100%;
+    //min-width: 50%;
+    //width: 100%;
 }
 
 div#modal {
@@ -68,6 +86,7 @@ div#modal {
     font-size: xx-large;
     font-weight: bold;
     padding: 16px;
+    margin: 0 5vw;
 }
 .modal_pn:hover{
     background-color: rgba(0, 0, 0, 0.7);
@@ -109,7 +128,7 @@ div#modal_head {
 }
 
 #modal_img {
-    width: 100%;
+    width: 60%;
 }
 // begin button
 .close-button {

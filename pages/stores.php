@@ -24,16 +24,16 @@ header("Content-Security-Policy:
 <body>
     <?php include_once './includes/header.php'; ?>
     <main>
-        <h1>企画一覧</h1>
+        <p class="title">企画一覧</p>
         <div id="s_container">
             <figure class="s_items" data-description="詳細1">
-                <img src="https://img.skin/420x315?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" class="s_pic" alt="企画1" />
+                <img src="https://img.skin/340x340?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" class="s_pic" alt="企画1" />
             </figure>
             <figure class="s_items" data-description="詳細2">
-                <img src="https://img.skin/420x315?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" class="s_pic" alt="企画2" />
+                <img src="https://img.skin/340x340?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" class="s_pic" alt="企画2" />
             </figure>
             <figure class="s_items" data-description="詳細3">
-                <img src="https://img.skin/420x315?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" class="s_pic" alt="企画3" />
+                <img src="https://img.skin/340x340?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" class="s_pic" alt="企画3" />
             </figure>
         </div>
     </main>
@@ -50,7 +50,7 @@ header("Content-Security-Policy:
                         企画名
                     </div>
                 </div>
-                <img src="https://img.skin/420x315?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" id="modal_img" alt="企画名" /><br>
+                <img src="https://img.skin/340x340?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" id="modal_img" alt="企画名" /><br>
                 <div id="modal_place">
                     場所
                 </div>
