@@ -21,6 +21,7 @@ header("Content-Security-Policy:
 <body>
     <?php include './includes/header.php'; ?>
     <main>
+        <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
         <p class="title">プライバシーポリシー</p>
         <p class="privacy-content">
             このプライバシーポリシーは、2025年度仙台高専広瀬キャンパス高専祭ウェブサイト（以下、「当サイト」と称します）の訪問者の個人情報の取り扱いに関するものです。当サイトを利用することにより、本プライバシーポリシーに同意したものとみなされます。

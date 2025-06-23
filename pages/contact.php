@@ -22,6 +22,7 @@ header("Content-Security-Policy:
 <body>
     <?php include './includes/header.php'; ?>
     <main>
+        <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
         <div class="contact_header">
             <p class="title">お問い合わせ</p>
             <p>お問い合わせいただいた内容は確認後、担当者よりご返信させていただきます。</p>

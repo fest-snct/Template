@@ -22,6 +22,7 @@ header("Content-Security-Policy:
     <?php include './includes/header.php' ?>
     <div class="wrapper">
         <main>
+            <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">ニュース一覧</p>
             <div class="news_list">
                 <div>

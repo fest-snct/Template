@@ -23,6 +23,7 @@ header("Content-Security-Policy:
     <?php include './includes/header.php'; ?>
     <div class="wrapper">
         <main>
+            <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">イベント企画</p>
             <div class="events">
                 <p>準備中です。</p>

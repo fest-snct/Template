@@ -22,6 +22,7 @@ header("Content-Security-Policy:
     <?php include './includes/header.php' ?>
     <div class="wrapper">
         <main>
+            <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">校長からの挨拶</p>
             <div class="greeting_contents">
                 <p class="greeting_name">橋爪 秀利</p>

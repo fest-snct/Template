@@ -24,6 +24,7 @@ header("Content-Security-Policy:
 <body>
     <?php include_once './includes/header.php'; ?>
     <main>
+        <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
         <p class="title">出店一覧</p>
         <div id="s_container">
             <figure class="s_items" data-description="詳細1">
