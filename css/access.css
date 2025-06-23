@@ -508,9 +508,31 @@ body {
 }
 
 main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+  margin: 0 auto;
   margin-top: 5rem;
+  width: 80vw;
   text-align: center;
   padding: 10px 0px;
+}
+main p.title {
+  width: 100%;
+  font: bold;
+  text-align: left;
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  margin: 0;
+  margin-top: 2rem;
+  border-left: 4px solid #0077ff;
+}
+main div.content_main {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
 }
 
 .content_title {
@@ -522,15 +544,15 @@ main {
 }
 
 #google_embed {
-  width: 90vw;
+  width: 80vw;
   height: max(45vw, 45vh);
   border: 0;
 }
 
 .a_con_span {
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: column;
   max-width: 90vw;
-  display: block;
+  align-items: flex-start;
   text-align: left;
 }

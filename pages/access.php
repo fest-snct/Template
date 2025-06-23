@@ -24,7 +24,7 @@ header("Content-Security-Policy:
 <body>
     <?php include_once './includes/header.php'; ?>
     <main>
-        <h1>アクセス</h1>
+        <p class="title">アクセス</p>
         <div class="content_title">
             <h3>周辺地図</h3>
         </div>
