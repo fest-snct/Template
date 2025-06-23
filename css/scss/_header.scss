@@ -78,7 +78,7 @@ header {
             display: flex;
             align-items: center;
             justify-content: center;
-            .subtitle {
+            a.subtitle {
                 font-size: $font-size-base;
                 text-decoration: none;
                 color: $text-color;
@@ -126,7 +126,7 @@ header {
             }
         }
     }
-    .menu {
+    div.menu {
         margin-right: 10px;
     }
 

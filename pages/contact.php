@@ -23,7 +23,7 @@ header("Content-Security-Policy:
     <?php include './includes/header.php'; ?>
     <main>
         <div class="contact_header">
-            <p class="subject">お問い合わせ</p>
+            <p class="title">お問い合わせ</p>
             <p>お問い合わせいただいた内容は確認後、担当者よりご返信させていただきます。</p>
             <p>※記入いただいた個人情報は、ご本人の同意なく第三者に提供することはございません。</p>
             <p>※詳細は<a href="privacypolicy.php">プライバシーポリシー</a>を確認してください。</p>

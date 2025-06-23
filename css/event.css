@@ -334,159 +334,11 @@ footer div.footer-content div.subtitles a.subtitle {
   }
 }
 
-.hamburger-menu {
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #e0f7ff;
-  z-index: 900;
-  overflow: visible;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.hamburger-menu div.drop, .hamburger-menu div.wave {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-}
-.hamburger-menu div.drop {
-  width: 20px;
-  height: 20px;
-  margin: 0 auto;
-  background: #FFF;
-  border-radius: 20px;
-  animation-name: drip;
-  animation-timing-function: cubic-bezier(1, 0, 0.91, 0.19);
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-}
-.hamburger-menu div.drop:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 30px solid rgb(255, 255, 255);
-  top: -22px;
-}
-.hamburger-menu div.wave {
-  opacity: 0;
-  width: 2px;
-  height: 1px;
-  border: #FFF 7px solid;
-  border-radius: 300px/150px;
-  animation-name: ripple;
-  animation-delay: 2s;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-}
-.hamburger-menu div.wave:after {
-  content: "";
-  position: absolute;
-  opacity: 0;
-  top: -5px;
-  left: -5px;
-  width: 2px;
-  height: 1px;
-  border: #FFF 5px solid;
-  border-radius: 300px/150px;
-  animation-name: ripple-2;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-}
-.hamburger-menu.is-open {
-  opacity: 1;
-  visibility: visible;
-}
-.hamburger-menu__item,
-.hamburger-menu a.title {
-  color: #333;
-  text-decoration: none;
-}
-.hamburger-menu__item:hover,
-.hamburger-menu a.title:hover {
-  opacity: 0.7;
-}
-.hamburger-menu__item {
-  font-size: 1.5rem;
-}
-.hamburger-menu a.title {
-  font-size: 1.7rem;
-  font-weight: bold;
-}
-.hamburger-menu div.hamburger-menu__inner {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-  transition-delay: 2s;
-}
-.hamburger-menu div.hamburger-menu__inner {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 101;
-  align-items: center;
+html, body {
   height: 100%;
-  gap: 25px;
+  margin: 0;
 }
 
-body.is-menu-open {
-  overflow: hidden;
-}
-
-nav.hamburger-menu.is-open div.hamburger-menu__inner {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-@keyframes ripple {
-  from {
-    opacity: 1;
-  }
-  to {
-    width: 600px;
-    height: 300px;
-    border-width: 1px;
-    top: 60%;
-    opacity: 0;
-  }
-}
-@keyframes ripple-2 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    width: 200px;
-    height: 100px;
-    border-width: 1px;
-    top: 60%;
-    left: 200px;
-  }
-}
-@keyframes drip {
-  to {
-    top: 60%;
-  }
-}
 body {
   background-color: #e0f7ff;
   overflow-y: auto;
@@ -495,19 +347,24 @@ body {
   min-height: 100vh;
 }
 
-main {
+div.wrapper {
+  min-height: calc(100% - 10rem);
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+div.wrapper main {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 12px;
-  margin: 0 auto;
-  margin-top: 5rem;
+  padding-top: 10px;
   width: 80vw;
   text-align: center;
-  padding: 10px 0px;
+  margin: 0 auto;
 }
-main p.title {
+div.wrapper main p.title {
   width: 100%;
   font: bold;
   text-align: left;
@@ -517,27 +374,12 @@ main p.title {
   margin-top: 2rem;
   border-left: 4px solid #0077ff;
 }
-main div.content_main {
-  display: flex;
-  flex-direction: column;
-  margin-left: 2rem;
-}
-main div.content_title {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: x-large;
-  text-align: left;
-  width: 90vw;
-}
-main iframe#google_embed {
+div.wrapper main div.border {
   width: 80vw;
-  height: max(45vw, 45vh);
-  border: 0;
+  margin-top: 2rem;
+  border: 2px solid #333;
 }
-main span.a_con_span {
+div.wrapper main div.events {
   display: flex;
-  flex-direction: column;
-  max-width: 90vw;
-  align-items: flex-start;
-  text-align: left;
+  margin-left: 2rem;
 }

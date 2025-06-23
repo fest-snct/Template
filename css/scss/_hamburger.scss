@@ -19,163 +19,153 @@
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 
+    div.drop, div.wave {
+        position: absolute;
+        top: 40%; // 中央やや上に水滴を落とす
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100; // メニューの下に潜らないように
+    }
+    div.drop {
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        background: #FFF;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        -moz-animation-name: drip;
+        -webkit-animation-name: drip;
+        animation-name: drip;
+        -moz-animation-timing-function: cubic-bezier(1,0,.91,.19);
+        -webkit-animation-timing-function: cubic-bezier(1,0,.91,.19);
+        animation-timing-function: cubic-bezier(1,0,.91,.19);
+        -moz-animation-duration: 2s;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -moz-animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+    }
+    div.drop:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 30px solid rgba(255,255,255,1);
+        top: -22px;
+    }
+    div.wave {
+        opacity: 0;
+        width: 2px;
+        height: 1px;
+        border: #FFF 7px solid;
+        -moz-border-radius: 300px / 150px;
+        -webkit-border-radius: 300px / 150px;
+        border-radius: 300px / 150px;
+        -moz-animation-name: ripple;
+        -webkit-animation-name: ripple;
+        animation-name: ripple;
+        -moz-animation-delay: 2s;
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+        -moz-animation-duration: 2s;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -moz-animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+    }
+    div.wave:after {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        top: -5px;
+        left: -5px;
+        width: 2px;
+        height: 1px;
+        border: #FFF 5px solid;
+        -moz-border-radius: 300px / 150px;
+        -webkit-border-radius: 300px / 150px;
+        border-radius: 300px / 150px;
+        -moz-animation-name: ripple-2;
+        -webkit-animation-name: ripple-2;
+        animation-name: ripple-2;
+        -moz-animation-duration: 2s;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -moz-animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+    }
     // JavaScriptで is-openクラスが付いたときのスタイル
     &.is-open {
         opacity: 1;
         visibility: visible;        
     }
-
-    &__inner {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        justify-content: center;
-        z-index: 101;
-        align-items: center;
-        height: 100%;
-        gap: 25px; // メニュー項目間の余白
-    }
-
+    
     // メニューの各項目
     &__item,
-    .title { // hamburgermenu.php内の.titleクラスも対象に
+    a.title { // hamburgermenu.php内の.titleクラスも対象に
         color: $text-color;
         text-decoration: none;
         &:hover {
             opacity: 0.7;
         }
     }
-    
     // それぞれのフォントサイズを調整
     &__item {
         font-size: 1.5rem;
     }
-    .title { // ホームへのリンク
+    a.title { // ホームへのリンク
         font-size: 1.7rem;
         font-weight: bold;
+    }
+    div.hamburger-menu__inner {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+        transition-delay: 2s; // アニメーション終了後に表示されるようにする
+
+        & {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 101;
+            align-items: center;
+            height: 100%;
+            gap: 25px; // メニュー項目間の余白
+        }
     }
 }
 
 body.is-menu-open {
     overflow: hidden;
 }
-
-.hamburger-menu__inner {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-  transition-delay: 2s; // アニメーション終了後に表示されるようにする
-}
-
-.hamburger-menu.is-open .hamburger-menu__inner {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.drop, .wave {
-  position: absolute;
-  top: 40%; // 中央やや上に水滴を落とす
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100; // メニューの下に潜らないように
-}
-
-
-
-.drop {
-  width: 20px;
-  height: 20px;
-  margin: 0 auto;
-  background: #FFF;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  -moz-animation-name: drip;
-  -webkit-animation-name: drip;
-  animation-name: drip;
-  -moz-animation-timing-function: cubic-bezier(1,0,.91,.19);
-  -webkit-animation-timing-function: cubic-bezier(1,0,.91,.19);
-  animation-timing-function: cubic-bezier(1,0,.91,.19);
-  -moz-animation-duration: 2s;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -moz-animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-}
-
-.drop:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 30px solid rgba(255,255,255,1);
-  top: -22px;
-}
-
-.wave {
-  opacity: 0;
-  width: 2px;
-  height: 1px;
-  border: #FFF 7px solid;
-  -moz-border-radius: 300px / 150px;
-  -webkit-border-radius: 300px / 150px;
-  border-radius: 300px / 150px;
-  -moz-animation-name: ripple;
-  -webkit-animation-name: ripple;
-  animation-name: ripple;
-  -moz-animation-delay: 2s;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-  -moz-animation-duration: 2s;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -moz-animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-}
-
-.wave:after {
-  content: "";
-  position: absolute;
-  opacity: 0;
-  top: -5px;
-  left: -5px;
-  width: 2px;
-  height: 1px;
-  border: #FFF 5px solid;
-  -moz-border-radius: 300px / 150px;
-  -webkit-border-radius: 300px / 150px;
-  border-radius: 300px / 150px;
-  -moz-animation-name: ripple-2;
-  -webkit-animation-name: ripple-2;
-  animation-name: ripple-2;
-  -moz-animation-duration: 2s;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -moz-animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
+nav.hamburger-menu.is-open div.hamburger-menu__inner {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 @keyframes ripple {
     from {
-      opacity: 1;
+        opacity: 1;
     }
     to {
-      width: 600px;
-      height: 300px;
-      border-width: 1px;
-      top: 60%;
-      opacity: 0;
+        width: 600px;
+        height: 300px;
+        border-width: 1px;
+        top: 60%;
+        opacity: 0;
     }
 }
 
@@ -186,17 +176,17 @@ body.is-menu-open {
     50% {
       opacity: 0;
     }
-  100% {
-    width: 200px;
-    height: 100px;
-    border-width: 1px;
-    top: 60%;
-    left: 200px;
-  }
+    100% {
+        width: 200px;
+        height: 100px;
+        border-width: 1px;
+        top: 60%;
+        left: 200px;
+    }
 }
 
 @keyframes drip {
     to {
-      top: 60%;
+        top: 60%;
     }
 }

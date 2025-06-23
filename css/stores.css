@@ -14,62 +14,14 @@
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.hamburger-menu.is-open {
-  opacity: 1;
-  visibility: visible;
-}
-.hamburger-menu__inner {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 101;
-  align-items: center;
-  height: 100%;
-  gap: 25px;
-}
-.hamburger-menu__item,
-.hamburger-menu .title {
-  color: #333;
-  text-decoration: none;
-}
-.hamburger-menu__item:hover,
-.hamburger-menu .title:hover {
-  opacity: 0.7;
-}
-.hamburger-menu__item {
-  font-size: 1.5rem;
-}
-.hamburger-menu .title {
-  font-size: 1.7rem;
-  font-weight: bold;
-}
-
-body.is-menu-open {
-  overflow: hidden;
-}
-
-.hamburger-menu__inner {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-  transition-delay: 2s;
-}
-
-.hamburger-menu.is-open .hamburger-menu__inner {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.drop, .wave {
+.hamburger-menu div.drop, .hamburger-menu div.wave {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
 }
-
-.drop {
+.hamburger-menu div.drop {
   width: 20px;
   height: 20px;
   margin: 0 auto;
@@ -82,8 +34,7 @@ body.is-menu-open {
   animation-fill-mode: forwards;
   animation-play-state: paused;
 }
-
-.drop:before {
+.hamburger-menu div.drop:before {
   content: "";
   position: absolute;
   width: 0;
@@ -93,8 +44,7 @@ body.is-menu-open {
   border-bottom: 30px solid rgb(255, 255, 255);
   top: -22px;
 }
-
-.wave {
+.hamburger-menu div.wave {
   opacity: 0;
   width: 2px;
   height: 1px;
@@ -107,8 +57,7 @@ body.is-menu-open {
   animation-fill-mode: forwards;
   animation-play-state: paused;
 }
-
-.wave:after {
+.hamburger-menu div.wave:after {
   content: "";
   position: absolute;
   opacity: 0;
@@ -123,6 +72,51 @@ body.is-menu-open {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: paused;
+}
+.hamburger-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.hamburger-menu__item,
+.hamburger-menu a.title {
+  color: #333;
+  text-decoration: none;
+}
+.hamburger-menu__item:hover,
+.hamburger-menu a.title:hover {
+  opacity: 0.7;
+}
+.hamburger-menu__item {
+  font-size: 1.5rem;
+}
+.hamburger-menu a.title {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.hamburger-menu div.hamburger-menu__inner {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  transition-delay: 2s;
+}
+.hamburger-menu div.hamburger-menu__inner {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 101;
+  align-items: center;
+  height: 100%;
+  gap: 25px;
+}
+
+body.is-menu-open {
+  overflow: hidden;
+}
+
+nav.hamburger-menu.is-open div.hamburger-menu__inner {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @keyframes ripple {
@@ -229,7 +223,7 @@ header div.index div.subtitles {
   align-items: center;
   justify-content: center;
 }
-header div.index div.subtitles .subtitle {
+header div.index div.subtitles a.subtitle {
   font-size: 16px;
   text-decoration: none;
   color: #333;
@@ -239,7 +233,7 @@ header div.index div.subtitles .subtitle {
   display: inline-block;
   padding: 8px 0;
 }
-header div.index div.subtitles .subtitle::before, header div.index div.subtitles .subtitle::after {
+header div.index div.subtitles a.subtitle::before, header div.index div.subtitles a.subtitle::after {
   content: "";
   position: absolute;
   left: 0;
@@ -250,23 +244,23 @@ header div.index div.subtitles .subtitle::before, header div.index div.subtitles
   transform: translateY(4px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-header div.index div.subtitles .subtitle::before {
+header div.index div.subtitles a.subtitle::before {
   top: 0;
   transform: translateY(-4px);
 }
-header div.index div.subtitles .subtitle::after {
+header div.index div.subtitles a.subtitle::after {
   bottom: 0;
   transform: translateY(4px);
 }
-header div.index div.subtitles .subtitle:hover::before, header div.index div.subtitles .subtitle:hover::after {
+header div.index div.subtitles a.subtitle:hover::before, header div.index div.subtitles a.subtitle:hover::after {
   opacity: 1;
   transform: translateY(0);
 }
-header div.index div.subtitles .subtitle.is-current::before, header div.index div.subtitles .subtitle.is-current::after {
+header div.index div.subtitles a.subtitle.is-current::before, header div.index div.subtitles a.subtitle.is-current::after {
   opacity: 1;
   transform: translateY(0);
 }
-header .menu {
+header div.menu {
   margin-right: 10px;
 }
 @media (max-width: 769px) {
@@ -299,7 +293,7 @@ footer div.footer-content {
 footer div.footer-content div.footer_menu {
   display: flex;
 }
-footer div.footer-content .title {
+footer div.footer-content a.title {
   text-decoration: none;
   color: #333;
 }
@@ -308,7 +302,7 @@ footer div.footer-content div.subtitles {
   align-items: center;
   justify-content: center;
 }
-footer div.footer-content div.subtitles .subtitle {
+footer div.footer-content div.subtitles a.subtitle {
   font-size: 19.2px;
   text-decoration: none;
   color: #333;
@@ -326,7 +320,7 @@ footer div.footer-content div.subtitles .subtitle {
   footer div.footer-content div.footer_menu {
     flex-direction: column;
   }
-  footer div.footer-content .title {
+  footer div.footer-content a.title {
     font-size: 24px;
     margin: 10px 0;
   }
@@ -334,171 +328,12 @@ footer div.footer-content div.subtitles .subtitle {
     flex-direction: column;
     align-items: center;
   }
-  footer div.footer-content div.subtitles .subtitle {
+  footer div.footer-content div.subtitles a.subtitle {
     font-size: 24px;
     margin: 5px 0;
   }
 }
 
-.hamburger-menu {
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #e0f7ff;
-  z-index: 900;
-  overflow: visible;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.hamburger-menu.is-open {
-  opacity: 1;
-  visibility: visible;
-}
-.hamburger-menu__inner {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 101;
-  align-items: center;
-  height: 100%;
-  gap: 25px;
-}
-.hamburger-menu__item,
-.hamburger-menu .title {
-  color: #333;
-  text-decoration: none;
-}
-.hamburger-menu__item:hover,
-.hamburger-menu .title:hover {
-  opacity: 0.7;
-}
-.hamburger-menu__item {
-  font-size: 1.5rem;
-}
-.hamburger-menu .title {
-  font-size: 1.7rem;
-  font-weight: bold;
-}
-
-body.is-menu-open {
-  overflow: hidden;
-}
-
-.hamburger-menu__inner {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-  transition-delay: 2s;
-}
-
-.hamburger-menu.is-open .hamburger-menu__inner {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.drop, .wave {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-}
-
-.drop {
-  width: 20px;
-  height: 20px;
-  margin: 0 auto;
-  background: #FFF;
-  border-radius: 20px;
-  animation-name: drip;
-  animation-timing-function: cubic-bezier(1, 0, 0.91, 0.19);
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-}
-
-.drop:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 30px solid rgb(255, 255, 255);
-  top: -22px;
-}
-
-.wave {
-  opacity: 0;
-  width: 2px;
-  height: 1px;
-  border: #FFF 7px solid;
-  border-radius: 300px/150px;
-  animation-name: ripple;
-  animation-delay: 2s;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-}
-
-.wave:after {
-  content: "";
-  position: absolute;
-  opacity: 0;
-  top: -5px;
-  left: -5px;
-  width: 2px;
-  height: 1px;
-  border: #FFF 5px solid;
-  border-radius: 300px/150px;
-  animation-name: ripple-2;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-}
-
-@keyframes ripple {
-  from {
-    opacity: 1;
-  }
-  to {
-    width: 600px;
-    height: 300px;
-    border-width: 1px;
-    top: 60%;
-    opacity: 0;
-  }
-}
-@keyframes ripple-2 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    width: 200px;
-    height: 100px;
-    border-width: 1px;
-    top: 60%;
-    left: 200px;
-  }
-}
-@keyframes drip {
-  to {
-    top: 60%;
-  }
-}
 body {
   background-color: #e0f7ff;
   overflow-y: auto;
@@ -506,35 +341,45 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
-main {
+body main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   margin-top: 5rem;
   text-align: center;
+  align-items: flex-start;
   padding: 10px 0px;
+  width: 80vw;
 }
-
-div#s_container {
+body main p.title {
+  width: 100%;
+  font: bold;
+  text-align: left;
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  margin: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid #0077ff;
+}
+body main div#s_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
-
-figure.s_items {
+body main div#s_container figure.s_items {
   flex: 0 1 auto;
   cursor: pointer;
   margin: 0.25% 1%;
-  width: min(420px, 45%);
 }
-
-img.s_pic {
+body main div#s_container figure.s_items img.s_pic {
   height: auto;
-  min-width: 50%;
-  width: 100%;
 }
-
-div#modal {
+body div#modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -542,36 +387,13 @@ div#modal {
   height: 100%;
   z-index: 1100;
 }
-
-#modal_bg {
+body div#modal div#modal_bg {
   width: 100%;
   height: 100%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
 }
-
-.modal_pn {
-  cursor: pointer;
-  position: absolute;
-  color: white;
-  font-size: xx-large;
-  font-weight: bold;
-  padding: 16px;
-}
-
-.modal_pn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-#prev {
-  left: 0;
-}
-
-#next {
-  right: 0;
-}
-
-div#modal_inner {
+body div#modal div#modal_inner {
   position: fixed;
   top: 0;
   left: 0;
@@ -582,28 +404,17 @@ div#modal_inner {
   align-items: center;
   justify-content: center;
 }
-
-div#modal_root {
+body div#modal div#modal_inner div#modal_root {
   max-width: min(90vh, 90vw);
   width: 100%;
   text-align: center;
   color: white;
 }
-
-.nodisp {
-  display: none;
-}
-
-div#modal_head {
+body div#modal div#modal_inner div#modal_root div#modal_head {
   position: relative;
   height: 30px;
 }
-
-#modal_img {
-  width: 100%;
-}
-
-.close-button {
+body div#modal div#modal_inner div#modal_root div#modal_head button.close-button {
   --close-btn-size: 30px;
   --close-btn-width: 100%;
   --close-btn-height: 2px;
@@ -617,24 +428,45 @@ div#modal_head {
   border-color: transparent;
   cursor: pointer;
 }
-
-.close-button__line {
+body div#modal div#modal_inner div#modal_root div#modal_head button.close-button div.close-button__line {
   position: absolute;
   background: var(--close-btn-color);
 }
-
-.close-button__line:nth-child(1) {
+body div#modal div#modal_inner div#modal_root div#modal_head button.close-button div.close-button__line:nth-child(1) {
   left: 0;
   top: 50%;
   transform: translate(0%, -50%) rotate(45deg);
   width: var(--close-btn-width);
   height: var(--close-btn-height);
 }
-
-.close-button__line:nth-child(2) {
+body div#modal div#modal_inner div#modal_root div#modal_head button.close-button div.close-button__line:nth-child(2) {
   left: 50%;
   top: 0;
   transform: translate(-50%, 0%) rotate(45deg);
   width: var(--close-btn-height);
   height: var(--close-btn-width);
+}
+body div#modal div#modal_inner div#modal_root img#modal_img {
+  width: 60%;
+}
+body div#modal div#modal_inner a.modal_pn {
+  cursor: pointer;
+  position: absolute;
+  color: white;
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 16px;
+  margin: 0 5vw;
+}
+body div#modal div#modal_inner a.modal_pn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+body div#modal div#modal_inner a#prev {
+  left: 0;
+}
+body div#modal div#modal_inner a#next {
+  right: 0;
+}
+body div.nodisp {
+  display: none;
 }

@@ -47,6 +47,7 @@ if (
             <a class="title" href="./home.php">高専祭2025</a>
             <div class="subtitles">
                 <p class="subtitle">ご挨拶</p>
+                <a class="subtitle <?= $currentPage == './pages/event.php' ? 'is-current' : '' ?>" href="./pages/event.php">イベント企画</a>
                 <a class="subtitle <?= $currentPage == './pages/stores.php' ? 'is-current' : '' ?>" href="./pages/stores.php">企画一覧</a>
                 <a class="subtitle <?= $currentPage == './pages/access.php' ? 'is-current' : '' ?>" href="./pages/access.php">アクセス</a>
                 <p class="subtitle">ニュース</p>
@@ -66,6 +67,7 @@ if (
             <div class="hamburger-menu__inner">
                 <a href="./home.php" class="hamburger-menu__item title">ホーム</a>
                 <a href="#" class="hamburger-menu__item">ご挨拶</a>
+                <a href="./pages/event.php" class="hamburger-menu__item">イベント企画</a>
                 <a href="./pages/stores.php" class="hamburger-menu__item">企画一覧</a>
                 <a href="./pages/access.php" class="hamburger-menu__item">アクセス</a>
                 <a href="#" class="hamburger-menu__item">ニュース</a>
@@ -79,6 +81,48 @@ if (
         <div class="main_logo">
             <img src="./images/icon.png" alt="Main Image" />
         </div>
+        <div class="border"></div>
+        <div class="main_menu">
+            <p class="main_menus">開催日時</p>
+            <div class="fest_date">
+                <p>一日目：10月25日(土)　　9:00-16:00</p>
+                <p>二日目：10月26日(日)　　9:00-16:00</p>
+            </div>
+            <p>※時間は変更になる可能性がありあます。</p>
+        </div>
+        <div class="border"></div>
+        <div class="main_menu">
+            <p class="main_menus">ニュース</p>
+            <div class="news_content">
+            </div>
+        </div>
+        <div class="border"></div>
+        <div class="main_menu">
+            <p class="main_menus">校長挨拶</p>
+            <div class="greetings_content"></div>
+        </div>
+        <div class="border"></div>
+        <div class="main_menu">
+            <p class="main_menus">イベント</p>
+            <div class="event_content"></div>
+        </div>
+        <div class="border"></div>
+        <div class="main_menu">
+            <p class="main_menus">出店一覧</p>
+            <div class="stores_content">
+                <a href="./pages/stores.php">詳しくはこちら</a>
+            </div>
+        </div>
+        <div class="border"></div>
+        <div class="main_menu">
+            <p class="main_menus">アクセス</p>
+            <div class="access_content">
+                <p>公共交通機関</p>
+                <p>JR仙山線　愛子駅より徒歩15分</p>
+                <p>仙台市営バス 仙台高専広瀬キャンパス入口より徒歩5分</p>
+                <a href="./pages/access.php">詳しくはこちら</a>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="footer-content">
@@ -86,6 +130,7 @@ if (
                 <a class="title" href="./home.php">ホーム</a>
                 <div class="subtitles">
                     <p class="subtitle">ご挨拶</p>
+                    <a class="subtitle" href="./pages/event.php">イベント企画</a>
                     <a class="subtitle" href="./pages/stores.php">企画一覧</a>
                     <a class="subtitle" href="./pages/access.php">アクセス</a>
                     <p class="subtitle">ニュース</p>
