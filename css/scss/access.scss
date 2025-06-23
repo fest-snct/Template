@@ -35,7 +35,25 @@ main {
     }
     div.content_main {
         display: flex;
+        align-items: flex-start;
         flex-direction: column;
+
+        a.time {
+            display: block;
+            width: 80vw;
+            height: 2rem;
+            justify-content: center;
+            background-color: $blue-color;
+            color: white;
+            border: 2px solid $text-color;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+
+            &:hover {
+                color: $text-color;
+            }
+        }
     }
     div.content_title {
         margin-left: auto;
@@ -55,5 +73,10 @@ main {
         max-width: 90vw;
         align-items: flex-start;
         text-align: left;
+    }
+    div.border {
+        width: 80vw;
+        margin-top: 2rem;
+        border: 2px solid $text-color;
     }
 }

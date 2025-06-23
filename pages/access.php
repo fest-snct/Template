@@ -38,18 +38,22 @@ header("Content-Security-Policy:
             仙台市営バス 仙台高専広瀬キャンパス入口より徒歩5分
         </span>
         </div>
+        <div class="border"></div>
         <div class="content_title">
             <h3>シャトルバス</h3>
         </div>
         <div class="content_main">
-            準備中です...
+            <p>準備中です...</p>
+            <a class="time" href="./access/shuttle_bus.php">時刻表はこちら</a>
         </div>
+        <!--
         <div class="content_title">
             <h3>急行しらはぎ</h3>
         </div>
         <div class="content_main">
             準備中です...
         </div>
+        -->
 
     </main>
     <?php include_once './includes/footer.php'; ?>

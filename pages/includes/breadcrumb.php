@@ -12,6 +12,7 @@ function render_breadcrumb() {
         'news' => 'ニュース',
         'contact' => 'お問い合わせ',
         'privacypolicy' => 'プライバシーポリシー',
+        'shuttle_bus' => 'シャトルバス時刻表',
     ];
 
     // 現在のURLパスを取得（例: /about/greeting.php）
@@ -20,17 +21,19 @@ function render_breadcrumb() {
 
     $breadcrumbs = ['<li><a href="/2025/home.php">ホーム</a></li>'];
     $link = '';
+    $displayParts = [];
 
     foreach ($parts as $index => $part) {
         $cleanPart = preg_replace('/\.php/', '', $part);
+        $isLast = ($index === array_key_last($parts));
 
         // 無視対象ならスキップ
         if (in_array($cleanPart, $ignoreList)) {
+            $link .= '/' . $part;
             continue;
         }
 
-        $link .= '/' . $part;
-        $isLast = ($index === array_key_last($parts));
+        $displayParts[] = $cleanPart;
 
         // ラベル取得
         $label = $labelMap[$cleanPart] ?? ucfirst($cleanPart);
@@ -38,7 +41,16 @@ function render_breadcrumb() {
         if ($isLast) {
             $breadcrumbs[] = "<li class='bold'>$label</li>";
         } else {
-            $breadcrumbs[] = "<li><a href=\"$link\">$label</a></li>";
+            // 中間パーツに対応する .php があるかを仮定
+            $phpPath = $_SERVER['DOCUMENT_ROOT'] . '/' . implode('/', array_slice($parts, 0, $index + 1)) . '.php';
+            if (file_exists($phpPath)) {
+                // ファイルがあれば .php にリンク
+                $href = '/' . implode('/', array_slice($parts, 0, $index + 1)) . '.php';
+            } else {
+                // そうでなければディレクトリリンク
+                $href = '/' . implode('/', array_slice($parts, 0, $index + 1)) . '/';
+            }
+            $breadcrumbs[] = "<li><a href=\"$href\">$label</a></li>";
         }
     }
 

@@ -17,6 +17,7 @@ header("Content-Security-Policy:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q&A | 高専祭2025</title>
     <link rel="stylesheet" href="../css/Q&A.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
+    <script src="../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
 <body>
     <?php include './includes/header.php'; ?>
@@ -30,7 +31,7 @@ header("Content-Security-Policy:
                     <dd>高専祭は10月25日（土）から10月26日（日）の2日間開催されます。</dd>
 
                     <dt>高専祭の開催時間は何時から何時までですか？</dt>
-                    <dd>高専祭の開催時間は9:00-16:00（25日）/9:00-15:00（26日）です。</dd>
+                    <dd>高専祭の開催時間は9:30-16:00（25日）/9:30-15:00（26日）です。</dd>
 
                     <dt>駐車場はありますか？</dt>
                     <dd>学校の駐車場は面談のために来校される保護者様のみご利用いただけます。それ以外のお客様は公共交通機関をご利用ください。</dd>
