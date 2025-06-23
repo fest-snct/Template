@@ -28,14 +28,14 @@ header("Content-Security-Policy:
         <div class="index">
             <a class="title" href="../../home.php">高専祭2025</a>
             <div class="subtitles">
-                <a class="subtitle <?= $currentPage == '/2025/pages/greeting.php' ? 'is-current' : '' ?>" href="./greeting.php">ご挨拶</a>
-                <a class="subtitle <?= $currentPage == '/2025/pages/event.php' ? 'is-current' : '' ?>" href="./event.php">イベント企画</a>
-                <a class="subtitle <?= $currentPage == '/2025/pages/stores.php' ? 'is-current' : '' ?>" href="./stores.php">出店一覧</a>
-                <a class="subtitle <?= $currentPage == '/2025/pages/access.php' ? 'is-current' : '' ?>" href="./access.php">アクセス</a>
-                <a class="subtitle <?= $currentPage == '/2025/pages/news.php' ? 'is-current' : '' ?>" href="./news.php">ニュース</a>
-                <a class="subtitle <?= $currentPage == '/2025/pages/Q&A.php' ? 'is-current' : '' ?>" href="./Q&A.php">Q&A</a>
-                <a class="subtitle <?= $currentPage == '/2025/pages/contact.php' ? 'is-current' : '' ?>" href="./contact.php">お問い合わせ</a>
-                <a class="subtitle <?= $currentPage == '/2025/pages/privacypolicy.php' ? 'is-current' : '' ?>" href="./privacypolicy.php">プライバシーポリシー</a>
+                <a class="subtitle <?= $currentPage == '/2025/pages/greeting.php' ? 'is-current' : '' ?>" href="../greeting.php">ご挨拶</a>
+                <a class="subtitle <?= $currentPage == '/2025/pages/event.php' ? 'is-current' : '' ?>" href="../event.php">イベント企画</a>
+                <a class="subtitle <?= $currentPage == '/2025/pages/stores.php' ? 'is-current' : '' ?>" href="../stores.php">出店一覧</a>
+                <a class="subtitle <?= $currentPage == '/2025/pages/access.php' ? 'is-current' : '' ?>" href="../access.php">アクセス</a>
+                <a class="subtitle <?= $currentPage == '/2025/pages/news.php' ? 'is-current' : '' ?>" href="../news.php">ニュース</a>
+                <a class="subtitle <?= $currentPage == '/2025/pages/Q&A.php' ? 'is-current' : '' ?>" href="../Q&A.php">Q&A</a>
+                <a class="subtitle <?= $currentPage == '/2025/pages/contact.php' ? 'is-current' : '' ?>" href="../contact.php">お問い合わせ</a>
+                <a class="subtitle <?= $currentPage == '/2025/pages/privacypolicy.php' ? 'is-current' : '' ?>" href="../privacypolicy.php">プライバシーポリシー</a>
             </div>
         </div>
         <div class="menu">
@@ -52,5 +52,24 @@ header("Content-Security-Policy:
             </div>
         </main>
     </div>
-    <?php include '../includes/footer.php' ?>
+    <footer>
+        <div class="footer-content">
+            <div class="footer_menu">
+                <div class="subtitles">
+                    <a class="subtitle" href="../../home.php">ホーム</a>
+                    <a class="subtitle" href="../greeting.php">ご挨拶</a>
+                    <a class="subtitle" href="../event.php">イベント企画</a>
+                    <a class="subtitle" href="../stores.php">出店一覧</a>
+                    <a class="subtitle" href="../access.php">アクセス</a>
+                    <a class="subtitle" href="../news.php">ニュース</a>
+                    <a class="subtitle" href="../Q&A.php">Q&A</a>
+                    <a class="subtitle" href="../contact.php">お問い合わせ</a>
+                    <a class="subtitle" href="../privacypolicy.php">プライバシーポリシー</a>
+                </div>
+            </div>
+            <div>
+                <P>© 2025 高専祭実行委員会 - 仙台高等専門学校広瀬キャンパス</P>
+            </div>
+        </div>
+    </footer>
 </body>
