@@ -3,7 +3,7 @@
         <div class="footer_menu">
             <a class="title" href="/home.php">ホーム</a>
             <div class="subtitles">
-                <p class="subtitle">ご挨拶</p>
+                <a class="subtitle" href="./greeting.php">ご挨拶</a>
                 <a class="subtitle" href="./event.php">イベント企画</a>
                 <a class="subtitle" href="./stores.php">出店一覧</a>
                 <a class="subtitle" href="./access.php">アクセス</a>
