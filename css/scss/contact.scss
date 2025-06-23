@@ -36,85 +36,85 @@ main {
     }
 
     // 元のHTMLにあったformクラスのコンテナ
-    .form {
-    margin-top: 2rem; // 上の要素との余白
-    }
+    div.form {
+        margin-top: 2rem; // 上の要素との余白
 
-    // フォーム全体のスタイル
-    .contact-form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 1.8rem; // 各入力欄の間の余白
-
-        // ラベルと入力欄のグループ
-        .form-group {
+        // フォーム全体のスタイル
+        form.contact-form {
+            width: 100%;
             display: flex;
             flex-direction: column;
-        }
+            gap: 1.8rem; // 各入力欄の間の余白
 
-        label {
-            font-weight: bold;
-            color: $text-color;
-            margin-bottom: 0.5rem;
-        }
-
-        // 「必須」マークのスタイル
-        .required {
-            background-color: $danger-color;
-            color: white;
-            font-size: 0.75rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-left: 0.5rem;
-            font-weight: normal;
-        }
-
-        // 入力欄（input, textarea）の共通スタイル
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 80vw;
-            padding: 0.8rem;
-            border: 1px solid $border-color;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-family: inherit; // ページ全体のフォントを継承
-            box-sizing: border-box; // paddingとborderをwidthに含める
-            transition: border-color 0.2s, box-shadow 0.2s;
-
-            // クリック（フォーカス）された時のスタイル
-            &:focus {
-            outline: none;
-            border-color: $primary-color;
-            box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+            // ラベルと入力欄のグループ
+            .form-group {
+                display: flex;
+                flex-direction: column;
             }
-        }
 
-        textarea {
-            resize: vertical; // 縦方向のリサイズのみ許可
-            min-height: 150px;
-        }
+            label {
+                font-weight: bold;
+                color: $text-color;
+                margin-bottom: 0.5rem;
+            }
 
-        // 送信ボタンのエリア
-        .form-actions {
-            text-align: center;
-        }
+            // 「必須」マークのスタイル
+            span.required {
+                background-color: $danger-color;
+                color: white;
+                font-size: 0.75rem;
+                padding: 2px 6px;
+                border-radius: 4px;
+                margin-left: 0.5rem;
+                font-weight: normal;
+            }
 
-        // 送信ボタン
-        button[type="submit"] {
-            background-color: $primary-color;
-            color: white;
-            border: none;
-            padding: 0.8rem 2.5rem;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s;
+            // 入力欄（input, textarea）の共通スタイル
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                width: 80vw;
+                padding: 0.8rem;
+                border: 1px solid $border-color;
+                border-radius: 5px;
+                font-size: 1rem;
+                font-family: inherit; // ページ全体のフォントを継承
+                box-sizing: border-box; // paddingとborderをwidthに含める
+                transition: border-color 0.2s, box-shadow 0.2s;
 
-            &:hover {
-            background-color: $primary-color-dark;
+                // クリック（フォーカス）された時のスタイル
+                &:focus {
+                    outline: none;
+                    border-color: $primary-color;
+                    box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+                }
+            }
+
+            textarea {
+                resize: vertical; // 縦方向のリサイズのみ許可
+                min-height: 150px;
+            }
+
+            // 送信ボタンのエリア
+            div.form-actions {
+                text-align: center;
+
+                // 送信ボタン
+                button[type="submit"] {
+                    background-color: $primary-color;
+                    color: white;
+                    border: none;
+                    padding: 0.8rem 2.5rem;
+                    border-radius: 5px;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        background-color: $primary-color-dark;
+                    }
+                }
             }
         }
     }

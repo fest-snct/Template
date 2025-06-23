@@ -16,7 +16,7 @@ footer {
         div.footer_menu {
             display: flex;
         }
-        .title {
+        a.title {
             text-decoration: none;
             color: $text-color;
         }
@@ -24,7 +24,7 @@ footer {
             display: flex;
             align-items: center;
             justify-content: center;
-            .subtitle {
+            a.subtitle {
                 font-size: $font-size-base*1.2;
                 text-decoration: none;
                 color: $text-color;
@@ -46,7 +46,7 @@ footer {
                 flex-direction: column;
             }
 
-            .title {
+            a.title {
                 font-size: $font-size-base * 1.5; // モバイルでのタイトルサイズ
                 margin: 10px 0; // 上下のマージンを調整
             }
@@ -55,7 +55,7 @@ footer {
                 flex-direction: column; // サブタイトルも縦に並べる
                 align-items: center; // 中央揃え
                 
-                .subtitle {
+                a.subtitle {
                     font-size: $font-size-base*1.5; // モバイルでのサブタイトルサイズ
                     margin: 5px 0; // サブタイトル間の上下マージン
                 }

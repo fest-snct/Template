@@ -6,12 +6,12 @@
     <div class="index">
         <a class="title" href="../home.php">高専祭2025</a>
         <div class="subtitles">
-            <p class="subtitle">ご挨拶</p>
+            <a class="subtitle">ご挨拶</a>
             <a class="subtitle <?= $currentPage == '/2025/pages/event.php' ? 'is-current' : '' ?>" href="./event.php">イベント企画</a>
             <a class="subtitle <?= $currentPage == '/2025/pages/stores.php' ? 'is-current' : '' ?>" href="./stores.php">出店一覧</a>
             <a class="subtitle <?= $currentPage == '/2025/pages/access.php' ? 'is-current' : '' ?>" href="./access.php">アクセス</a>
-            <p class="subtitle">ニュース</p>
-            <p class="subtitle">Q&A</p>
+            <a class="subtitle">ニュース</a>
+            <a class="subtitle">Q&A</a>
             <a class="subtitle <?= $currentPage == '/2025/pages/contact.php' ? 'is-current' : '' ?>" href="./contact.php">お問い合わせ</a>
             <a class="subtitle <?= $currentPage == '/2025/pages/privacypolicy.php' ? 'is-current' : '' ?>" href="./privacypolicy.php">プライバシーポリシー</a>
         </div>

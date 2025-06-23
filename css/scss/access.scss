@@ -38,25 +38,23 @@ main {
         flex-direction: column;
         margin-left: 2rem;
     }
-}
-
-.content_title {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: x-large;
-    text-align: left;
-    width: 90vw;
-}
-
-#google_embed {
-    width: 80vw;
-    height: max(45vw, 45vh);
-    border: 0;
-}
-.a_con_span {
-    display: flex;
-    flex-direction: column;
-    max-width: 90vw;
-    align-items: flex-start;
-    text-align: left;
+    div.content_title {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: x-large;
+        text-align: left;
+        width: 90vw;
+    }
+    iframe#google_embed {
+        width: 80vw;
+        height: max(45vw, 45vh);
+        border: 0;
+    }
+    span.a_con_span {
+        display: flex;
+        flex-direction: column;
+        max-width: 90vw;
+        align-items: flex-start;
+        text-align: left;
+    }
 }
