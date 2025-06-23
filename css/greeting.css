@@ -370,7 +370,6 @@ div.wrapper main p.title {
 div.wrapper main div.greeting_contents {
   display: flex;
   flex-direction: column;
-  margin-left: 3rem;
 }
 div.wrapper main div.greeting_contents p.greeting_name {
   font-size: 2rem;

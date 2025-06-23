@@ -517,7 +517,6 @@ main p.title {
 main div.content_main {
   display: flex;
   flex-direction: column;
-  margin-left: 2rem;
 }
 main div.content_title {
   margin-left: auto;
