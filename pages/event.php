@@ -15,7 +15,7 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>イベント企画</title>
+    <title>イベント企画 | 高専祭2025</title>
     <link rel="stylesheet" href="../css/event.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <script src="../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
 </head>
@@ -23,6 +23,7 @@ header("Content-Security-Policy:
     <?php include './includes/header.php'; ?>
     <div class="wrapper">
         <main>
+            <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">イベント企画</p>
             <div class="events">
                 <p>準備中です。</p>

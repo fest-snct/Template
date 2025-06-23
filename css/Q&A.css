@@ -365,11 +365,6 @@ footer div.footer-content div.subtitles a.subtitle {
   }
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 body {
   background-color: #e0f7ff;
   overflow-y: auto;
@@ -386,14 +381,13 @@ div.wrapper {
 }
 div.wrapper main {
   flex: 1;
-  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 12px;
-  padding-top: 10px;
-  width: 80vw;
-  text-align: center;
   margin: 0 auto;
+  align-items: flex-start;
+  text-align: center;
+  justify-content: center;
+  padding: 12px;
+  width: 80vw;
 }
 div.wrapper main p.title {
   width: 100%;
@@ -402,14 +396,65 @@ div.wrapper main p.title {
   font-size: 1.75rem;
   padding: 0.5rem;
   margin: 0;
-  margin-top: 2rem;
+  margin: 2rem 0;
   border-left: 4px solid #0077ff;
 }
-div.wrapper main div.border {
-  width: 80vw;
-  margin-top: 2rem;
-  border: 2px solid #333;
-}
-div.wrapper main div.events {
+div.wrapper main div.contents {
   display: flex;
+}
+div.wrapper main div.contents .qa-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0;
+}
+div.wrapper main div.contents .qa-list dt, div.wrapper main div.contents .qa-list dd {
+  position: relative;
+  width: 40vw;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  word-break: break-word;
+}
+div.wrapper main div.contents .qa-list dt {
+  background-color: #0077ff;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+div.wrapper main div.contents .qa-list dt::before {
+  content: "?";
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0077ff;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50%;
+}
+div.wrapper main div.contents .qa-list dd {
+  background-color: #005f64;
+  margin-left: auto;
+  margin-right: 2rem;
+  margin-bottom: 2.5rem;
+}
+div.wrapper main div.contents .qa-list dd::after {
+  content: "!";
+  position: absolute;
+  right: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #005f64;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50%;
 }

@@ -1,7 +1,7 @@
 @import 'variables';
+@import 'breadcrumb';
 @import 'header';
 @import 'footer';
-@import 'hamburger';
 
 body {
     background-color: $background-color;
@@ -36,7 +36,6 @@ main {
     div.content_main {
         display: flex;
         flex-direction: column;
-        margin-left: 2rem;
     }
     div.content_title {
         margin-left: auto;

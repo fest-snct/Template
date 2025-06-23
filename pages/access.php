@@ -24,6 +24,7 @@ header("Content-Security-Policy:
 <body>
     <?php include_once './includes/header.php'; ?>
     <main>
+        <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
         <p class="title">アクセス</p>
         <div class="content_title">
             <h3>周辺地図</h3>

@@ -14,13 +14,14 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プライバシーポリシー</title>
+    <title>プライバシーポリシー | 高専祭2025</title>
     <link rel="stylesheet" href="../css/privacypolicy.css">
     <script src="../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
 <body>
     <?php include './includes/header.php'; ?>
     <main>
+        <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
         <p class="title">プライバシーポリシー</p>
         <p class="privacy-content">
             このプライバシーポリシーは、2025年度仙台高専広瀬キャンパス高専祭ウェブサイト（以下、「当サイト」と称します）の訪問者の個人情報の取り扱いに関するものです。当サイトを利用することにより、本プライバシーポリシーに同意したものとみなされます。

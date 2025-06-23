@@ -15,13 +15,14 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ</title>
+    <title>お問い合わせ | 高専祭2025</title>
     <link rel="stylesheet" href="../css/contact.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <script src="../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
 </head>
 <body>
     <?php include './includes/header.php'; ?>
     <main>
+        <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
         <div class="contact_header">
             <p class="title">お問い合わせ</p>
             <p>お問い合わせいただいた内容は確認後、担当者よりご返信させていただきます。</p>

@@ -1,14 +1,14 @@
 <footer>
     <div class="footer-content">
         <div class="footer_menu">
-            <a class="title" href="/home.php">ホーム</a>
             <div class="subtitles">
-                <p class="subtitle">ご挨拶</p>
+                <a class="subtitle" href="../home.php">ホーム</a>
+                <a class="subtitle" href="./greeting.php">ご挨拶</a>
                 <a class="subtitle" href="./event.php">イベント企画</a>
                 <a class="subtitle" href="./stores.php">出店一覧</a>
                 <a class="subtitle" href="./access.php">アクセス</a>
-                <p class="subtitle">ニュース</p>
-                <p class="subtitle">Q&A</p>
+                <a class="subtitle" href="./news.php">ニュース</a>
+                <a class="subtitle" href="./Q&A.php">Q&A</a>
                 <a class="subtitle" href="./contact.php">お問い合わせ</a>
                 <a class="subtitle" href="./privacypolicy.php">プライバシーポリシー</a>
             </div>

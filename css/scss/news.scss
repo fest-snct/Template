@@ -3,15 +3,9 @@
 @import 'header';
 @import 'footer';
 
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
 body {
     background-color: $background-color;
     overflow-y: auto;
-
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -27,12 +21,13 @@ div.wrapper {
         flex: 1;
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
         align-items: flex-start;
+        text-align: center;
+        justify-content: center;
         padding: $spacing-unit * 1.5;
         padding-top: 10px;
         width: 80vw;
-        text-align: center;
-        margin: 0 auto;
 
         p.title {
             width: 100%;
@@ -41,15 +36,10 @@ div.wrapper {
             font-size: $header-height * 0.35;
             padding: 0.5rem;
             margin: 0;
-            margin-top: 2rem;
+            margin: 2rem 0;
             border-left: 4px solid $blue-color;
         }
-        div.border {
-            width: 80vw;
-            margin-top: 2rem;
-            border: 2px solid $text-color;
-        }
-        div.events {
+        div.news_list {
             display: flex;
         }
     }
