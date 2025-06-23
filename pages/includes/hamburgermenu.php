@@ -10,7 +10,7 @@
         <a href="./stores.php" class="hamburger-menu__item">企画一覧</a>
         <a href="./access.php" class="hamburger-menu__item">アクセス</a>
         <a href="./news.php" class="hamburger-menu__item">ニュース</a>
-        <a href="#" class="hamburger-menu__item">Q&A</a>
+        <a href="./Q&A.php" class="hamburger-menu__item">Q&A</a>
         <a href="./contact.php" class="hamburger-menu__item">お問い合わせ</a>
         <a href="./privacypolicy.php" class="hamburger-menu__item">プライバシーポリシー</a>
     </div>

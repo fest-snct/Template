@@ -8,7 +8,7 @@
                 <a class="subtitle" href="./stores.php">出店一覧</a>
                 <a class="subtitle" href="./access.php">アクセス</a>
                 <a class="subtitle" href="./news.php">ニュース</a>
-                <p class="subtitle">Q&A</p>
+                <a class="subtitle" href="./Q&A.php">Q&A</a>
                 <a class="subtitle" href="./contact.php">お問い合わせ</a>
                 <a class="subtitle" href="./privacypolicy.php">プライバシーポリシー</a>
             </div>

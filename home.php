@@ -51,7 +51,7 @@ if (
                 <a class="subtitle <?= $currentPage == './pages/stores.php' ? 'is-current' : '' ?>" href="./pages/stores.php">企画一覧</a>
                 <a class="subtitle <?= $currentPage == './pages/access.php' ? 'is-current' : '' ?>" href="./pages/access.php">アクセス</a>
                 <a class="subtitle <?= $currentPage == './pages/news.php' ? 'is-current' : '' ?>" href="./pages/news.php">ニュース</a>
-                <p class="subtitle">Q&A</p>
+                <a class="subtitle <?= $currentPage == './pages/Q&A.php' ? 'is-current' : '' ?>" href="./pages/Q&A.php">Q&A</a>
                 <a class="subtitle <?= $currentPage == './pages/contact.php' ? 'is-current' : '' ?>" href="./pages/contact.php">お問い合わせ</a>
                 <a class="subtitle <?= $currentPage == './pages/privacypolicy.php' ? 'is-current' : '' ?>" href="./pages/privacypolicy.php">プライバシーポリシー</a>
             </div>
@@ -71,7 +71,7 @@ if (
                 <a href="./pages/stores.php" class="hamburger-menu__item">企画一覧</a>
                 <a href="./pages/access.php" class="hamburger-menu__item">アクセス</a>
                 <a href="./pages/news.php" class="hamburger-menu__item">ニュース</a>
-                <a href="#" class="hamburger-menu__item">Q&A</a>
+                <a href="./pages/Q&A.php" class="hamburger-menu__item">Q&A</a>
                 <a href="./pages/contact.php" class="hamburger-menu__item">お問い合わせ</a>
                 <a href="./pages//privacypolicy.php" class="hamburger-menu__item">プライバシーポリシー</a>
             </div>
@@ -134,7 +134,7 @@ if (
                     <a class="subtitle" href="./pages/stores.php">企画一覧</a>
                     <a class="subtitle" href="./pages/access.php">アクセス</a>
                     <a class="subtitle" href="./pages/news.php">ニュース</a>
-                    <p class="subtitle">Q&A</p>
+                    <a class="subtitle" href="./pages/Q&A.php">Q&A</a>
                     <a class="subtitle" href="./pages/contact.php">お問い合わせ</a>
                     <a class="subtitle" href="./pages/privacypolicy.php">プライバシーポリシー</a>
                 </div>
