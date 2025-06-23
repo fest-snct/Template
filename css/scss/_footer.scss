@@ -16,10 +16,6 @@ footer {
         div.footer_menu {
             display: flex;
         }
-        a.title {
-            text-decoration: none;
-            color: $text-color;
-        }
         div.subtitles {
             display: flex;
             align-items: center;
@@ -43,6 +39,7 @@ footer {
             padding: 0 15px; // 左右の余白
 
             div.footer_menu {
+                display: flex;
                 flex-direction: column;
             }
 

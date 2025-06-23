@@ -293,10 +293,6 @@ footer div.footer-content {
 footer div.footer-content div.footer_menu {
   display: flex;
 }
-footer div.footer-content a.title {
-  text-decoration: none;
-  color: #333;
-}
 footer div.footer-content div.subtitles {
   display: flex;
   align-items: center;
@@ -318,6 +314,7 @@ footer div.footer-content div.subtitles a.subtitle {
     padding: 0 15px;
   }
   footer div.footer-content div.footer_menu {
+    display: flex;
     flex-direction: column;
   }
   footer div.footer-content a.title {

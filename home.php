@@ -127,8 +127,8 @@ if (
     <footer>
         <div class="footer-content">
             <div class="footer_menu">
-                <a class="title" href="./home.php">ホーム</a>
                 <div class="subtitles">
+                    <a class="subtitle" href="./home.php">ホーム</a>
                     <a class="subtitle" href="./pages/greeting.php">ご挨拶</a>
                     <a class="subtitle" href="./pages/event.php">イベント企画</a>
                     <a class="subtitle" href="./pages/stores.php">企画一覧</a>
