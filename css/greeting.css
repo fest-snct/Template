@@ -386,3 +386,14 @@ div.wrapper main div.border {
   margin-top: 2rem;
   border: 2px solid #333;
 }
+
+@media (max-width: 770px) {
+  .greeting_content {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .greeting_content p.greeting_speech {
+    margin-left: 0 !important;
+  }
+}

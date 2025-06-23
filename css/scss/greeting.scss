@@ -61,3 +61,15 @@ div.wrapper {
         }
     }
 }
+
+@media (max-width: $breakpoint-tablet) {
+    .greeting_content {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+
+        p.greeting_speech {
+            margin-left: 0 !important;
+        }
+    }
+}

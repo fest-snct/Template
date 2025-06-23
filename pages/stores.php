@@ -15,7 +15,7 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>企画一覧 | 高専祭2025</title>
+    <title>出店一覧 | 高専祭2025</title>
     <link rel="stylesheet" href="../css/stores.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <script src="../js/stores.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8'); ?>" defer></script>
     <script src="../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8'); ?>" defer></script>
@@ -24,7 +24,7 @@ header("Content-Security-Policy:
 <body>
     <?php include_once './includes/header.php'; ?>
     <main>
-        <p class="title">企画一覧</p>
+        <p class="title">出店一覧</p>
         <div id="s_container">
             <figure class="s_items" data-description="詳細1">
                 <img src="https://img.skin/340x340?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" class="s_pic" alt="企画1" />

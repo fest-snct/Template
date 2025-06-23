@@ -14,7 +14,7 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プライバシーポリシー</title>
+    <title>プライバシーポリシー | 高専祭2025</title>
     <link rel="stylesheet" href="../css/privacypolicy.css">
     <script src="../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
