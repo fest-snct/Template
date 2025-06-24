@@ -411,16 +411,20 @@ div.wrapper main div.contents .qa-list {
 }
 div.wrapper main div.contents .qa-list dt, div.wrapper main div.contents .qa-list dd {
   position: relative;
-  width: 40vw;
+  width: auto;
+  max-width: 80vw;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   color: #fff;
   word-break: break-word;
+  text-align: left;
 }
 div.wrapper main div.contents .qa-list dt {
   background-color: #0077ff;
+  text-align: left;
   margin-left: 2rem;
   margin-bottom: 1.5rem;
+  align-self: flex-start;
 }
 div.wrapper main div.contents .qa-list dt::before {
   content: "?";
@@ -439,9 +443,12 @@ div.wrapper main div.contents .qa-list dt::before {
 }
 div.wrapper main div.contents .qa-list dd {
   background-color: #005f64;
+  text-align: right;
   margin-left: auto;
   margin-right: 2rem;
   margin-bottom: 2.5rem;
+  align-self: flex-end;
+  text-align: left;
 }
 div.wrapper main div.contents .qa-list dd::after {
   content: "!";
@@ -449,6 +456,7 @@ div.wrapper main div.contents .qa-list dd::after {
   right: -2.5rem;
   top: 50%;
   transform: translateY(-50%);
+  transform: none;
   background-color: #005f64;
   color: #fff;
   width: 2rem;

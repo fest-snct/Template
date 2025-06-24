@@ -50,17 +50,21 @@ div.wrapper {
 
             .qa-list dt, .qa-list dd {
                 position: relative;
-                width: 40vw;
+                width: auto;
+                max-width: 80vw;
                 padding: 1rem 1.5rem;
                 border-radius: 0.5rem;
                 color: #fff;
                 word-break: break-word;
+                text-align: left;
             }
 
             .qa-list dt {
                 background-color: $blue-color;
+                text-align: left;
                 margin-left: 2rem;
                 margin-bottom: 1.5rem;
+                align-self: flex-start;
             }
 
             .qa-list dt::before {
@@ -81,9 +85,12 @@ div.wrapper {
 
             .qa-list dd {
                 background-color: #005f64;
+                text-align: right;
                 margin-left: auto;
                 margin-right: 2rem;
                 margin-bottom: 2.5rem;
+                align-self: flex-end;
+                text-align: left;
             }
 
             .qa-list dd::after {
@@ -92,6 +99,7 @@ div.wrapper {
                 right: -2.5rem;
                 top: 50%;
                 transform: translateY(-50%);
+                transform: none;
                 background-color: #005f64;
                 color: #fff;
                 width: 2rem;

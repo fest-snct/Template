@@ -26,7 +26,10 @@ header("Content-Security-Policy:
             <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">校長からの挨拶</p>
             <div class="greeting_contents">
-                <p class="greeting_name">橋爪 秀利</p>
+                <div class="greeting">
+                    <p class="greeting_post">仙台高専広瀬キャンパス校長</p>
+                    <p class="greeting_name">橋爪 秀利</p>
+                </div>
                 <div class="greeting_content">
                     <img src="https://img.skin/340x340?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif">
                     <p class="greeting_speech">準備中です。</p>
@@ -35,7 +38,10 @@ header("Content-Security-Policy:
             <div class="border"></div>
             <p class="title">実行委員長からの挨拶</p>
             <div class="greeting_contents">
-                <p class="greeting_name">高橋 劉和</p>
+                <div class="greeting">
+                    <p class="greeting_post">高専祭実行委員長</p>
+                    <p class="greeting_name">高橋 劉和</p>
+                </div>
                 <div class="greeting_content">
                     <img src="https://img.skin/340x340?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif">
                     <p class="greeting_speech">準備中です。</p>
