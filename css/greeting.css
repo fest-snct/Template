@@ -405,9 +405,21 @@ div.wrapper main div.greeting_contents {
   display: flex;
   flex-direction: column;
 }
-div.wrapper main div.greeting_contents p.greeting_name {
+div.wrapper main div.greeting_contents div.greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+div.wrapper main div.greeting_contents div.greeting p.greeting_post {
+  font-size: 1rem;
+  margin-right: 1rem;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+div.wrapper main div.greeting_contents div.greeting p.greeting_name {
   font-size: 2rem;
   text-align: left;
+  margin-top: 0;
 }
 div.wrapper main div.greeting_contents div.greeting_content {
   display: flex;
