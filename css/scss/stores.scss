@@ -47,6 +47,8 @@ body {
 
                 img.s_pic {
                     height: auto;
+                    width: 100%;
+                    max-width: min(35vw, 320px);
                 }
             }
         }
@@ -123,10 +125,12 @@ body {
                     }
                 }
                 img#modal_img {
-                    width: 60%;
+                    width: min(80vw, 80vh);
+                    box-sizing: border-box;
                 }
             }
             a.modal_pn {
+                user-select: none;
                 cursor: pointer;
                 position: absolute;
                 color: white;
