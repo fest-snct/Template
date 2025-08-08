@@ -27,7 +27,7 @@ header("Content-Security-Policy:
             <p class="title">校長からの挨拶</p>
             <div class="greeting_contents">
                 <div class="greeting">
-                    <p class="greeting_post">仙台高専広校長</p>
+                    <p class="greeting_post">仙台高専校長</p>
                     <p class="greeting_name">橋爪 秀利</p>
                 </div>
                 <div class="greeting_content">

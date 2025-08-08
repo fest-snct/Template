@@ -409,6 +409,8 @@ body main div#s_container figure.s_items {
 }
 body main div#s_container figure.s_items img.s_pic {
   height: auto;
+  width: 100%;
+  max-width: min(35vw, 320px);
 }
 body div#modal {
   position: fixed;
@@ -478,9 +480,13 @@ body div#modal div#modal_inner div#modal_root div#modal_head button.close-button
   height: var(--close-btn-width);
 }
 body div#modal div#modal_inner div#modal_root img#modal_img {
-  width: 60%;
+  width: min(80vw, 80vh);
+  box-sizing: border-box;
 }
 body div#modal div#modal_inner a.modal_pn {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
   position: absolute;
   color: white;
