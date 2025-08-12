@@ -1,4 +1,6 @@
-@import './hamburger';
+@use "variables";
+
+@use 'hamburger';
 
 header {
     position: fixed;
@@ -10,10 +12,10 @@ header {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: $header-height;
+    height: variables.$header-height;
     align-items: center;
     justify-content: space-between;
-    background-color: $secondary-color;
+    background-color: variables.$secondary-color;
     .mini_logo {
         margin: 0 20px;
     }
@@ -39,7 +41,7 @@ header {
             left: 50%;
             width: 60%; // バツ印の線の長さ
             height: 3px; // バツ印の線の太さ
-            background-color: $text-color; // バツ印の色
+            background-color: variables.$text-color; // バツ印の色
             border-radius: 2px;
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
             opacity: 0; // 通常時は非表示
@@ -68,20 +70,20 @@ header {
         align-items: center;
         justify-content: center;
         .title {
-            font-size: $header-height * 0.5;
+            font-size: variables.$header-height * 0.5;
             text-decoration: none;
             margin: 0 20px;
             flex-grow: 1;
-            color: $text-color;
+            color: variables.$text-color;
         }
         div.subtitles {
             display: flex;
             align-items: center;
             justify-content: center;
             a.subtitle {
-                font-size: $font-size-base;
+                font-size: variables.$font-size-base;
                 text-decoration: none;
-                color: $text-color;
+                color: variables.$text-color;
                 margin: 0 10px;
                 position: relative;
                 cursor: pointer;
@@ -95,7 +97,7 @@ header {
                     left: 0;
                     width: 100%;
                     height: 4px;
-                    background-color: $blue-color;
+                    background-color: variables.$blue-color;
                     opacity: 0;
                     transform: translateY(4px);
                     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -130,12 +132,12 @@ header {
         margin-right: 10px;
     }
 
-    @media (max-width: ($breakpoint-tablet - 1px)){
+    @media (max-width: (variables.$breakpoint-tablet - 1px)){
         div.index {
             .title {
                 // モバイルでtitleを中央に配置するために調整
                 margin: 0 auto; // 左右マージンをautoにして中央寄せ
-                font-size: $header-height * 0.4;
+                font-size: variables.$header-height * 0.4;
             }
             div.subtitles {
                 display: none;

@@ -1,3 +1,5 @@
+@use "variables";
+
 footer {
     display: flex;
     align-items: center;
@@ -12,7 +14,7 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-size: $font-size-base*1.2;
+        font-size: variables.$font-size-base*1.2;
         div.footer_menu {
             display: flex;
         }
@@ -21,16 +23,16 @@ footer {
             align-items: center;
             justify-content: center;
             a.subtitle {
-                font-size: $font-size-base*1.2;
+                font-size: variables.$font-size-base*1.2;
                 text-decoration: none;
-                color: $text-color;
+                color: variables.$text-color;
                 margin: 0 10px;
             }
         }
     }
 
     // --- メディアクエリでスマホ・タブレット対応 ---
-    @media (max-width: ($breakpoint-tablet - 1px)) { // 例: 767px以下の場合
+    @media (max-width: (variables.$breakpoint-tablet - 1px)) { // 例: 767px以下の場合
         padding: 15px 0; // モバイルでのpaddingを調整
 
         div.footer-content {
@@ -44,7 +46,7 @@ footer {
             }
 
             a.title {
-                font-size: $font-size-base * 1.5; // モバイルでのタイトルサイズ
+                font-size: variables.$font-size-base * 1.5; // モバイルでのタイトルサイズ
                 margin: 10px 0; // 上下のマージンを調整
             }
 
@@ -53,7 +55,7 @@ footer {
                 align-items: center; // 中央揃え
                 
                 a.subtitle {
-                    font-size: $font-size-base*1.5; // モバイルでのサブタイトルサイズ
+                    font-size: variables.$font-size-base*1.5; // モバイルでのサブタイトルサイズ
                     margin: 5px 0; // サブタイトル間の上下マージン
                 }
             }

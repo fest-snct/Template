@@ -1,9 +1,9 @@
-@import './variables';
-@import './header';
-@import './footer';
+@use 'variables';
+@use 'header';
+@use 'footer';
 
 body {
-    background-color: $background-color;
+    background-color: variables.$background-color;
     overflow-y: auto;
 
     display: flex;
@@ -15,12 +15,12 @@ main {
     flex: 1;
     width: 80vw;
     display: flex;
-    margin-top: $header-height;
+    margin-top: variables.$header-height;
     margin-right: auto;
     margin-left: auto;
     align-items: flex-start;
     justify-content: center;
-    padding: $spacing-unit * 1.5;
+    padding: variables.$spacing-unit * 1.5;
     padding: 10px;
     text-align: left;
     div.thank-you-container {

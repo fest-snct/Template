@@ -1,3 +1,5 @@
+@use 'variables';
+
 // ===================================
 // ハンバーガーメニュー
 // ===================================
@@ -115,7 +117,7 @@
     // メニューの各項目
     &__item,
     a.title { // hamburgermenu.php内の.titleクラスも対象に
-        color: $text-color;
+        color: variables.$text-color;
         text-decoration: none;
         &:hover {
             opacity: 0.7;

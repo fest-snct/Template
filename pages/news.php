@@ -26,8 +26,14 @@ header("Content-Security-Policy:
             <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">ニュース一覧</p>
             <div class="news_list">
-                <div>
-                    <img src="https://img.skin/340x340?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" alt="ニュース1" /><br>
+                <div class="news_item">
+                    <div class="news_item_top">
+                        <p>準備中です...</p>
+                    </div>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.06.24</p>
+                        <p class="news_title"><a href="./news/01.php">高専祭webサイトを公開しました。</a></p>
+                    </div>
                 </div>
             </div>
         </main>
