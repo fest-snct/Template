@@ -353,8 +353,8 @@ main div.main_logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400px;
-  height: 600px;
+  width: 600px;
+  height: 800px;
 }
 main div.main_logo img {
   width: 100%;
