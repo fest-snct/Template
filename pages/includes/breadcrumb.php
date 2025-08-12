@@ -13,6 +13,7 @@ function render_breadcrumb() {
         'contact' => 'お問い合わせ',
         'privacypolicy' => 'プライバシーポリシー',
         'shuttle_bus' => 'シャトルバス時刻表',
+        '01' => '2025年度高専祭webサイト公開!',
     ];
 
     // 現在のURLパスを取得（例: /about/greeting.php）
