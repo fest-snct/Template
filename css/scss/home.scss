@@ -36,6 +36,23 @@ main {
         margin-top: 2rem;
         border: 2px solid variables.$text-color;
     }
+    .about {
+        display: block;
+        width: 80vw;
+        height: 2rem;
+        justify-content: center;
+        background-color: variables.$blue-color;
+        color: white;
+        border: 2px solid variables.$text-color;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 1rem;
+
+        &:hover {
+            color: variables.$text-color;
+        }
+    }
     div.main_menu {
         width: 80vw;
         flex: 1;
@@ -57,40 +74,35 @@ main {
         }
         div.access_content {
             width: 100%;
-            a {
-                display: block;
-                width: 80vw;
-                height: 2rem;
-                justify-content: center;
-                background-color: variables.$blue-color;
-                color: white;
-                border: 2px solid variables.$text-color;
-                text-decoration: none;
-                border-radius: 5px;
-                text-align: center;
-
-                &:hover {
-                    color: variables.$text-color;
-                }
-            }
         }
         div.stores_content {
             width: 100%;
-            a {
-                display: block;
-                width: 80vw;
-                height: 2rem;
-                justify-content: center;
-                background-color: variables.$blue-color;
-                color: white;
-                border: 2px solid variables.$text-color;
-                text-decoration: none;
-                border-radius: 5px;
-                text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            row-gap: 3rem;
+            justify-content: space-between;
 
-                &:hover {
-                    color: variables.$text-color;
+            .store-item {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+                &.is-visible {
+                    opacity: 1;
+                    transform: translateY(0);
                 }
+            }
+
+            .s_items {
+                margin: 0;
+                width: 400px !important;
+                height: 300px !important;
+            }
+
+            .s_pic {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
