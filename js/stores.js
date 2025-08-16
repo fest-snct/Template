@@ -6,7 +6,7 @@ function showModal(e) {
     const self_img = e.currentTarget.getElementsByTagName("img")[0];
     const modal_txt = document.getElementById("modal_txt");
     const figs = document.getElementsByTagName("main")[0].getElementsByClassName("s_items");
-    const matchRx = /[ 　]場所[:：][ 　]?\d{1,2}-\d{3}$/;
+    const matchRx = /[ 　]場所[:：][ 　]?.+?$/;
     const matchAlt = self_img.getAttribute("alt").match(matchRx);
     glb_iIndex = this.img_id;
     modal_place.innerText = matchAlt != null ? matchAlt[0].replace(/^[ 　]/, "", 1) : "";
