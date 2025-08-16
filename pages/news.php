@@ -35,6 +35,15 @@ header("Content-Security-Policy:
                         <p class="news_title"><a href="./news/01.php">高専祭webサイトを公開しました。</a></p>
                     </div>
                 </div>
+                <div class="news_item">
+                    <div class="news_item_top">
+                        <p>準備中です...</p>
+                    </div>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.08.16</p>
+                        <p class="news_title"><a href="./news/02.php">出店一覧を公開しました。</a></p>
+                    </div>
+                </div>
             </div>
         </main>
     </div>

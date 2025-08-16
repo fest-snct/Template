@@ -413,6 +413,8 @@ div.wrapper main p.title {
 }
 div.wrapper main div.news_list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 div.wrapper main div.news_list .news_item {
   width: 340px; /* As per original image width */
@@ -468,4 +470,7 @@ div.wrapper main div.news_content {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+}
+div.wrapper main div.news_content li.store {
+  font-size: 1.2rem;
 }
