@@ -7,7 +7,7 @@
         <a href="../home.php" class="hamburger-menu__item title">ホーム</a>
         <a href="./greeting.php" class="hamburger-menu__item">ご挨拶</a>
         <a href="./event.php" class="hamburger-menu__item">イベント企画</a>
-        <a href="./stores.php" class="hamburger-menu__item">企画一覧</a>
+        <a href="./stores.php" class="hamburger-menu__item">出店一覧</a>
         <a href="./access.php" class="hamburger-menu__item">アクセス</a>
         <a href="./news.php" class="hamburger-menu__item">ニュース</a>
         <a href="./Q&A.php" class="hamburger-menu__item">Q&A</a>

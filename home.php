@@ -48,7 +48,7 @@ if (
             <div class="subtitles">
                 <a class="subtitle <?= $currentPage == './pages/greeting.php' ? 'is-current' : '' ?>" href="./pages/greeting.php">ご挨拶</a>
                 <a class="subtitle <?= $currentPage == './pages/event.php' ? 'is-current' : '' ?>" href="./pages/event.php">イベント企画</a>
-                <a class="subtitle <?= $currentPage == './pages/stores.php' ? 'is-current' : '' ?>" href="./pages/stores.php">企画一覧</a>
+                <a class="subtitle <?= $currentPage == './pages/stores.php' ? 'is-current' : '' ?>" href="./pages/stores.php">出店一覧</a>
                 <a class="subtitle <?= $currentPage == './pages/access.php' ? 'is-current' : '' ?>" href="./pages/access.php">アクセス</a>
                 <a class="subtitle <?= $currentPage == './pages/news.php' ? 'is-current' : '' ?>" href="./pages/news.php">ニュース</a>
                 <a class="subtitle <?= $currentPage == './pages/Q&A.php' ? 'is-current' : '' ?>" href="./pages/Q&A.php">Q&A</a>
@@ -68,7 +68,7 @@ if (
                 <a href="./home.php" class="hamburger-menu__item title">ホーム</a>
                 <a href="./pages/greeting.php" class="hamburger-menu__item">ご挨拶</a>
                 <a href="./pages/event.php" class="hamburger-menu__item">イベント企画</a>
-                <a href="./pages/stores.php" class="hamburger-menu__item">企画一覧</a>
+                <a href="./pages/stores.php" class="hamburger-menu__item">出店一覧</a>
                 <a href="./pages/access.php" class="hamburger-menu__item">アクセス</a>
                 <a href="./pages/news.php" class="hamburger-menu__item">ニュース</a>
                 <a href="./pages/Q&A.php" class="hamburger-menu__item">Q&A</a>
@@ -131,7 +131,7 @@ if (
                     <a class="subtitle" href="./home.php">ホーム</a>
                     <a class="subtitle" href="./pages/greeting.php">ご挨拶</a>
                     <a class="subtitle" href="./pages/event.php">イベント企画</a>
-                    <a class="subtitle" href="./pages/stores.php">企画一覧</a>
+                    <a class="subtitle" href="./pages/stores.php">出店一覧</a>
                     <a class="subtitle" href="./pages/access.php">アクセス</a>
                     <a class="subtitle" href="./pages/news.php">ニュース</a>
                     <a class="subtitle" href="./pages/Q&A.php">Q&A</a>
