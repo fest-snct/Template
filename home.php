@@ -27,6 +27,12 @@ if (
     exit;
 }
 
+include './pages/includes/stores_array.php';
+
+// Randomly select 6 stores
+shuffle($stores);
+$random_stores = array_slice($stores, 0, 6);
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -111,36 +117,13 @@ if (
         <div class="main_menu">
             <p class="main_menus">出店一覧</p>
             <div class="stores_content" id="home_stores_container">
-                <a href="./pages/stores.php?store=shashinnbu">
-                    <figure class="s_items store-item">
-                        <img src="./images/stores/shashinnbu.png" class="s_pic" alt="写真部" />
-                    </figure>
-                </a>
-                <a href="./pages/stores.php?store=toshoiinkai">
-                    <figure class="s_items store-item">
-                        <img src="./images/stores/toshoiinkai.png" class="s_pic" alt="図書委員会" />
-                    </figure>
-                </a>
-                <a href="./pages/stores.php?store=suurikagakuaikoukai">
-                    <figure class="s_items store-item">
-                        <img src="./images/stores/suurikagakuaikoukai.png" class="s_pic" alt="数理科学愛好会" />
-                    </figure>
-                </a>
-                <a href="./pages/stores.php?store=DTMbu">
-                    <figure class="s_items store-item">
-                        <img src="./images/stores/DTMbu.png" class="s_pic" alt="DTM部" />
-                    </figure>
-                </a>
-                <a href="./pages/stores.php?store=puroguraminngubu">
-                    <figure class="s_items store-item">
-                        <img src="./images/stores/puroguraminngubu.png" class="s_pic" alt="プログラミング部" />
-                    </figure>
-                </a>
-                <a href="./pages/stores.php?store=kagakubu">
-                    <figure class="s_items store-item">
-                        <img src="./images/stores/kagakubu.png" class="s_pic" alt="科学部" />
-                    </figure>
-                </a>
+                <?php foreach ($random_stores as $store) : ?>
+                    <a href="./pages/stores.php?store=<?= htmlspecialchars($store['id'], ENT_QUOTES, 'UTF-8') ?>">
+                        <figure class="s_items store-item">
+                            <img src="<?= htmlspecialchars($store['image'], ENT_QUOTES, 'UTF-8') ?>" class="s_pic" alt="<?= htmlspecialchars($store['alt'], ENT_QUOTES, 'UTF-8') ?>" />
+                        </figure>
+                    </a>
+                <?php endforeach; ?>
             </div>
             <a href="./pages/stores.php" class="about">詳しくはこちら</a>
         </div>
