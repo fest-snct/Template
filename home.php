@@ -36,6 +36,7 @@ if (
     <title>仙台高等専門学校広瀬キャンパス高専祭2025</title>
     <link rel="stylesheet" href="./css/home.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <script src="./js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
+    <script src="./js/home_animation.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
 </head>
 <body>
     <header>
@@ -109,9 +110,39 @@ if (
         <div class="border"></div>
         <div class="main_menu">
             <p class="main_menus">出店一覧</p>
-            <div class="stores_content">
-                <a href="./pages/stores.php">詳しくはこちら</a>
+            <div class="stores_content" id="home_stores_container">
+                <a href="./pages/stores.php?store=shashinnbu">
+                    <figure class="s_items store-item">
+                        <img src="./images/stores/shashinnbu.png" class="s_pic" alt="写真部" />
+                    </figure>
+                </a>
+                <a href="./pages/stores.php?store=toshoiinkai">
+                    <figure class="s_items store-item">
+                        <img src="./images/stores/toshoiinkai.png" class="s_pic" alt="図書委員会" />
+                    </figure>
+                </a>
+                <a href="./pages/stores.php?store=suurikagakuaikoukai">
+                    <figure class="s_items store-item">
+                        <img src="./images/stores/suurikagakuaikoukai.png" class="s_pic" alt="数理科学愛好会" />
+                    </figure>
+                </a>
+                <a href="./pages/stores.php?store=DTMbu">
+                    <figure class="s_items store-item">
+                        <img src="./images/stores/DTMbu.png" class="s_pic" alt="DTM部" />
+                    </figure>
+                </a>
+                <a href="./pages/stores.php?store=puroguraminngubu">
+                    <figure class="s_items store-item">
+                        <img src="./images/stores/puroguraminngubu.png" class="s_pic" alt="プログラミング部" />
+                    </figure>
+                </a>
+                <a href="./pages/stores.php?store=kagakubu">
+                    <figure class="s_items store-item">
+                        <img src="./images/stores/kagakubu.png" class="s_pic" alt="科学部" />
+                    </figure>
+                </a>
             </div>
+            <a href="./pages/stores.php" class="about">詳しくはこちら</a>
         </div>
         <div class="border"></div>
         <div class="main_menu">
@@ -120,7 +151,7 @@ if (
                 <p>公共交通機関</p>
                 <p>JR仙山線　愛子駅より徒歩15分</p>
                 <p>仙台市営バス 仙台高専広瀬キャンパス入口より徒歩5分</p>
-                <a href="./pages/access.php">詳しくはこちら</a>
+                <a href="./pages/access.php" class="about">詳しくはこちら</a>
             </div>
         </div>
     </main>
