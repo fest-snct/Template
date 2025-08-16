@@ -27,6 +27,12 @@ if (
     exit;
 }
 
+include './pages/includes/stores_array.php';
+
+// Randomly select 6 stores
+shuffle($stores);
+$random_stores = array_slice($stores, 0, 6);
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -36,6 +42,7 @@ if (
     <title>仙台高等専門学校広瀬キャンパス高専祭2025</title>
     <link rel="stylesheet" href="./css/home.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <script src="./js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
+    <script src="./js/home_animation.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
 </head>
 <body>
     <header>
@@ -48,7 +55,7 @@ if (
             <div class="subtitles">
                 <a class="subtitle <?= $currentPage == './pages/greeting.php' ? 'is-current' : '' ?>" href="./pages/greeting.php">ご挨拶</a>
                 <a class="subtitle <?= $currentPage == './pages/event.php' ? 'is-current' : '' ?>" href="./pages/event.php">イベント企画</a>
-                <a class="subtitle <?= $currentPage == './pages/stores.php' ? 'is-current' : '' ?>" href="./pages/stores.php">企画一覧</a>
+                <a class="subtitle <?= $currentPage == './pages/stores.php' ? 'is-current' : '' ?>" href="./pages/stores.php">出店一覧</a>
                 <a class="subtitle <?= $currentPage == './pages/access.php' ? 'is-current' : '' ?>" href="./pages/access.php">アクセス</a>
                 <a class="subtitle <?= $currentPage == './pages/news.php' ? 'is-current' : '' ?>" href="./pages/news.php">ニュース</a>
                 <a class="subtitle <?= $currentPage == './pages/Q&A.php' ? 'is-current' : '' ?>" href="./pages/Q&A.php">Q&A</a>
@@ -68,7 +75,7 @@ if (
                 <a href="./home.php" class="hamburger-menu__item title">ホーム</a>
                 <a href="./pages/greeting.php" class="hamburger-menu__item">ご挨拶</a>
                 <a href="./pages/event.php" class="hamburger-menu__item">イベント企画</a>
-                <a href="./pages/stores.php" class="hamburger-menu__item">企画一覧</a>
+                <a href="./pages/stores.php" class="hamburger-menu__item">出店一覧</a>
                 <a href="./pages/access.php" class="hamburger-menu__item">アクセス</a>
                 <a href="./pages/news.php" class="hamburger-menu__item">ニュース</a>
                 <a href="./pages/Q&A.php" class="hamburger-menu__item">Q&A</a>
@@ -109,9 +116,16 @@ if (
         <div class="border"></div>
         <div class="main_menu">
             <p class="main_menus">出店一覧</p>
-            <div class="stores_content">
-                <a href="./pages/stores.php">詳しくはこちら</a>
+            <div class="stores_content" id="home_stores_container">
+                <?php foreach ($random_stores as $store) : ?>
+                    <a href="./pages/stores.php?store=<?= htmlspecialchars($store['id'], ENT_QUOTES, 'UTF-8') ?>">
+                        <figure class="s_items store-item">
+                            <img src="<?= htmlspecialchars($store['image'], ENT_QUOTES, 'UTF-8') ?>" class="s_pic" alt="<?= htmlspecialchars($store['alt'], ENT_QUOTES, 'UTF-8') ?>" />
+                        </figure>
+                    </a>
+                <?php endforeach; ?>
             </div>
+            <a href="./pages/stores.php" class="about">詳しくはこちら</a>
         </div>
         <div class="border"></div>
         <div class="main_menu">
@@ -120,7 +134,7 @@ if (
                 <p>公共交通機関</p>
                 <p>JR仙山線　愛子駅より徒歩15分</p>
                 <p>仙台市営バス 仙台高専広瀬キャンパス入口より徒歩5分</p>
-                <a href="./pages/access.php">詳しくはこちら</a>
+                <a href="./pages/access.php" class="about">詳しくはこちら</a>
             </div>
         </div>
     </main>
@@ -131,7 +145,7 @@ if (
                     <a class="subtitle" href="./home.php">ホーム</a>
                     <a class="subtitle" href="./pages/greeting.php">ご挨拶</a>
                     <a class="subtitle" href="./pages/event.php">イベント企画</a>
-                    <a class="subtitle" href="./pages/stores.php">企画一覧</a>
+                    <a class="subtitle" href="./pages/stores.php">出店一覧</a>
                     <a class="subtitle" href="./pages/access.php">アクセス</a>
                     <a class="subtitle" href="./pages/news.php">ニュース</a>
                     <a class="subtitle" href="./pages/Q&A.php">Q&A</a>

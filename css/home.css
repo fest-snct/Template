@@ -365,6 +365,22 @@ main div.border {
   margin-top: 2rem;
   border: 2px solid #333;
 }
+main .about {
+  display: block;
+  width: 80vw;
+  height: 2rem;
+  justify-content: center;
+  background-color: #0077ff;
+  color: white;
+  border: 2px solid #333;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 1rem;
+}
+main .about:hover {
+  color: #333;
+}
 main div.main_menu {
   width: 80vw;
   flex: 1;
@@ -388,36 +404,31 @@ main div.main_menu div.fest_date p {
 main div.main_menu div.access_content {
   width: 100%;
 }
-main div.main_menu div.access_content a {
-  display: block;
-  width: 80vw;
-  height: 2rem;
-  justify-content: center;
-  background-color: #0077ff;
-  color: white;
-  border: 2px solid #333;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
-}
-main div.main_menu div.access_content a:hover {
-  color: #333;
-}
 main div.main_menu div.stores_content {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 3rem;
+  justify-content: space-between;
 }
-main div.main_menu div.stores_content a {
-  display: block;
-  width: 80vw;
-  height: 2rem;
-  justify-content: center;
-  background-color: #0077ff;
-  color: white;
-  border: 2px solid #333;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
+main div.main_menu div.stores_content .store-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-main div.main_menu div.stores_content a:hover {
-  color: #333;
+main div.main_menu div.stores_content .store-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+main div.main_menu div.stores_content .s_items {
+  margin: 0;
+  width: 400px !important;
+  height: 300px !important;
+}
+main div.main_menu div.stores_content .s_pic {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
