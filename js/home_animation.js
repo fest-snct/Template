@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const storeItems = document.querySelectorAll('.store-item');
+    const storeItems = document.querySelectorAll('.store_item');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
+                entry.target.classList.add('is_visible');
             }
         });
     }, {
