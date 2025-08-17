@@ -119,7 +119,7 @@ $random_stores = array_slice($stores, 0, 6);
             <div class="stores_content" id="home_stores_container">
                 <?php foreach ($random_stores as $store) : ?>
                     <a href="./pages/stores.php?store=<?= htmlspecialchars($store['id'], ENT_QUOTES, 'UTF-8') ?>">
-                        <figure class="s_items store-item">
+                        <figure class="store_item">
                             <img src="<?= htmlspecialchars($store['image'], ENT_QUOTES, 'UTF-8') ?>" class="s_pic" alt="<?= htmlspecialchars($store['alt'], ENT_QUOTES, 'UTF-8') ?>" />
                         </figure>
                     </a>
