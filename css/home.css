@@ -430,7 +430,7 @@ main div.main_menu div.news_content p .news-date {
 }
 main div.main_menu div.news_content p a {
   text-decoration: none;
-  color: #333;
+  color: #0077ff;
 }
 main div.main_menu div.news_content p a:hover {
   text-decoration: underline;
