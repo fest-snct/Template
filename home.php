@@ -33,6 +33,47 @@ include './pages/includes/stores_array.php';
 shuffle($stores);
 $random_stores = array_slice($stores, 0, 6);
 
+// Get dates from news.php
+$news_page_content = file_get_contents('./pages/news.php');
+$date_map = [];
+if (preg_match_all('/<div class="news_item">.*?<p class="news_date">(.*?)<\/p>.*?<a href="(.*?)">/s', $news_page_content, $matches, PREG_SET_ORDER)) {
+    foreach ($matches as $match) {
+        $date = str_replace('2025.', '', $match[1]);
+        $date_map[$match[2]] = $date;
+    }
+}
+
+// Get news files
+$news_files = glob('./pages/news/*.php');
+// Sort files in reverse order by filename
+rsort($news_files, SORT_STRING);
+// Get the 3 most recent news
+$recent_news = array_slice($news_files, 0, 3);
+
+$news_list = [];
+foreach ($recent_news as $news_file) {
+    $content = file_get_contents($news_file);
+    $title = '';
+    if (preg_match('/<p class="title">(.*?)<\/p>/', $content, $matches)) {
+        $title = $matches[1];
+        // Clean up the title
+        $title = str_replace(' | 高専祭2025', '', $title);
+        $title = str_replace('2025年度', '', $title);
+        $title = str_replace('高専祭', '', $title);
+        $title = trim($title);
+    }
+
+    $map_key = str_replace('./pages', '.', $news_file);
+
+    if ($title) {
+        $news_list[] = [
+            'link' => $news_file,
+            'title' => $title,
+            'date' => isset($date_map[$map_key]) ? $date_map[$map_key] : ''
+        ];
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -103,7 +144,16 @@ $random_stores = array_slice($stores, 0, 6);
         <div class="main_menu">
             <p class="main_menus">ニュース</p>
             <div class="news_content">
+                <?php foreach ($news_list as $news) : ?>
+                    <p>
+                        <a href="<?= htmlspecialchars($news['link'], ENT_QUOTES, 'UTF-8') ?>">
+                            <span class="news-date"><?= htmlspecialchars($news['date'], ENT_QUOTES, 'UTF-8') ?></span>
+                            <?= htmlspecialchars($news['title'], ENT_QUOTES, 'UTF-8') ?>
+                        </a>
+                    </p>
+                <?php endforeach; ?>
             </div>
+            <a href="./pages/news.php" class="about">詳しくはこちら</a>
         </div>
         <div class="border"></div>
         <div class="main_menu">

@@ -73,6 +73,22 @@ main {
         div.access_content {
             width: 100%;
         }
+        div.news_content {
+            width: 100%;
+            p {
+                margin-left: 3rem;
+                .news-date {
+                    margin-right: 1em;
+                }
+                a {
+                    text-decoration: none;
+                    color: variables.$text-color;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
         div.stores_content {
             width: 100%;
             display: flex;

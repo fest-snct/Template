@@ -419,6 +419,22 @@ main div.main_menu div.fest_date p {
 main div.main_menu div.access_content {
   width: 100%;
 }
+main div.main_menu div.news_content {
+  width: 100%;
+}
+main div.main_menu div.news_content p {
+  margin-left: 3rem;
+}
+main div.main_menu div.news_content p .news-date {
+  margin-right: 1em;
+}
+main div.main_menu div.news_content p a {
+  text-decoration: none;
+  color: #333;
+}
+main div.main_menu div.news_content p a:hover {
+  text-decoration: underline;
+}
 main div.main_menu div.stores_content {
   width: 100%;
   display: flex;
