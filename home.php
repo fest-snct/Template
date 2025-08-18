@@ -158,12 +158,18 @@ foreach ($recent_news as $news_file) {
         <div class="border"></div>
         <div class="main_menu">
             <p class="main_menus">校長挨拶</p>
-            <div class="greetings_content"></div>
+            <div class="greetings_content">
+                <p>準備中です。</p>
+            </div>
+            <a href="./pages/greeting.php" class="about">詳しくはこちら</a>
         </div>
         <div class="border"></div>
         <div class="main_menu">
             <p class="main_menus">イベント</p>
-            <div class="event_content"></div>
+            <div class="event_content">
+                <p>準備中です。</p>
+            </div>
+            <a href="./pages/event.php" class="about">詳しくはこちら</a>
         </div>
         <div class="border"></div>
         <div class="main_menu">
