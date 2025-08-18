@@ -43,7 +43,7 @@
   height: 100vh;
   background-color: #e0f7ff;
   z-index: 900;
-  overflow: auto;
+  overflow: visible;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -202,6 +202,12 @@ header {
 }
 header .mini_logo {
   margin: 0 20px;
+  height: 80px;
+  width: 80px;
+}
+header .mini_logo img {
+  height: 100%;
+  width: 100%;
 }
 header .menu {
   width: 40px;

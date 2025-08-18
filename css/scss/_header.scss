@@ -18,6 +18,13 @@ header {
     background-color: variables.$secondary-color;
     .mini_logo {
         margin: 0 20px;
+        height: 80px;
+        width: 80px;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
     }
     .menu {
         width: 40px;

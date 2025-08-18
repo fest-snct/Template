@@ -48,7 +48,7 @@ $random_stores = array_slice($stores, 0, 6);
     <header>
         <?php $currentPage = $_SERVER['SCRIPT_NAME']; // 現在のファイル名（例: /pages/stores.php）?>
         <div class="mini_logo">
-            <img src="https://img.skin/80x80/000/fff/?text=logo&fmt=png" />
+            <img src="./images/logo.png" />
         </div>
         <div class="index">
             <a class="title" href="./home.php">高専祭2025</a>
