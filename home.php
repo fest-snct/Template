@@ -81,6 +81,8 @@ $random_stores = array_slice($stores, 0, 6);
                 <a href="./pages/Q&A.php" class="hamburger-menu__item">Q&A</a>
                 <a href="./pages/contact.php" class="hamburger-menu__item">お問い合わせ</a>
                 <a href="./pages//privacypolicy.php" class="hamburger-menu__item">プライバシーポリシー</a>
+                <a href="https://x.com/Kosensai_Zitsui" class="hamburger-menu__item">X</a>
+                <a href="https://www.instagram.com/hirosekousensai/" class="hamburger-menu__item">Instagram</a>
             </div>
         </nav>
     </header>
@@ -151,6 +153,10 @@ $random_stores = array_slice($stores, 0, 6);
                     <a class="subtitle" href="./pages/Q&A.php">Q&A</a>
                     <a class="subtitle" href="./pages/contact.php">お問い合わせ</a>
                     <a class="subtitle" href="./pages/privacypolicy.php">プライバシーポリシー</a>
+                    <div class="SNS">
+                        <a class="subtitle" href="https://x.com/Kosensai_Zitsui">X</a>
+                        <a class="subtitle" href="https://www.instagram.com/hirosekousensai/">Instagram</a>
+                    </div>
                 </div>
             </div>
             <div>
