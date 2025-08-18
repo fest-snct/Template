@@ -28,7 +28,7 @@ header("Content-Security-Policy:
             <div class="news_list">
                 <div class="news_item">
                     <div class="news_item_top">
-                        <p>準備中です...</p>
+                        <img src="../images/icon_yoko.png" alt="News Image">
                     </div>
                     <div class="news_item_bottom">
                         <p class="news_date">2025.08.16</p>
@@ -37,7 +37,7 @@ header("Content-Security-Policy:
                 </div>
                 <div class="news_item">
                     <div class="news_item_top">
-                        <p>準備中です...</p>
+                        <img src="../images/icon_yoko.png" alt="News Image">
                     </div>
                     <div class="news_item_bottom">
                         <p class="news_date">2025.06.24</p>
