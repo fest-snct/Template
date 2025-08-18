@@ -202,6 +202,12 @@ header {
 }
 header .mini_logo {
   margin: 0 20px;
+  height: 80px;
+  width: 80px;
+}
+header .mini_logo img {
+  height: 100%;
+  width: 100%;
 }
 header .menu {
   width: 40px;
@@ -331,12 +337,19 @@ footer div.footer-content div.subtitles {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 footer div.footer-content div.subtitles a.subtitle {
   font-size: 19.2px;
   text-decoration: none;
   color: #333;
   margin: 0 10px;
+}
+footer div.footer-content div.subtitles div.SNS {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 769px) {
   footer {
@@ -362,6 +375,10 @@ footer div.footer-content div.subtitles a.subtitle {
   footer div.footer-content div.subtitles a.subtitle {
     font-size: 24px;
     margin: 5px 0;
+  }
+  footer div.footer-content div.subtitles div.SNS {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

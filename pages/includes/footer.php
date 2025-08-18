@@ -25,6 +25,10 @@ if (empty($path_to_root)) {
                 <a class="subtitle" href="<?= $path_to_root ?>pages/Q&A.php">Q&A</a>
                 <a class="subtitle" href="<?= $path_to_root ?>pages/contact.php">お問い合わせ</a>
                 <a class="subtitle" href="<?= $path_to_root ?>pages/privacypolicy.php">プライバシーポリシー</a>
+                <div class="SNS">
+                    <a class="subtitle" href="https://x.com/Kosensai_Zitsui">X</a>
+                    <a class="subtitle" href="https://www.instagram.com/hirosekousensai/">Instagram</a>
+                </div>
             </div>
         </div>
         <div>

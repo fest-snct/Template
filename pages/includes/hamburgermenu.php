@@ -13,5 +13,7 @@
         <a href="/2025/pages/Q&A.php" class="hamburger-menu__item">Q&A</a>
         <a href="/2025/pages/contact.php" class="hamburger-menu__item">お問い合わせ</a>
         <a href="/2025/pages/privacypolicy.php" class="hamburger-menu__item">プライバシーポリシー</a>
+        <a href="https://x.com/Kosensai_Zitsui" class="hamburger-menu__item">X</a>
+        <a href="https://www.instagram.com/hirosekousensai/" class="hamburger-menu__item">Instagram</a>
     </div>
 </nav>

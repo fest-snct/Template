@@ -48,7 +48,7 @@ $random_stores = array_slice($stores, 0, 6);
     <header>
         <?php $currentPage = $_SERVER['SCRIPT_NAME']; // 現在のファイル名（例: /pages/stores.php）?>
         <div class="mini_logo">
-            <img src="https://img.skin/80x80/000/fff/?text=logo&fmt=png" />
+            <img src="./images/logo.png" />
         </div>
         <div class="index">
             <a class="title" href="./home.php">高専祭2025</a>
@@ -81,6 +81,8 @@ $random_stores = array_slice($stores, 0, 6);
                 <a href="./pages/Q&A.php" class="hamburger-menu__item">Q&A</a>
                 <a href="./pages/contact.php" class="hamburger-menu__item">お問い合わせ</a>
                 <a href="./pages//privacypolicy.php" class="hamburger-menu__item">プライバシーポリシー</a>
+                <a href="https://x.com/Kosensai_Zitsui" class="hamburger-menu__item">X</a>
+                <a href="https://www.instagram.com/hirosekousensai/" class="hamburger-menu__item">Instagram</a>
             </div>
         </nav>
     </header>
@@ -151,6 +153,10 @@ $random_stores = array_slice($stores, 0, 6);
                     <a class="subtitle" href="./pages/Q&A.php">Q&A</a>
                     <a class="subtitle" href="./pages/contact.php">お問い合わせ</a>
                     <a class="subtitle" href="./pages/privacypolicy.php">プライバシーポリシー</a>
+                    <div class="SNS">
+                        <a class="subtitle" href="https://x.com/Kosensai_Zitsui">X</a>
+                        <a class="subtitle" href="https://www.instagram.com/hirosekousensai/">Instagram</a>
+                    </div>
                 </div>
             </div>
             <div>
