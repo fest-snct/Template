@@ -1,0 +1,22 @@
+name: Deploy to Sakura
+
+on:
+  push:
+    branches:
+      - main   # mainブランチにpushしたら実行
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: fest-snct.sakura.ne.jp
+          username: fest-snct
+          key: ${{ secrets.SAKURA_SSH_KEY }}
+          script: |
+            cd /home/fest-snct/www/2025
+            git fetch origin
+            git merge origin/main
