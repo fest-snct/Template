@@ -160,7 +160,7 @@ foreach ($recent_news as $news_file) {
         <div class="main_menu">
             <p class="main_menus">校長挨拶</p>
             <div class="greetings_content">
-                <p>準備中です。</p>
+                <p>　今年の⾼専祭のテーマは「彩風」（あやかぜ）です。このテーマには「個性豊かな出店や企画の彩りが、それぞれの色を持ちながらも一つに重なり合い、秋風のように心地よく⾼専祭全体を包み込む、そんなあたたかく一体感のあるイベントにしたい」という思いが込められています。</p>
             </div>
             <a href="./pages/greeting.php" class="about">詳しくはこちら</a>
         </div>
