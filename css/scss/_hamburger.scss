@@ -145,7 +145,7 @@
             z-index: 101;
             align-items: center;
             height: 100%;
-            gap: 25px; // メニュー項目間の余白
+            gap: calc((80dvh - 396px)/10); // メニュー項目間の余白
         }
     }
 }
