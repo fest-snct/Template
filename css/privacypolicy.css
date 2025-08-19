@@ -303,7 +303,7 @@ header div.index div.subtitles a.subtitle.is-current::before, header div.index d
 header div.menu {
   margin-right: 10px;
 }
-@media (max-width: 769px) {
+@media (max-width: 1024px) {
   header div.index .title {
     margin: 0 auto;
     font-size: 2rem;
@@ -351,7 +351,7 @@ footer div.footer-content div.subtitles div.SNS {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 769px) {
+@media (max-width: 1024px) {
   footer {
     padding: 15px 0;
   }
@@ -433,7 +433,7 @@ main p.privacy-content {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1015px) {
   body {
     font-size: 15px;
   }
