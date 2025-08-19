@@ -20,6 +20,7 @@ include '../includes/stores_array.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025年度高専祭webサイト公開! | 高専祭2025</title>
     <link rel="stylesheet" href="../../css/news.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
+    <?php include '/2025/pages/includes/header-favicon.php'; ?>
     <script src="../../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
 <body>

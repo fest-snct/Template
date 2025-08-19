@@ -16,6 +16,7 @@ header("Content-Security-Policy:
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>お問い合わせありがとうございます。</title>
         <link rel="stylesheet" href="../css/thanks.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
+        <?php include '/2025/pages/includes/header-favicon.php'; ?>
         <script src="../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
     </head>
     <body>
