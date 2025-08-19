@@ -2,6 +2,9 @@
 
 @use 'hamburger';
 
+body {
+    font-family: variables.$base-fonts;
+}
 header {
     position: fixed;
     top: 0;

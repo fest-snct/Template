@@ -141,7 +141,7 @@
   z-index: 101;
   align-items: center;
   height: 100%;
-  gap: 25px;
+  gap: calc((80dvh - 396px) / 10);
 }
 
 body.is-menu-open {
@@ -185,6 +185,10 @@ nav.hamburger-menu.is-open div.hamburger-menu__inner {
     top: 60%;
   }
 }
+body {
+  font-family: sans-serif;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -384,10 +388,6 @@ footer div.footer-content div.subtitles div.SNS {
 
 body {
   background-color: #e0f7ff;
-  color: #333;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 1.8;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -395,6 +395,10 @@ body {
 }
 
 main {
+  color: #333;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -426,6 +430,7 @@ main h2.privacy-menu {
 main p.privacy-content {
   display: flex;
   width: 100%;
+  box-sizing: border-box;
   margin-bottom: 1.5rem;
   background-color: #f9f9f9;
   padding: 1rem;

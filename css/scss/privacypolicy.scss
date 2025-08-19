@@ -5,18 +5,17 @@
 
 body {
   background-color: variables.$background-color;
-  color: variables.$text-color;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  line-height: 1.8;
   overflow-y: auto;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 main {
+  color: variables.$text-color;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -50,6 +49,7 @@ main {
   p.privacy-content {
     display: flex;
     width: 100%;
+    box-sizing: border-box;
     margin-bottom: 1.5rem;
     background-color: #f9f9f9;
     padding: 1rem;

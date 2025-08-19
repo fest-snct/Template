@@ -137,9 +137,10 @@ body {
                 font-size: xx-large;
                 font-weight: bold;
                 padding: 16px;
-                margin: 0 5vw;
+                margin: 0 1vw;
+                touch-action: manipulation;
             }
-            a.modal_pn:hover{
+            a.modal_pn:hover {
                 background-color: rgba(0, 0, 0, 0.7);
             }
             a#prev {
@@ -152,5 +153,29 @@ body {
     }
     div.nodisp {
         display: none;
+    }
+}
+
+//orientation
+@media screen and (orientation: landscape){
+    a.modal_pn {
+        padding: 16px;
+        margin: 0 5vw;
+    }
+}
+@media screen and (orientation: portrait) and (max-width: variables.$breakpoint-phone) {
+    a.modal_pn {
+        padding: 10px 20px !important;
+        margin: 0 15vw !important;
+        bottom: 5%;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    div#modal_root {
+        padding-bottom: 75px;
+    }
+}
+@media screen and (orientation: landscape) {
+    a.modal_pn {
+        margin: 0 5vw !important;
     }
 }

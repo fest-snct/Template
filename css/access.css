@@ -141,7 +141,7 @@
   z-index: 101;
   align-items: center;
   height: 100%;
-  gap: 25px;
+  gap: calc((80dvh - 396px) / 10);
 }
 
 body.is-menu-open {
@@ -185,6 +185,10 @@ nav.hamburger-menu.is-open div.hamburger-menu__inner {
     top: 60%;
   }
 }
+body {
+  font-family: sans-serif;
+}
+
 header {
   position: fixed;
   top: 0;

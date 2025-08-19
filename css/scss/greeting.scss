@@ -62,7 +62,9 @@ div.wrapper {
             }
             div.greeting_content {
                 display: flex;
-
+                img {
+                    width: 100%;
+                }
                 p.greeting_speech {
                     margin-left: 2rem;
                 }
