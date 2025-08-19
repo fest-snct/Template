@@ -62,11 +62,19 @@ div.wrapper {
             }
             div.greeting_content {
                 display: flex;
-                img {
-                    width: 100%;
-                }
-                p.greeting_speech {
+
+                div.greeting_speech {
+                    margin: 0;
                     margin-left: 2rem;
+                    text-align: left;
+                    font-size: 1.3rem;
+                    p {
+                        margin: 0;
+                        margin-top: 10px;
+                    }
+                }
+                img {
+                    width: 520px;
                 }
             }
         }
@@ -84,8 +92,11 @@ div.wrapper {
         align-items: flex-start;
         text-align: left;
 
-        p.greeting_speech {
+        div.greeting_speech {
             margin-left: 0 !important;
+        }
+        img {
+            width: 100%;
         }
     }
 }
