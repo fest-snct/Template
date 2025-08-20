@@ -141,7 +141,7 @@
   z-index: 101;
   align-items: center;
   height: 100%;
-  gap: calc((80dvh - 396px) / 10);
+  gap: min(25px, (80dvh - 396px) / 10);
 }
 
 body.is-menu-open {
@@ -459,6 +459,7 @@ div.wrapper main div.news_list .news_item .news_item_top {
   border-bottom: 1px solid #eee; /* Separator */
 }
 div.wrapper main div.news_list .news_item .news_item_top img {
+  vertical-align: top;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
