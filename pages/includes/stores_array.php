@@ -8,7 +8,7 @@ $stores = [
     ],
     [
         'id' => 'gakuseitoshoiinkai',
-        'alt' => '学生図書委員会',
+        'alt' => '図書委員会',
         'description' => '本図書室で不要となった蔵書のほか、地域の方々や仙台市広瀬図書館様が寄贈してくださった本の無償譲渡を行います。',
         'image' => '/2025/images/stores/toshoiinkai.png'
     ],
@@ -56,7 +56,7 @@ $stores = [
     ],
     [
         'id' => 'yaserunoasitakaraya',
-        'alt' => '痩せるの明日から屋',
+        'alt' => 'ダイエット明日から屋',
         'description' => '歩き回って疲れた時は、アツアツたい焼き、香ばしくて大容量のポップコーン、そして冷たいドリンクで一休み！美味しさ満点でエネルギーチャージ！ぜひお立ち寄りください！',
         'image' => '/2025/images/stores/daiettoasukaraya.png'
     ],
@@ -68,7 +68,7 @@ $stores = [
     ],
     [
         'id' => 'ennnichiIT2',
-        'alt' => '縁日(IT2)',
+        'alt' => '縁日IT2',
         'description' => '一回100円の射的です。的に当てるとお菓子をし一掴みできます。',
         'image' => '/2025/images/stores/ennnichiIT2.png'
     ],
@@ -104,7 +104,7 @@ $stores = [
     ],
     [
         'id' => 'watagashi',
-        'alt' => 'わたがし',
+        'alt' => '綿菓子',
         'description' => 'みんな大好きお祭りなどにあるわたあめです',
         'image' => '/2025/images/stores/watagashi.png'
     ],
@@ -122,7 +122,7 @@ $stores = [
     ],
     [
         'id' => 'potesarayakikaihatuiinnkai',
-        'alt' => 'ポテサラ焼開発委員会',
+        'alt' => '焼ポテサラ開発委員会',
         'description' => '『焼きポテサラ』ポテトサラダを鉄板でジュワッと焼き上げた香ばしい逸品。外カリッ、中ホクホクの芋のうま味をたっぷり詰め込んだ一味違うポテサラはいかが？5種のトッピングも併せてご賞味あれ。カルメ焼きもあｒ',
         'image' => '/2025/images/stores/yakipotesarakaihatuiinnkai.png'
     ],
