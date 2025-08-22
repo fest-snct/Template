@@ -18,7 +18,7 @@ include '../includes/stores_array.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025年度高専祭webサイト公開! | 高専祭2025</title>
+    <title>2025年度高専祭出店一覧を公開しました! | 高専祭2025</title>
     <link rel="stylesheet" href="../../css/news.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <?php include '/2025/pages/includes/header-favicon.php'; ?>
     <script src="../../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
@@ -28,7 +28,7 @@ include '../includes/stores_array.php';
     <div class="wrapper">
         <main>
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
-            <p class="title">出店一覧を公開しました! | 高専祭2025</p>
+            <p class="title">出店一覧を公開しました!</p>
             <div class="news_content">
                 <p>今年の出店一覧を公開しました！</p>
                 <p>今年は以下の26団体が出店します!</p>
