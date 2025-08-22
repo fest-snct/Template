@@ -31,7 +31,7 @@ include '../includes/stores_array.php';
             <p class="title">出店一覧を公開しました! | 高専祭2025</p>
             <div class="news_content">
                 <p>今年の出店一覧を公開しました！</p>
-                <p>今年は以下の27団体が出店します!</p>
+                <p>今年は以下の26団体が出店します!</p>
                 <ul>
                     <?php foreach ($stores as $store) : ?>
                         <li class="store"><?= htmlspecialchars($store['alt'], ENT_QUOTES, 'UTF-8') ?></li>
