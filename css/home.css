@@ -107,7 +107,7 @@
   z-index: 101;
   align-items: center;
   height: 100%;
-  gap: calc((80dvh - 396px) / 10);
+  gap: min(25px, (80dvh - 396px) / 10);
 }
 
 body.is-menu-open {
@@ -376,7 +376,7 @@ main div.main_logo {
   justify-content: center;
 }
 main div.main_logo img {
-  max-width: 100%;
+  max-width: 80vw;
   max-height: 800px;
 }
 main div.border {

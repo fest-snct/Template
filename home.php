@@ -8,24 +8,7 @@ header("Content-Security-Policy:
     frame-src 'self';
     frame-ancestors 'none';
 ");
-require_once './vendor/autoload.php';
-// dotenv
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
-$user = $_ENV['BASIC_USER'];
-$hashed_pass = $_ENV['BASIC_PASS']; // password_hashで生成した値
-
-if (
-    !isset($_SERVER['PHP_AUTH_USER']) ||
-    $_SERVER['PHP_AUTH_USER'] !== $user ||
-    !password_verify($_SERVER['PHP_AUTH_PW'], $hashed_pass)
-) {
-    header('WWW-Authenticate: Basic realm="Protected Area"');
-    header('HTTP/1.0 401 Unauthorized');
-    echo '認証が必要です';
-    exit;
-}
 
 include './pages/includes/stores_array.php';
 
@@ -130,7 +113,7 @@ foreach ($recent_news as $news_file) {
     </header>
     <main>
         <div class="main_logo">
-            <img src="./images/icon.png" alt="Main Image" />
+            <img src="./images/hp_icon.png" alt="Main Image" />
         </div>
         <div class="border"></div>
         <div class="main_menu">
