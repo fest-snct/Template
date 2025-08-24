@@ -120,7 +120,7 @@ foreach ($recent_news as $news_file) {
             <p class="main_menus">開催日時</p>
             <div class="fest_date">
                 <p>一日目：10月25日(土)　　9:00-16:00</p>
-                <p>二日目：10月26日(日)　　9:00-16:00</p>
+                <p>二日目：10月26日(日)　　9:00-15:00</p>
             </div>
             <p>※時間は変更になる可能性がありあます。</p>
         </div>
