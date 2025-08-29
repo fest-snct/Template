@@ -39,7 +39,7 @@ header("Content-Security-Policy:
                     </div>
                 </div>
                 <div class="news_item">
-                    <a href="./news/02.php">
+                    <a href="./news/01.php">
                         <div class="news_item_top">
                             <img src="../images/icon_yoko.png" alt="News Image">
                         </div>
