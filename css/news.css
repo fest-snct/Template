@@ -502,3 +502,18 @@ div.wrapper main div.news_content {
 div.wrapper main div.news_content li.store {
   font-size: 1.2rem;
 }
+
+img.profile-image {
+  width: 30vw;
+}
+
+@media (max-width: 1025px) {
+  img.profile-image {
+    width: 50vw;
+  }
+}
+@media (max-width: 600px) {
+  img.profile-image {
+    width: 80vw;
+  }
+}
