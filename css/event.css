@@ -405,7 +405,8 @@ div.wrapper {
   flex-direction: column;
   margin-top: 5rem;
 }
-div.wrapper main {
+
+main {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -415,8 +416,9 @@ div.wrapper main {
   width: 80vw;
   text-align: center;
   margin: 0 auto;
+  margin-top: 5rem;
 }
-div.wrapper main p.title {
+main p.title {
   width: 100%;
   font: bold;
   text-align: left;
@@ -426,16 +428,16 @@ div.wrapper main p.title {
   margin-top: 2rem;
   border-left: 4px solid #0077ff;
 }
-div.wrapper main div.border {
+main div.border {
   width: 80vw;
   margin-top: 2rem;
   border: 2px solid #333;
 }
-div.wrapper main div.events {
+main div.events {
   display: flex;
   margin-left: 3rem;
 }
-div.wrapper main div.events p.event-title {
+main p.event-title {
   width: 100%;
   font: bold;
   font-weight: 700;
@@ -443,11 +445,25 @@ div.wrapper main div.events p.event-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-div.wrapper main div.events div.description {
+main div.description {
   display: flex;
   flex-direction: column;
 }
-div.wrapper main div.events div.description p, div.wrapper main div.events div.description a {
+main div.description p, main div.description a {
   text-align: left;
   margin-bottom: 10px;
+}
+main img.profile-image {
+  width: 30vw;
+}
+
+@media (max-width: 600px) {
+  img.profile-image {
+    width: 80vw !important;
+  }
+}
+@media (max-width: 1025px) {
+  img.profile-image {
+    width: 50vw !important;
+  }
 }
