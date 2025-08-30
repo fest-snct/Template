@@ -89,6 +89,19 @@ main {
                 }
             }
         }
+        div.event_content {
+            width: 100%;
+            p {
+                margin-left: 3rem;
+                a {
+                    text-emphasis: none;
+                    color: variables.$blue-color;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
         div.stores_content {
             width: 100%;
             display: flex;

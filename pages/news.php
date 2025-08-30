@@ -28,6 +28,17 @@ header("Content-Security-Policy:
             <p class="title">ニュース一覧</p>
             <div class="news_list">
                 <div class="news_item">
+                    <a href="./news/03.php">
+                        <div class="news_item_top">
+                            <img src="../images/icon_yoko.png" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.08.31</p>
+                        <p class="news_title"><a href="./news/03.php">松本紀生さんが高専祭にやってくる!</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
                     <a href="./news/02.php">
                         <div class="news_item_top">
                             <img src="../images/icon_yoko.png" alt="News Image">

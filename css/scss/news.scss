@@ -119,6 +119,17 @@ div.wrapper {
     }
 }
 
-
-
-
+// 03.php
+img.profile-image {
+    width: 30vw;
+}
+@media (max-width: variables.$breakpoint-tablet) {
+    img.profile-image {
+        width: 50vw;
+    }
+}
+@media (max-width: variables.$breakpoint-phone) {
+    img.profile-image {
+        width: 80vw;
+    }
+}

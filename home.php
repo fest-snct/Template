@@ -30,8 +30,8 @@ if (preg_match_all('/<div class="news_item">.*?<p class="news_date">(.*?)<\/p>.*
 $news_files = glob('./pages/news/*.php');
 // Sort files in reverse order by filename
 rsort($news_files, SORT_STRING);
-// Get the 3 most recent news
-$recent_news = array_slice($news_files, 0, 3);
+// Get the 5 most recent news
+$recent_news = array_slice($news_files, 0, 5);
 
 $news_list = [];
 foreach ($recent_news as $news_file) {
@@ -53,6 +53,34 @@ foreach ($recent_news as $news_file) {
             'link' => $news_file,
             'title' => $title,
             'date' => isset($date_map[$map_key]) ? $date_map[$map_key] : ''
+        ];
+    }
+}
+
+// Get event files
+$event_files = glob('./pages/event/*.php');
+// Sort files in reverse order by filename
+rsort($event_files, SORT_STRING);
+// Get the 5 most recent event
+$recent_event = array_slice($event_files, 0, 5);
+
+$event_list = [];
+foreach ($recent_event as $event_file) {
+    $content = file_get_contents($event_file);
+    $title = '';
+    if (preg_match('/<p class="event-title">(.*?)<\/p>/', $content, $matches)) {
+        $title = $matches[1];
+        // Clean up the title
+        $title = str_replace(' | 高専祭2025', '', $title);
+        $title = str_replace('2025年度', '', $title);
+        $title = str_replace('高専祭', '', $title);
+        $title = trim($title);
+    }
+    $map_key = str_replace('./pagews', '.', $event_file);
+    if ($title) {
+        $event_list[] = [
+            'link' => $event_file,
+            'title' => $title
         ];
     }
 }
@@ -151,7 +179,13 @@ foreach ($recent_news as $news_file) {
         <div class="main_menu">
             <p class="main_menus">イベント</p>
             <div class="event_content">
-                <p>準備中です。</p>
+                <?php foreach ($event_list as $event) : ?>
+                    <p>
+                        <a href="<?= htmlspecialchars($event['link'], ENT_QUOTES, 'UTF-8') ?>">
+                            <?= htmlspecialchars($event['title'], ENT_QUOTES, 'UTF-8') ?>
+                        </a>
+                    </p>
+                <?php endforeach; ?>
             </div>
             <a href="./pages/event.php" class="about">詳しくはこちら</a>
         </div>
