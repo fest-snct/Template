@@ -456,6 +456,13 @@ main div.description p, main div.description a {
 main img.profile-image {
   width: 30vw;
 }
+main a {
+  text-decoration: none;
+  color: #0077ff;
+}
+main a:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 600px) {
   img.profile-image {

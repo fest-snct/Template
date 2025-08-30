@@ -74,6 +74,13 @@ main {
     img.profile-image {
         width: 30vw;
     }
+    a {
+        text-decoration: none;
+        color: variables.$blue-color;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 @media (max-width: variables.$breakpoint-phone) {
