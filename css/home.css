@@ -439,6 +439,20 @@ main div.main_menu div.news_content p a {
 main div.main_menu div.news_content p a:hover {
   text-decoration: underline;
 }
+main div.main_menu div.event_content {
+  width: 100%;
+}
+main div.main_menu div.event_content p {
+  margin-left: 3rem;
+}
+main div.main_menu div.event_content p a {
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  color: #0077ff;
+}
+main div.main_menu div.event_content p a:hover {
+  text-decoration: underline;
+}
 main div.main_menu div.stores_content {
   width: 100%;
   display: flex;
