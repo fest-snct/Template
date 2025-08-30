@@ -433,4 +433,21 @@ div.wrapper main div.border {
 }
 div.wrapper main div.events {
   display: flex;
+  margin-left: 3rem;
+}
+div.wrapper main div.events p.event-title {
+  width: 100%;
+  font: bold;
+  font-weight: 700;
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+div.wrapper main div.events div.description {
+  display: flex;
+  flex-direction: column;
+}
+div.wrapper main div.events div.description p, div.wrapper main div.events div.description a {
+  text-align: left;
+  margin-bottom: 10px;
 }
