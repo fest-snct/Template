@@ -30,8 +30,8 @@ if (preg_match_all('/<div class="news_item">.*?<p class="news_date">(.*?)<\/p>.*
 $news_files = glob('./pages/news/*.php');
 // Sort files in reverse order by filename
 rsort($news_files, SORT_STRING);
-// Get the 3 most recent news
-$recent_news = array_slice($news_files, 0, 3);
+// Get the 5 most recent news
+$recent_news = array_slice($news_files, 0, 5);
 
 $news_list = [];
 foreach ($recent_news as $news_file) {
