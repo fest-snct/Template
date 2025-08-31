@@ -51,7 +51,7 @@ include './includes/stores_array.php';
                         企画名
                     </div>
                 </div>
-                <img src="https://img.skin/340x340?text=%E6%BA%96%E5%82%99%E4%B8%AD%E3%81%A7%E3%81%99...&fmt=gif" id="modal_img" alt="企画名" /><br>
+                <img src="/2025/images/store_modal_placeholder.png" id="modal_img" alt="企画名" /><br>
                 <div id="modal_place">
                     場所
                 </div>
