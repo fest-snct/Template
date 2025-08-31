@@ -42,7 +42,6 @@ foreach ($recent_news as $news_file) {
         // Clean up the title
         $title = str_replace(' | 高専祭2025', '', $title);
         $title = str_replace('2025年度', '', $title);
-        $title = str_replace('高専祭', '', $title);
         $title = trim($title);
     }
 
