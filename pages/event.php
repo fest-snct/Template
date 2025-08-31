@@ -30,7 +30,7 @@ header("Content-Security-Policy:
                 <div class="event">
                     <p class="event-title">松本紀生さん特別企画</p>
                     <div class="description">
-                        <p>一日目：10月25日(土)13:30から第一体育館で開催!</p>
+                        <p>二日目：10月26日(日)13:30から第一体育館で開催!</p>
                         <p>写真家の松本紀生さんが高専祭にやってくる!</p>
                         <a href="./event/guest.php" class="detail">詳細はこちら</a>
                     </div>
