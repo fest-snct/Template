@@ -25,7 +25,8 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="event-title">松本紀生オーロラフォトライブ</p>
             <div class="description">
-                <p>一日目：10月25日(土)13:30から第一体育館で開催!</p>
+                <p>日時：10月26日(日) 13:00開場 13:30開演</p>
+                <p>会場：仙台高専第一体育館</p>
                 <p>入場料は無料です。</p>
                 <p>未就学児も入場可ですが、他のお客様のご迷惑にならないようにお願い致します。</p>
                 <div class="profile">

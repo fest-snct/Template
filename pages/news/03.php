@@ -27,7 +27,8 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">松本紀生さんが高専祭にやってくる!</p>
             <div class="news_content">
-                <p>10月25日(土)13:30から第一体育館に写真家の松本紀生さんがこられます。</p>
+                <p>今年の高専祭では、アラスカ写真家の松本紀生さんにお越しいただきます！</p>
+                <p>フォトライブなど様々な企画を予定しています。ぜひお越しください！</p>
                 <img src="../../images/event/guest.jpg" alt="Profile Image" class="profile-image">
             </div>
 
