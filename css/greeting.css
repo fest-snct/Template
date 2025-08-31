@@ -444,6 +444,7 @@ div.wrapper main div.greeting_contents div.greeting p.greeting_name {
 }
 div.wrapper main div.greeting_contents div.greeting_content {
   display: flex;
+  align-items: flex-start;
 }
 div.wrapper main div.greeting_contents div.greeting_content div.greeting_speech {
   margin: 0;
@@ -456,7 +457,11 @@ div.wrapper main div.greeting_contents div.greeting_content div.greeting_speech 
   margin-top: 10px;
 }
 div.wrapper main div.greeting_contents div.greeting_content img {
-  width: 520px;
+  max-width: 520px;
+  width: 25vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
 }
 div.wrapper main div.border {
   width: 80vw;
@@ -481,7 +486,7 @@ div.wrapper main div.border {
     margin-left: 0 !important;
   }
   .greeting_content img {
-    max-width: 80vw;
+    width: 80vw !important;
     height: auto;
   }
 }

@@ -85,10 +85,10 @@ $stores = [
         'image' => '/2025/images/stores/nazotokiaikoukai.png'
     ],
     [
-        'id' => 'gekijouhananobarebu',
+        'id' => 'gekijouhananobare-bu',
         'alt' => '激情　華のバレー部',
         'description' => '絶対に楽しむことができる縁日です。ほんとのお祭りに来た気分で楽しんでいってねー',
-        'image' => 'https://img.skin/400x300?text=%E6%BF%80%E6%83%85%E3%80%80%E8%8F%AF%E3%81%AE%E3%83%90%E3%83%AC%E3%83%BC%E9%83%A8&fmt=gif'
+        'image' => '/2025/images/stores/gekijouhananobare-bu.png'
     ],
     [
         'id' => 'nasusennassennburo-ka',

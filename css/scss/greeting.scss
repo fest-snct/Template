@@ -62,6 +62,7 @@ div.wrapper {
             }
             div.greeting_content {
                 display: flex;
+                align-items: flex-start;
 
                 div.greeting_speech {
                     margin: 0;
@@ -74,7 +75,10 @@ div.wrapper {
                     }
                 }
                 img {
-                    width: 520px;
+                    max-width: 520px;
+                    width: 25vw;
+                    object-fit: cover;
+                    aspect-ratio: 1 / 1;
                 }
             }
         }
@@ -103,7 +107,7 @@ div.wrapper {
             margin-left: 0 !important;
         }
         img {
-            max-width: 80vw;
+            width: 80vw !important;
             height: auto;
         }
     }
