@@ -92,7 +92,7 @@ foreach ($recent_event as $event_file) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>仙台高等専門学校広瀬キャンパス高専祭2025</title>
     <link rel="stylesheet" href="./css/home.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
-    <?php include '/2025/pages/includes/header-favicon.php'; ?>
+    <?php include './pages/includes/header-favicon.php'; ?>
     <script src="./js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
     <script src="./js/home_animation.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
 </head>
