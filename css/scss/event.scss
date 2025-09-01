@@ -4,7 +4,6 @@
 @use 'footer';
 
 html, body {
-    height: 100%;
     margin: 0;
 }
 
@@ -21,7 +20,6 @@ div.wrapper {
     min-height: calc(100% - (variables.$header-height * 2));
     display: flex;
     flex-direction: column;
-    margin-top: variables.$header-height;
 }
 
 main {

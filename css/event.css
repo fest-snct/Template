@@ -387,7 +387,6 @@ footer div.footer-content div.subtitles div.SNS {
 }
 
 html, body {
-  height: 100%;
   margin: 0;
 }
 
@@ -403,7 +402,6 @@ div.wrapper {
   min-height: calc(100% - 10rem);
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
 }
 
 main {
