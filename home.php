@@ -149,7 +149,7 @@ foreach ($recent_event as $event_file) {
                 <p>一日目：10月25日(土)　　9:30-16:00</p>
                 <p>二日目：10月26日(日)　　9:30-15:00</p>
             </div>
-            <p>※時間は変更になる可能性がありあます。</p>
+            <p>※時間は変更になる可能性があります。</p>
         </div>
         <div class="border"></div>
         <div class="main_menu">
