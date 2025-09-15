@@ -100,9 +100,7 @@ foreach ($recent_event as $event_file) {
     <header>
         <?php $currentPage = $_SERVER['SCRIPT_NAME']; // 現在のファイル名（例: /pages/stores.php）?>
         <div class="mini_logo">
-            <a href="./home.php">
-                <img src="./images/logo.png" />
-            </a>
+            <img src="./images/logo.png" />
         </div>
         <div class="index">
             <a class="title" href="./home.php">高専祭2025</a>
