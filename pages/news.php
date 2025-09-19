@@ -28,6 +28,17 @@ header("Content-Security-Policy:
             <p class="title">ニュース一覧</p>
             <div class="news_list">
                 <div class="news_item">
+                    <a href="./news/04.php">
+                        <div class="news_item_top">
+                            <img src="../images/icon_yoko.png" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.9.20</p>
+                        <p class="news_title"><a href="./news/04.php">しらはぎ号が今年も走る!</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
                     <a href="./news/03.php">
                         <div class="news_item_top">
                             <img src="../images/icon_yoko.png" alt="News Image">

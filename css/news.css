@@ -507,9 +507,93 @@ img.profile-image {
   width: 30vw;
 }
 
+/* --- しらはぎ号 時刻表スタイル --- */
+.news_content .timetable-wrapper {
+  margin-top: 2em;
+}
+
+.news_content .timetable-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px; /* テーブル間の隙間 */
+  margin-bottom: 2em;
+}
+
+.news_content .timetable-section {
+  flex: 1; /* スペースを均等に分ける */
+  min-width: 0;
+}
+
+.news_content .direction-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.7em;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+/* テーブルの共通スタイル */
+.news_content table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+.news_content th,
+.news_content td {
+  border: 1px solid #000;
+  padding: 12px 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.news_content th {
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5vw;
+}
+
+.sirahagi {
+  width: 20vw;
+}
+
+/* 注意事項 */
+.news_content .notes {
+  font-size: 0.9em;
+  line-height: 1.6;
+  border: 1px solid #ccc;
+  padding: 1em 1em 1em 1.5em;
+  border-radius: 4px;
+}
+
+.news_content .notes p {
+  margin: 0 0 0.5em 0;
+}
+
+.news_content .notes ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
 @media (max-width: 1025px) {
   img.profile-image {
     width: 50vw;
+  }
+  .news_content .timetable-container {
+    flex-direction: column; /* 横並びを解除して縦並びにする */
+    gap: 40px;
+  }
+  .flex-container {
+    flex-direction: column; /* 横並びを解除して縦並びにする */
+  }
+  .sirahagi {
+    width: 80vw;
   }
 }
 @media (max-width: 600px) {

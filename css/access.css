@@ -432,6 +432,7 @@ main div.content_main a.time {
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
+  margin-top: 1rem;
 }
 main div.content_main a.time:hover {
   color: #333;
@@ -459,4 +460,11 @@ main div.border {
   width: 80vw;
   margin-top: 2rem;
   border: 2px solid #333;
+}
+main div.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
