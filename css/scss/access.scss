@@ -49,6 +49,7 @@ main {
             text-decoration: none;
             border-radius: 5px;
             text-align: center;
+            margin-top: 1rem;
 
             &:hover {
                 color: variables.$text-color;
@@ -78,5 +79,12 @@ main {
         width: 80vw;
         margin-top: 2rem;
         border: 2px solid variables.$text-color;
+    }
+    div.center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
     }
 }

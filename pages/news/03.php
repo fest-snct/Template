@@ -15,7 +15,7 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025年度高専祭出店一覧を公開しました! | 高専祭2025</title>
+    <title>松本紀生さんが高専祭にやってくる! | 高専祭2025</title>
     <link rel="stylesheet" href="../../css/news.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <?php include '../includes/header-favicon.php'; ?>
     <script src="../../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
