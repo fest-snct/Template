@@ -44,18 +44,9 @@ header("Content-Security-Policy:
             <h3>シャトルバス</h3>
         </div>
         <div class="content_main">
-            <p>準備中です...</p>
+            <p>本校広瀬キャンパスとJR愛子駅を結ぶ無料シャトルバスを運行いたします。</p>
             <a class="time" href="./access/shuttle_bus.php">時刻表はこちら</a>
         </div>
-        <!--
-        <div class="content_title">
-            <h3>急行しらはぎ</h3>
-        </div>
-        <div class="content_main">
-            準備中です...
-        </div>
-        -->
-
     </main>
     <?php include_once './includes/footer.php'; ?>
 </body>
