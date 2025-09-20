@@ -87,4 +87,18 @@ main {
         text-align: center;
         width: 100%;
     }
+    img.shirahagi {
+        width: 50vw;
+        max-width: 30vw;
+    }
+}
+@media (max-width: variables.$breakpoint-tablet) {
+    img.shirahagi {
+        max-width: 80vw !important;
+    }
+}
+@media (max-width: variables.$breakpoint-phone) {
+    img.shirahagi {
+        width: 80vw !important;
+    }
 }
