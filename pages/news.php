@@ -34,7 +34,7 @@ header("Content-Security-Policy:
                         </div>
                     </a>
                     <div class="news_item_bottom">
-                        <p class="news_date">2025.9.20</p>
+                        <p class="news_date">2025.09.20</p>
                         <p class="news_title"><a href="./news/04.php">しらはぎ号が今年も走る!</a></p>
                     </div>
                 </div>
