@@ -46,7 +46,8 @@ main {
         border-radius: 5px;
         text-align: center;
         margin-top: 1rem;
-
+        align-content: center;
+        
         &:hover {
             color: variables.$text-color;
         }

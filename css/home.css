@@ -396,6 +396,7 @@ main .about {
   border-radius: 5px;
   text-align: center;
   margin-top: 1rem;
+  align-content: center;
 }
 main .about:hover {
   color: #333;
