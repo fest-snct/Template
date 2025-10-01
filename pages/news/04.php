@@ -27,7 +27,7 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">しらはぎ号が今年も走る!</p>
             <div class="news_content">
-                <p>今年度の高専祭でも、名取キャンパス後援会及び、広瀬キャンパス後援会のご支援により、名取-広瀬間を結ぶシャトルバス「急行しらはぎ号」を運行いたします。</p>
+                <p>今年度の高専祭でも、名取キャンパス後援会及び広瀬キャンパス後援会より運行費用のご支援を賜り、名取－広瀬間を結ぶシャトルバス「急行しらはぎ号」を運行いたします。</p>
                 <p>なお、10/25（土）、10/26（日）の両日運行いたします。</p>
 
                 <div class="flex-container">
