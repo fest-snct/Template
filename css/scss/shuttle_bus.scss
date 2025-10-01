@@ -53,6 +53,7 @@ main {
             min-width: 0; // flexアイテムの縮小に関する問題を回避
         }
         
+
         // --- 各パーツのスタイル ---
         .date-title { // 'data-title' から 'date-title' に修正
             font-size: 22px;
@@ -61,7 +62,7 @@ main {
             padding-bottom: 5px;
             border-bottom: 2px solid #333;
             text-align: center;
-        }
+        }//date-titleは現在使用されていない
 
         .direction-title {
             font-size: 18px;
