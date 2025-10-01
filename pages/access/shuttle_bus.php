@@ -27,53 +27,7 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">シャトルバス時刻表</p>
             <div class="content">
-                <h3 class="date-title">1日目</h3>
-
-                <div class="day-container">
-                <div class="timetable-section">
-                    <p class="direction-title">仙台高専広瀬 行</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>愛子駅</th>
-                                <th>仙台高専広瀬</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>9:00</td><td>9:05</td></tr>
-                            <tr><td>9:30</td><td>9:35</td></tr>
-                            <tr><td>10:00</td><td>10:05</td></tr>
-                            <tr><td>11:40</td><td>11:45</td></tr>
-                            <tr><td>12:35</td><td>12:40</td></tr>
-                            <tr><td>13:10</td><td>13:15</td></tr>
-                            <tr><td>13:45</td><td>13:50</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                </div>
-
-                <div class="timetable-section">
-                    <p class="direction-title">愛子駅 行</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>仙台高専広瀬</th>
-                                <th>愛子駅</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>12:05</td><td>12:10</td></tr>
-                            <tr><td>14:15</td><td>14:20</td></tr>
-                            <tr><td>15:05 <span>(★1日目のみ)</span></td><td>15:10</td></tr>
-                            <tr><td>16:10 <span>(★1日目のみ)</span></td><td>16:15</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-
-                <h3 class="date-title">2日目</h3>
-                
-                <div class="day-container"> 
+                <div class="day_container">
                 <div class="timetable-section">
                     <p class="direction-title">仙台高専広瀬 行</p>
                     <table>
@@ -86,7 +40,7 @@ header("Content-Security-Policy:
                         <tbody>
                             <tr><td>9:10 <span>(●2日目のみ)</span></td><td>9:15</td></tr>
                             <tr><td>9:45</td><td>9:50</td></tr>
-                            <tr><td>10:00</td><td>10:05</td></tr>
+                            <tr><td>10:35</td><td>10:40</td></tr>
                             <tr><td>11:25</td><td>11:30</td></tr>
                             <tr><td>12:10</td><td>12:15</td></tr>
                             <tr><td>12:55</td><td>13:00</td></tr>
@@ -94,8 +48,7 @@ header("Content-Security-Policy:
                         </tbody>
                     </table>
                 </div>
-                </div>
-    
+
                 <div class="timetable-section">
                     <p class="direction-title">愛子駅 行</p>
                     <table>
@@ -107,9 +60,15 @@ header("Content-Security-Policy:
                         </thead>
                         <tbody>
                             <tr><td>12:40</td><td>12:45</td></tr>
+                            <tr><td>13:15</td><td>13:20</td></tr>
+                            <tr><td>13:50</td><td>13:55</td></tr>
                             <tr><td>14:35</td><td>14:40</td></tr>
+                            <tr><td>15:10</td><td>15:15</td></tr>
+                            <tr><td>15:35 <span>(★1日目のみ)</span></td><td>15:40</td></tr>
+                            <tr><td>16:10 <span>(★1日目のみ)</span></td><td>16:15</td></tr>
                         </tbody>
                     </table>
+                </div>
                 </div>
             </div>
         </main>
