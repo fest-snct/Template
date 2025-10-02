@@ -31,48 +31,202 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">シャトルバス時刻表</p>
             <div class="content">
-                <div class="day_container">
-                <div class="timetable-section">
-                    <p class="direction-title">仙台高専広瀬 行</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>愛子駅</th>
-                                <th>仙台高専広瀬</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>9:10 <span>(●2日目のみ)</span></td><td>9:15</td></tr>
-                            <tr><td>9:45</td><td>9:50</td></tr>
-                            <tr><td>10:35</td><td>10:40</td></tr>
-                            <tr><td>11:25</td><td>11:30</td></tr>
-                            <tr><td>12:10</td><td>12:15</td></tr>
-                            <tr><td>12:55</td><td>13:00</td></tr>
-                            <tr><td>13:30</td><td>13:35</td></tr>
-                        </tbody>
-                    </table>
+                <div class="tables_flex">
+                    <div class="tables_con">
+                        <table class="main_table"><tbody>
+                        <tr>
+                            <th colspan=7 class="thead">仙台高専広瀬<span class="tbl_small">行</span></th>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">8</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr class="tr_stripe">
+                            <td class="td_hour">9</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"><span class="mark2">10</span></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center">45</td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">10</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center">35</td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr class="tr_stripe">
+                            <td class="td_hour">11</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center">25</td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">12</td>
+                            <td class="td_left"></td>
+                            <td class="td_center">10</td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right">55</td>
+                        </tr>
+                            <tr class="tr_stripe">
+                            <td class="td_hour">13</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center">30</td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">14</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                            <tr class="tr_stripe">
+                            <td class="td_hour">15</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">16</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr class="tr_stripe">
+                            <td class="td_hour">17</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                    </tbody></table>
+                    <div>凡例）<span class="mark_sample2">10</span>：２日目のみの運行</div>
                 </div>
-
-                <div class="timetable-section">
-                    <p class="direction-title">愛子駅 行</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>仙台高専広瀬</th>
-                                <th>愛子駅</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>12:40</td><td>12:45</td></tr>
-                            <tr><td>13:15</td><td>13:20</td></tr>
-                            <tr><td>13:50</td><td>13:55</td></tr>
-                            <tr><td>14:35</td><td>14:40</td></tr>
-                            <tr><td>15:10</td><td>15:15</td></tr>
-                            <tr><td>15:35 <span>(★1日目のみ)</span></td><td>15:40</td></tr>
-                            <tr><td>16:10 <span>(★1日目のみ)</span></td><td>16:15</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="tables_con">
+                    <table class="main_table"><tbody>
+                        <tr>
+                        <th colspan=7 class="thead">愛子駅南口<span class="tbl_small">行</span></th>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">8</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr class="tr_stripe">
+                            <td class="td_hour">9</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">10</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr class="tr_stripe">
+                            <td class="td_hour">11</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">12</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center">40</td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr class="tr_stripe">
+                            <td class="td_hour">13</td>
+                            <td class="td_left"></td>
+                            <td class="td_center">15</td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right">50</td>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">14</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center">35</td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr class="tr_stripe">
+                            <td class="td_hour">15</td>
+                            <td class="td_left"></td>
+                            <td class="td_center">10</td>
+                            <td class="td_center"></td>
+                            <td class="td_center"><span class="mark">35</span></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_hour">16</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"><span class="mark">10</span></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                        <tr class="tr_stripe">
+                            <td class="td_hour">17</td>
+                            <td class="td_left"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_center"></td>
+                            <td class="td_right"></td>
+                        </tr>
+                    </tbody></table>
+                    <div>凡例）<span class="mark_sample">35</span>：１日目のみの運行</div>
                 </div>
             </div>
         </main>
