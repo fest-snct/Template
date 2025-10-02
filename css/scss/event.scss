@@ -52,6 +52,7 @@ main {
     div.events {
         display: flex;
         margin-left: 3rem;
+        flex-direction: column;
     }
     p.event-title {
         width: 100%;
