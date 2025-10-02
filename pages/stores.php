@@ -51,7 +51,7 @@ include './includes/stores_array.php';
                         企画名
                     </div>
                 </div>
-                <img src="/2025/images/store_modal_placeholder.png" id="modal_img" alt="企画名" /><br>
+                <img src="/2025/images/store_modal_placeholder.webp" id="modal_img" alt="企画名" /><br>
                 <div id="modal_place">
                     場所
                 </div>

@@ -31,7 +31,7 @@ header("Content-Security-Policy:
                 <p>未就学児も入場可ですが、他のお客様のご迷惑にならないようにお願い致します。</p>
                 <div class="profile">
                     <p>写真家 松本紀生氏</p>
-                    <img src="../../images/event/guest.jpg" alt="Profile Image" class="profile-image">
+                    <img src="../../images/event/guest.webp" alt="Profile Image" class="profile-image">
                     <p>１９７２年愛媛県松山市生まれ。アラスカ大学卒業。自然写真家。</p>
                     <p>１年の約半分をアラスカで過ごし、単独で動物やオーロラを撮影。</p>
                     <p>近年は気候変動に関する取材も行っている。</p>

@@ -15,7 +15,7 @@ if (empty($path_to_root)) {
 <header>
     <?php $currentPage = $_SERVER['SCRIPT_NAME']; // 現在のファイル名（例: /pages/stores.php）?>
     <div class="mini_logo">
-        <img src="<?= $path_to_root ?>images/logo.png" />
+        <img src="<?= $path_to_root ?>images/logo.webp" />
     </div>
     <div class="index">
         <a class="title" href="<?= $path_to_root ?>home.php">高専祭2025</a>
@@ -31,7 +31,7 @@ if (empty($path_to_root)) {
         </div>
     </div>
     <div class="menu">
-        <img src="<?= $path_to_root ?>images/menu.png" alt="Menu Icon" />
+        <img src="<?= $path_to_root ?>images/menu.webp" alt="Menu Icon" />
     </div>
     <?php include __DIR__ . '/hamburgermenu.php' ; ?>
 </header>

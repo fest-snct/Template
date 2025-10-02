@@ -29,7 +29,7 @@ header("Content-Security-Policy:
             <div class="news_content">
                 <p>今年の高専祭では、アラスカ写真家の松本紀生さんにお越しいただきます！</p>
                 <p>フォトライブなど様々な企画を予定しています。ぜひお越しください！</p>
-                <img src="../../images/event/guest.jpg" alt="Profile Image" class="profile-image">
+                <img src="../../images/event/guest.webp" alt="Profile Image" class="profile-image">
             </div>
 
             <a href="../event/guest.php">詳しくはこちら<a>

@@ -100,7 +100,7 @@ foreach ($recent_event as $event_file) {
     <header>
         <?php $currentPage = $_SERVER['SCRIPT_NAME']; // 現在のファイル名（例: /pages/stores.php）?>
         <div class="mini_logo">
-            <img src="./images/logo.png" />
+            <img src="./images/logo.webp" />
         </div>
         <div class="index">
             <a class="title" href="./home.php">高専祭2025</a>
@@ -116,7 +116,7 @@ foreach ($recent_event as $event_file) {
             </div>
         </div>
         <div class="menu">
-            <img src="./images/menu.png" alt="Menu Icon" />
+            <img src="./images/menu.webp" alt="Menu Icon" />
         </div>
         <nav id="hamburger-menu" class="hamburger-menu">
             <!-- アニメーション部分 -->
@@ -140,7 +140,7 @@ foreach ($recent_event as $event_file) {
     </header>
     <main>
         <div class="main_logo">
-            <img src="./images/hp_icon.png" alt="Main Image" />
+            <img src="./images/hp_icon.webp" alt="Main Image" />
         </div>
         <div class="border"></div>
         <div class="main_menu">
