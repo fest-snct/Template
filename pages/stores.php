@@ -41,6 +41,7 @@ include './includes/stores_array.php';
                 </figure>
             <?php endforeach; ?>
         </div>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AdCwR54ykDFWf2BbVvn-gIcMFPRBe6w&ehbc=2E312F&noprof=1" width="640" height="480" class="googlemymap"></iframe>
         <div class="border"></div>
         <p class="b_title">教職員の出店</p>
         <div class="b_container">
