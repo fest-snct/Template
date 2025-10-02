@@ -30,7 +30,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/04.php">
                         <div class="news_item_top">
-                            <img src="../images/icon_yoko.webp" alt="News Image">
+                            <img src="../images/sirahagi.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">
@@ -41,7 +41,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/03.php">
                         <div class="news_item_top">
-                            <img src="../images/icon_yoko.webp" alt="News Image">
+                            <img src="../images/event/poster.webp" alt="News Image" class="object-position-bottom">
                         </div>
                     </a>
                     <div class="news_item_bottom">
