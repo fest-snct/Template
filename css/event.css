@@ -434,6 +434,7 @@ main div.border {
 main div.events {
   display: flex;
   margin-left: 3rem;
+  flex-direction: column;
 }
 main p.event-title {
   width: 100%;

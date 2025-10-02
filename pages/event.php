@@ -30,7 +30,7 @@ header("Content-Security-Policy:
     <div class="wrapper">
         <main>
             <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
-            <p class="title">イベント企画</p>
+            <p class="title">メインイベント</p>
             <div class="events">
                 <div class="event">
                     <p class="event-title">松本紀生さん特別企画</p>
@@ -40,11 +40,54 @@ header("Content-Security-Policy:
                         <a href="./event/guest.php" class="detail">詳細はこちら</a>
                     </div>
                 </div>
+                <div class="event">
+                    <p class="event-title">ゲーム大会</p>
+                    <div class="description">
+                        <p>会場：第一体育館</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">カラオケ</p>
+                    <div class="description">
+                        <p>会場：屋外ステージ</p>
+                        <p>雨天時：第一体育館</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">コスプレ大会</p>
+                    <div class="description">
+                        <p>会場：屋外ステージ</p>
+                        <p>雨天時：第一体育館</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">カードゲーム大会</p>
+                    <div class="description">
+                        <p>会場：AL-B</p>
+                    </div>
+                </div>
             </div>
             <div class="border"></div>
             <p class="title">ミニイベント</p>
             <div class="events">
-                <p>準備中です。</p>
+                <div class="event">
+                    <p class="event-title">高専クイズ</p>
+                    <div class="description">
+                        <p>会場：受付</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">気配切り</p>
+                    <div class="description">
+                        <p>会場：グラウンド</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">スタンプラリー</p>
+                    <div class="description">
+                        <p>会場：受付</p>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
