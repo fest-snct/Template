@@ -95,7 +95,7 @@ header("Content-Security-Policy:
                     </div>
                 </div>
                 <div>
-                    <img src="../../images/sirahagi.png" alt="しらはぎ号" class="sirahagi">
+                    <img src="../../images/sirahagi.webp" alt="しらはぎ号" class="sirahagi">
                 </div>
                 </div>
             </div>

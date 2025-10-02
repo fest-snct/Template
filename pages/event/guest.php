@@ -30,7 +30,7 @@ header("Content-Security-Policy:
                 <p>入場料は無料です。</p>
                 <p>未就学児も入場可ですが、他のお客様のご迷惑にならないようにお願い致します。</p>
                 <div>
-                    <img src="../../images/event/poster.jpg" alt="Event Poster" class="poster-image">
+                    <img src="../../images/event/poster.webp" alt="Event Poster" class="poster-image">
                 </div>
                 <div class="profile">
                     <p>写真家 松本紀生氏</p>

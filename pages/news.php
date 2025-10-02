@@ -30,7 +30,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/04.php">
                         <div class="news_item_top">
-                            <img src="../images/icon_yoko.png" alt="News Image">
+                            <img src="../images/icon_yoko.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">
@@ -41,7 +41,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/03.php">
                         <div class="news_item_top">
-                            <img src="../images/icon_yoko.png" alt="News Image">
+                            <img src="../images/icon_yoko.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">
@@ -52,7 +52,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/02.php">
                         <div class="news_item_top">
-                            <img src="../images/icon_yoko.png" alt="News Image">
+                            <img src="../images/icon_yoko.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">
@@ -63,7 +63,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/01.php">
                         <div class="news_item_top">
-                            <img src="../images/icon_yoko.png" alt="News Image">
+                            <img src="../images/icon_yoko.webp" alt="News Image">
                         </div>
                     <a>
                     <div class="news_item_bottom">

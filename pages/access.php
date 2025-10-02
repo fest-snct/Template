@@ -52,7 +52,7 @@ header("Content-Security-Policy:
             <h3>急行しらはぎ号</h3>
         </div>
         <div class="content_main center">
-            <img class="shirahagi" src="../images/sirahagi.png" alt="急行しらはぎ号">
+            <img class="shirahagi" src="../images/sirahagi.webp" alt="急行しらはぎ号">
             <a class="time" href="./news/04.php">詳しくはこちら</a>
         </div>
     </main>
