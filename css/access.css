@@ -40,7 +40,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: #e0f7ff;
   z-index: 900;
   overflow: visible;
@@ -467,4 +467,19 @@ main div.center {
   justify-content: center;
   text-align: center;
   width: 100%;
+}
+main img.shirahagi {
+  width: 50vw;
+  max-width: 30vw;
+}
+
+@media (max-width: 1025px) {
+  img.shirahagi {
+    max-width: 80vw !important;
+  }
+}
+@media (max-width: 600px) {
+  img.shirahagi {
+    width: 80vw !important;
+  }
 }

@@ -7,10 +7,10 @@ $stores = [
         'image' => '/2025/images/stores/shashinnbu.webp'
     ],
     [
-        'id' => 'toshoiinkai',
+        'id' => 'gakuseitoshoiinkai',
         'alt' => '学生図書委員会',
         'description' => '本図書室で不要となった蔵書のほか、地域の方々や仙台市広瀬図書館様が寄贈してくださった本の無償譲渡を行います。',
-        'image' => '/2025/images/stores/toshoiinkai.webp'
+        'image' => '/2025/images/stores/gakuseitoshoiinkai.webp'
     ],
     [
         'id' => 'suurikagakuaikoukai',
@@ -56,7 +56,7 @@ $stores = [
     ],
     [
         'id' => 'daiettoasukaraya',
-        'alt' => '瘦せるの明日から屋',
+        'alt' => 'ダイエット明日から屋',
         'description' => '歩き回って疲れた時は、アツアツたい焼き、香ばしくて大容量のポップコーン、そして冷たいドリンクで一休み！美味しさ満点でエネルギーチャージ！ぜひお立ち寄りください！',
         'image' => '/2025/images/stores/daiettoasukaraya.webp'
     ],
@@ -122,7 +122,7 @@ $stores = [
     ],
     [
         'id' => 'yakipotesarakaihatuiinnkai',
-        'alt' => 'ポテサラ焼開発委員会',
+        'alt' => '焼ポテサラ開発委員会',
         'description' => '『焼きポテサラ』ポテトサラダを鉄板でジュワッと焼き上げた香ばしい逸品。外カリッ、中ホクホクの芋のうま味をたっぷり詰め込んだ一味違うポテサラはいかが？5種のトッピングも併せてご賞味あれ。カルメ焼きもあｒ',
         'image' => '/2025/images/stores/yakipotesarakaihatuiinnkai.webp'
     ],

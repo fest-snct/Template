@@ -20,7 +20,7 @@ include './includes/stores_array.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>出店一覧 | 高専祭2025</title>
     <link rel="stylesheet" href="../css/stores.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
-    <?php include '/2025/pages/includes/header-favicon.php'; ?>
+    <?php include './includes/header-favicon.php'; ?>
     <script src="../js/stores.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8'); ?>" defer></script>
     <script src="../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8'); ?>" defer></script>
 </head>
@@ -36,6 +36,23 @@ include './includes/stores_array.php';
                     <img src="<?= htmlspecialchars($store['image'], ENT_QUOTES, 'UTF-8') ?>" class="s_pic" alt="<?= htmlspecialchars($store['alt'], ENT_QUOTES, 'UTF-8') ?>" />
                 </figure>
             <?php endforeach; ?>
+        </div>
+        <div class="border"></div>
+        <p class="b_title">教職員の出店</p>
+        <div class="b_container">
+            <p class="b_name">たのしい？理科実験・体験教室</p>
+            <div class="b_info">出店場所：3-103</div>
+            <p class="b_name">卒業生との交流会</p>
+            <div class="b_info">出店場所：11-301</div>
+            <div class="b_info">※10月25日土曜のみ</div>
+            <p class="b_name">ホームカミングルーム</p>
+            <div class="b_info">出店場所：2-201</div>
+            <p class="b_name">入試相談ブース</p>
+            <div class="b_info">出店場所：2-202</div>
+            <p class="b_name">後援会バザー</p>
+            <div class="b_info">出店場所：ピロティ</div>
+            <p class="b_name">図書館</p>
+            <div class="b_info">出店場所：図書館</div>
         </div>
     </main>
     <div id="modal" class="nodisp">

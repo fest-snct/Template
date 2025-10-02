@@ -40,7 +40,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: #e0f7ff;
   z-index: 900;
   overflow: visible;
@@ -387,7 +387,6 @@ footer div.footer-content div.subtitles div.SNS {
 }
 
 html, body {
-  height: 100%;
   margin: 0;
 }
 
@@ -403,7 +402,6 @@ div.wrapper {
   min-height: calc(100% - 10rem);
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
 }
 
 main {
@@ -453,7 +451,7 @@ main div.description p, main div.description a {
   text-align: left;
   margin-bottom: 10px;
 }
-main img.profile-image {
+main img.poster-image {
   width: 30vw;
 }
 main a {
@@ -465,12 +463,12 @@ main a:hover {
 }
 
 @media (max-width: 600px) {
-  img.profile-image {
+  img.poster-image {
     width: 80vw !important;
   }
 }
 @media (max-width: 1025px) {
-  img.profile-image {
+  img.poster-image {
     width: 50vw !important;
   }
 }

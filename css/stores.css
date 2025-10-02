@@ -40,7 +40,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: #e0f7ff;
   z-index: 900;
   overflow: visible;
@@ -432,6 +432,38 @@ body main div#s_container figure.s_items img.s_pic {
   height: auto;
   width: 100%;
   max-width: min(35vw, 320px);
+}
+body main div.border {
+  width: 80vw;
+  margin-top: 2rem;
+  border: 2px solid #333;
+}
+body main p.b_title {
+  width: 100%;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  margin: 0;
+  margin-top: 2rem;
+  margin-bottom: 0px;
+  border-left: 4px solid #0077ff;
+}
+body main div.b_container {
+  margin-left: 1rem;
+  text-align: left;
+  margin-top: 0px;
+}
+body main div.b_container p.b_name {
+  font-weight: bold;
+  font-weight: 700 !important;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+}
+body main div.b_container div.b_info {
+  margin-left: 1rem;
+  margin-bottom: 0.25rem;
 }
 body div#modal {
   position: fixed;

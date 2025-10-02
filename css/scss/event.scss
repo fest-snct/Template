@@ -4,7 +4,6 @@
 @use 'footer';
 
 html, body {
-    height: 100%;
     margin: 0;
 }
 
@@ -21,7 +20,6 @@ div.wrapper {
     min-height: calc(100% - (variables.$header-height * 2));
     display: flex;
     flex-direction: column;
-    margin-top: variables.$header-height;
 }
 
 main {
@@ -71,7 +69,7 @@ main {
             margin-bottom: 10px;
         }
     }
-    img.profile-image {
+    img.poster-image {
         width: 30vw;
     }
     a {
@@ -84,12 +82,12 @@ main {
 }
 
 @media (max-width: variables.$breakpoint-phone) {
-    img.profile-image {
+    img.poster-image {
         width: 80vw !important;
     }
 }
 @media (max-width: variables.$breakpoint-tablet) {
-    img.profile-image {
+    img.poster-image {
         width: 50vw !important;
     }
 }

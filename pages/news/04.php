@@ -17,7 +17,7 @@ header("Content-Security-Policy:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>しらはぎ号が今年も走る! | 高専祭2025</title>
     <link rel="stylesheet" href="../../css/news.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
-    <?php include '/2025/pages/includes/header-favicon.php'; ?>
+    <?php include '../includes/header-favicon.php'; ?>
     <script src="../../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
 <body>
@@ -27,8 +27,8 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">しらはぎ号が今年も走る!</p>
             <div class="news_content">
-                <p>今年度の高専祭でも、名取キャンパス後援会及び、広瀬キャンパス後援会のご支援により、名取-広瀬間を結ぶ急行シャトルバス「しらはぎ」を運行いたします。</p>
-                <p>なお、10/25（土）、10/26（日）両日運行いたします。</p>
+                <p>今年度の高専祭でも、名取キャンパス後援会及び広瀬キャンパス後援会より運行費用のご支援を賜り、名取－広瀬間を結ぶシャトルバス「急行しらはぎ号」を運行いたします。</p>
+                <p>なお、10/25（土）、10/26（日）の両日運行いたします。</p>
 
                 <div class="flex-container">
                 <div class="timetable-wrapper">

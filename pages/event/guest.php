@@ -16,7 +16,7 @@ header("Content-Security-Policy:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>松本紀生オーロラフォトライブ | 高専祭2025</title>
     <link rel="stylesheet" href="../../css/event.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
-    <?php include '/2025/pages/includes/header-favicon.php'; ?>
+    <?php include '../includes/header-favicon.php'; ?>
     <script src="../../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
 </head>
 <body>
@@ -29,13 +29,15 @@ header("Content-Security-Policy:
                 <p>会場：仙台高専第一体育館</p>
                 <p>入場料は無料です。</p>
                 <p>未就学児も入場可ですが、他のお客様のご迷惑にならないようにお願い致します。</p>
+                <div>
+                    <img src="../../images/event/poster.webp" alt="Event Poster" class="poster-image">
+                </div>
                 <div class="profile">
                     <p>写真家 松本紀生氏</p>
-                    <img src="../../images/event/guest.webp" alt="Profile Image" class="profile-image">
                     <p>１９７２年愛媛県松山市生まれ。アラスカ大学卒業。自然写真家。</p>
                     <p>１年の約半分をアラスカで過ごし、単独で動物やオーロラを撮影。</p>
                     <p>近年は気候変動に関する取材も行っている。</p>
-                    <p>その活動はＴＢＳ「情熱大陸」、今年４月２５日のＮＨＫ ＢＳスペシャル「アラスカ・大自然の話をしよう」、アメリカ「National Geographic Channel」などのテレビ番組のほか、中学道徳２０１９－）や高等学校の英語の教科書（２０１９－）でも紹介される。</p>
+                    <p>その活動はＴＢＳ「情熱大陸」、今年４月２５日のＮＨＫ ＢＳスペシャル「極限の世界の光」、アメリカ「National Geographic Channel」などのテレビ番組のほか、中学道徳（２０１９－）や高等学校の英語の教科書（２０１９－）でも紹介される。</p>
                     <p>日本滞在中はスライドショー「アラスカフォトライブ」で全国の学校、企業、団体を講演してまわる。</p>
                     <a href="https://www.matsumotonorio.com/">オフィシャルサイト</a>
                 </div>

@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: #e0f7ff;
   z-index: 900;
   overflow: visible;
@@ -396,6 +396,7 @@ main .about {
   border-radius: 5px;
   text-align: center;
   margin-top: 1rem;
+  align-content: center;
 }
 main .about:hover {
   color: #333;

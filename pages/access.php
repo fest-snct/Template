@@ -17,7 +17,7 @@ header("Content-Security-Policy:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アクセス | 高専祭2025</title>
     <link rel="stylesheet" href="../css/access.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
-    <?php include '/2025/pages/includes/header-favicon.php'; ?>
+    <?php include './includes/header-favicon.php'; ?>
     <script src="../js/access.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
     <script src="../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
@@ -52,7 +52,7 @@ header("Content-Security-Policy:
             <h3>急行しらはぎ号</h3>
         </div>
         <div class="content_main center">
-            <img src="../images/sirahagi.webp" alt="急行しらはぎ号">
+            <img class="shirahagi" src="../images/sirahagi.webp" alt="急行しらはぎ号">
             <a class="time" href="./news/04.php">詳しくはこちら</a>
         </div>
     </main>

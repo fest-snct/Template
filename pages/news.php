@@ -17,7 +17,7 @@ header("Content-Security-Policy:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ニュース | 高専祭2025</title>
     <link rel="stylesheet" href="../css/news.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
-    <?php include '/2025/pages/includes/header-favicon.php'; ?>
+    <?php include './includes/header-favicon.php'; ?>
     <script src="../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
 <body>
@@ -34,7 +34,7 @@ header("Content-Security-Policy:
                         </div>
                     </a>
                     <div class="news_item_bottom">
-                        <p class="news_date">2025.9.20</p>
+                        <p class="news_date">2025.09.20</p>
                         <p class="news_title"><a href="./news/04.php">しらはぎ号が今年も走る!</a></p>
                     </div>
                 </div>
