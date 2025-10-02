@@ -2,7 +2,7 @@
 $stores = [
     [
         'id' => 'shashinnbu',
-        'alt' => '写真部 場所: 8-204',
+        'alt' => '写真部 場所: 8-204教室',
         'description' => '写真部では部員が撮影した写真の展示をしたり、オリジナルグッズの販売を行っています。また、フォトスポットも設営しています。お気軽に寄ってみてください！お待ちしています！',
         'image' => '/2025/images/stores/shashinnbu.webp'
     ],
@@ -14,7 +14,7 @@ $stores = [
     ],
     [
         'id' => 'suurikagakuaikoukai',
-        'alt' => '数理科学愛好会 場所: 8-206',
+        'alt' => '数理科学愛好会 場所: 8-206教室',
         'description' => '私たち数理科学愛好会では、皆さんに科学への興味を持ってもらえるよう様々な現象の実演や展示をします。ぜひ気軽にお越しください。',
         'image' => '/2025/images/stores/suurikagakuaikoukai.webp'
     ],
@@ -26,31 +26,31 @@ $stores = [
     ],
     [
         'id' => 'puroguraminngubu',
-        'alt' => 'プログラミング部 場所: 松韻会館2階　第一共用室',
+        'alt' => 'プログラミング部 場所: 松韻会館2階',
         'description' => 'プログラミング部では、おなじみの弾幕ゲームや過去のプログラミングコンテスト出場作品などを展示しています。また、入力したテキストで学習するLLMも設置中です。どんなAIになるかは皆さん次第！',
         'image' => '/2025/images/stores/puroguraminngubu.webp'
     ],
     [
         'id' => 'kagakubu',
-        'alt' => '科学部 場所: 第二体育館',
+        'alt' => '科学部 場所: 第2体育館',
         'description' => '科学部は毎年、高専ロボコンに参加しています。高専祭では、ロボットの展示、ロボットの操縦体験、ロボコンの競技説明を行い、科学部の活動やロボコンについて紹介します。',
         'image' => '/2025/images/stores/kagakubu.webp'
     ],
     [
         'id' => 'kousenjoshipurojekuto',
-        'alt' => '高専女子プロジェクト 場所: 8-306',
+        'alt' => '高専女子プロジェクト 場所: 8-306教室',
         'description' => '高専女子プロジェクトでは、映えるエモいドリンクを販売します！また、フォトスポットや、活動内容を知っていただける展示もご用意しておりますので、ぜひお越しください！',
         'image' => '/2025/images/stores/kousenjoshipurojekuto.webp'
     ],
     [
         'id' => 'sakadoubu',
-        'alt' => '茶華道部 場所: 松陰会館2階　第二共用室',
+        'alt' => '茶華道部 場所: 松陰会館2階',
         'description' => '無料でお茶と和菓子をおもてなしいたします。華道の展示会も行っているのでぜひ足を運んでくれると嬉しいです。',
         'image' => '/2025/images/stores/sakadoubu.webp'
     ],
     [
         'id' => 'zaiseria',
-        'alt' => 'ザイセリア 場所: 8-302',
+        'alt' => 'ザイセリア 場所: 8-302教室',
         'description' => '1年3組の個性豊かな仲間たちがコスプレをして提供します！　???「やっぱ高専祭といえばコスプレですよねー。え行かない?世間は許してくｒえゃすぇんよ」',
         'image' => '/2025/images/stores/zaiseria.webp'
     ],
@@ -62,7 +62,7 @@ $stores = [
     ],
     [
         'id' => 'kissaten.pdf',
-        'alt' => '喫茶店.pdf 場所: 8号棟1階　休憩スペース',
+        'alt' => '喫茶店.pdf 場所: 8号棟1階',
         'description' => '三種のパンケーキにほろにがコーヒーゼリーと爽やかレモンティーをご用意！ぜひお立ち寄りください！',
         'image' => '/2025/images/stores/kissaten.pdf.webp'
     ],
@@ -80,7 +80,7 @@ $stores = [
     ],
     [
         'id' => 'nazotokiaikoukai',
-        'alt' => '謎解き愛好会 場所: 8-202',
+        'alt' => '謎解き愛好会 場所: 8-202教室',
         'description' => '体験型謎解きイベント『一生脱出できない運命からの脱出～開運！脱出みくじ～』を開催！第4回リアル脱出ゲーム甲子園本選出場作品の再演です！脱出の運勢を掴み取れ！',
         'image' => '/2025/images/stores/nazotokiaikoukai.webp'
     ],
@@ -98,7 +98,7 @@ $stores = [
     ],
     [
         'id' => 'monodukurikennkyuukai',
-        'alt' => 'ものづくり研究会 場所: 第二体育館',
+        'alt' => 'ものづくり研究会 場所: 第2体育館',
         'description' => '【高専生の技術集めました】 プログラミング？電子回路？モデリング？ もちろん全部あります！3Dプリンター製のキーホルダーや光る基板ストラップ、左手デバイスまでも販売中…!? 是非お越しください！',
         'image' => '/2025/images/stores/monodukurikennkyuukai.webp'
     ],
@@ -110,13 +110,13 @@ $stores = [
     ],
     [
         'id' => 'amatyuamusennbu',
-        'alt' => 'アマチュア無線部 場所: 8-208',
+        'alt' => 'アマチュア無線部 場所: 8-208教室',
         'description' => '無線に関する機材や展示などをしています！体験コーナーもあるので無線について気になっている方はぜひ見に来てネ',
         'image' => '/2025/images/stores/amatyuamusennbu.webp'
     ],
     [
         'id' => 'kuragefakutori-',
-        'alt' => 'クラゲファクトリー 場所: 8-308',
+        'alt' => 'クラゲファクトリー 場所: 8-308教室',
         'description' => 'クラゲファクトリーでは、ハンドクリーム・バスボム・クラゲのキーホルダーを自分好みに手作りできます。世界にひとつだけの作品を作ってみよう！',
         'image' => '/2025/images/stores/kuragefakutori-.webp'
     ],
@@ -134,13 +134,13 @@ $stores = [
     ],
     [
         'id' => 'dosyudoudagashihannbaiki',
-        'alt' => 'ド手動駄菓子販売機 場所: 8-205',
+        'alt' => 'ド手動駄菓子販売機 場所: 8-205教室',
         'description' => '駄菓子屋と休憩スペースで一息ついていってください❤️ゲーム機設置予定(スマブラ、マリカ、マリパetc…)長居も大歓迎ですヾ(:3ﾉｼヾ)ﾉｼ',
         'image' => '/2025/images/stores/dosyudoudagashihannbaiki.webp'
     ],
     [
         'id' => 'IS4yuushi',
-        'alt' => 'IS4有志 場所: 8-304',
+        'alt' => 'IS4有志 場所: 8-304教室',
         'description' => 'いつもは味わえない非日常のスリルを体験してみませんか？景品を求め、様々なゲームに挑戦しよう！楽しいカジノの世界へようこそ...',
         'image' => '/2025/images/stores/IS4yuushi.webp'
     ],
