@@ -1,4 +1,8 @@
 <?php
+// OGP settings
+$ogp_title = 'シャトルバス時刻表 | 高専祭2025';
+$ogp_description = '高専祭2025で運行する、本校広瀬キャンパスとJR愛子駅を結ぶ無料シャトルバスの時刻表です。';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;

@@ -1,4 +1,8 @@
 <?php
+// OGP settings
+$ogp_title = 'ニュース | 高専祭2025';
+$ogp_description = '高専祭2025の最新ニュース一覧。';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;

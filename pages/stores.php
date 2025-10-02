@@ -1,4 +1,8 @@
 <?php
+// OGP settings
+$ogp_title = '出店一覧 | 高専祭2025';
+$ogp_description = '高専祭2025の出店一覧です。各クラスや部活動、教職員による出店情報を確認できます。';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 header("Content-Security-Policy:

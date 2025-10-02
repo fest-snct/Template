@@ -1,4 +1,11 @@
 <?php
+// OGP settings
+$ogp_title = '仙台高等専門学校広瀬キャンパス高専祭2025';
+$ogp_description = '仙台高専広瀬キャンパスで2025年に開催される高専祭の公式ウェブサイトです。開催日時、ニュース、イベント情報、出店一覧などを確認できます。';
+// $ogp_type is 'website' by default
+// $ogp_url is set automatically
+// $ogp_image is set automatically to the default
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 header("Content-Security-Policy:

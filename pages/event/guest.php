@@ -1,4 +1,10 @@
 <?php
+// OGP settings
+$ogp_title = '松本紀生オーロラフォトライブ | 高専祭2025';
+$ogp_description = '写真家 松本紀生氏によるオーロラフォトライブを高専祭にて開催します。日時：10月26日(日) 13:00開場 13:30開演 会場：仙台高専第一体育館';
+$ogp_type = 'article';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/poster.webp';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 header("Content-Security-Policy:
