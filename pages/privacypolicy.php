@@ -1,4 +1,8 @@
 <?php
+// OGP settings
+$ogp_title = 'プライバシーポリシー | 高専祭2025';
+$ogp_description = '高専祭2025のプライバシーポリシーです。';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 header("Content-Security-Policy:

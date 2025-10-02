@@ -57,7 +57,7 @@ div.wrapper {
 
                 .news_item_top {
                     width: 100%;
-                    height: auto;
+                    height: 200px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -65,6 +65,7 @@ div.wrapper {
                     font-size: 1.5rem;
                     color: #666;
                     border-bottom: 1px solid #eee; /* Separator */
+                    overflow: hidden;
                     img {
                         vertical-align:top;
                         width: 100%;
@@ -219,3 +220,6 @@ img.profile-image {
         width: 80vw;
     }
 }
+.object-position-bottom {
+    object-position: bottom !important;
+}    

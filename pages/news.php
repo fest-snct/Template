@@ -1,4 +1,8 @@
 <?php
+// OGP settings
+$ogp_title = 'ニュース | 高専祭2025';
+$ogp_description = '高専祭2025の最新ニュース一覧。';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;
@@ -30,7 +34,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/04.php">
                         <div class="news_item_top">
-                            <img src="../images/icon_yoko.webp" alt="News Image">
+                            <img src="../images/sirahagi.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">
@@ -41,7 +45,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/03.php">
                         <div class="news_item_top">
-                            <img src="../images/icon_yoko.webp" alt="News Image">
+                            <img src="../images/event/poster.webp" alt="News Image" class="object-position-bottom">
                         </div>
                     </a>
                     <div class="news_item_bottom">

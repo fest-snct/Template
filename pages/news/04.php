@@ -1,4 +1,10 @@
 <?php
+// OGP settings
+$ogp_title = 'しらはぎ号が今年も走る! | 高専祭2025';
+$ogp_description = '今年度の高専祭でも、名取キャンパス後援会及び広瀬キャンパス後援会より運行費用のご支援を賜り、名取－広瀬間を結ぶシャトルバス「急行しらはぎ号」を運行いたします。';
+$ogp_type = 'article';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/sirahagi.webp';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;

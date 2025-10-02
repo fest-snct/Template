@@ -1,4 +1,9 @@
 <?php
+// OGP settings
+$ogp_title = 'イベント企画 | 高専祭2025';
+$ogp_description = '高専祭2025のイベント企画一覧。松本紀生さん特別企画やミニイベントなど、様々な企画を予定しています。';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/guest.webp';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;

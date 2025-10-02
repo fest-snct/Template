@@ -1,4 +1,9 @@
 <?php
+// OGP settings
+$ogp_title = '2025年度高専祭webサイト公開! | 高専祭2025';
+$ogp_description = 'ついに今年度のWebサイトが公開されました！高専祭当日までの間、様々な情報が本サイトに掲載されます。';
+$ogp_type = 'article';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;

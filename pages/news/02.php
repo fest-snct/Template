@@ -1,4 +1,9 @@
 <?php
+// OGP settings
+$ogp_title = '2025年度高専祭出店一覧を公開しました! | 高専祭2025';
+$ogp_description = '今年の出店一覧を公開しました！今年は以下の26団体が出店します!';
+$ogp_type = 'article';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;

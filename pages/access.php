@@ -1,4 +1,8 @@
 <?php
+// OGP settings
+$ogp_title = 'アクセス | 高専祭2025';
+$ogp_description = '高専祭2025へのアクセス情報です。周辺地図、シャトルバス、急行しらはぎ号の情報を確認できます。';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 header("Content-Security-Policy:

@@ -1,4 +1,8 @@
 <?php
+// OGP settings
+$ogp_title = 'お問い合わせ | 高専祭2025';
+$ogp_description = '高専祭2025へのお問い合わせフォームです。ご不明な点などございましたら、お気軽にお問い合わせください。';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;
