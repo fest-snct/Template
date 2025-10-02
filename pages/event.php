@@ -63,7 +63,7 @@ header("Content-Security-Policy:
                 <div class="event">
                     <p class="event-title">カードゲーム大会</p>
                     <div class="description">
-                        <p>会場：AL-B</p>
+                        <p>会場：AL-B（8-303）</p>
                     </div>
                 </div>
             </div>
