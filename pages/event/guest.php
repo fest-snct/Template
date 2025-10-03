@@ -28,7 +28,9 @@ header("Content-Security-Policy:
                 <p>日時：10月26日(日) 13:00開場 13:30開演</p>
                 <p>会場：仙台高専第一体育館</p>
                 <p>入場料は無料です。</p>
-                <p>未就学児も入場可ですが、他のお客様のご迷惑にならないようにお願い致します。</p>
+                <p>未就学児も入場可ですが、他のお客様のご迷惑にならないようにお願いいたします。</p>
+                <p>イベントへご来場の際は、公共交通機関のご利用にご協力くださいますようお願いいたします。お車でのご来場はご遠慮ください。</p>
+                <p>会場へのアクセスは、<a href="https://fest-snct.jp/2025/pages/event/guest.php" target="_blank">こちら</a>をご覧ください。</p>
                 <div>
                     <img src="../../images/event/poster.jpg" alt="Event Poster" class="poster-image">
                 </div>
