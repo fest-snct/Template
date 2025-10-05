@@ -43,7 +43,7 @@ include './includes/stores_array.php';
         </div>
         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AdCwR54ykDFWf2BbVvn-gIcMFPRBe6w&ehbc=2E312F&noprof=1" width="640" height="480" class="googlemymap"></iframe>
         <div class="border"></div>
-        <p class="b_title">教職員の出店</p>
+        <p class="b_title">教職員等の出展</p>
         <div class="b_container">
             <p class="b_name">たのしい？理科実験・体験教室</p>
             <div class="b_info">出店場所：3-103</div>
@@ -108,5 +108,6 @@ include './includes/stores_array.php';
     }
     ?>
 </body>
+
 
 </html>
