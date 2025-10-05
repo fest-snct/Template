@@ -403,6 +403,10 @@ html {
   box-sizing: border-box;
 }
 
+.disp_none {
+  display: none !important;
+}
+
 main {
   width: 85vw;
   margin: 0 auto;
@@ -421,7 +425,7 @@ main p.title {
   margin: 0 0 2rem 0;
   border-left: 4px solid #0077ff;
 }
-main .wrp {
+main #wrp {
   font-size: 3rem;
   text-align: left;
   margin-bottom: 1rem;
@@ -429,48 +433,51 @@ main .wrp {
   justify-content: space-around;
   flex-wrap: wrap;
 }
-main .wrp .b_wrap {
+main #wrp .b_wrap {
   padding: 0px 10px;
   margin-top: 0.3rem;
 }
-main .wrp .b_wrap .via {
+main #wrp .b_wrap .via {
   font-size: 1.1rem;
   font-weight: bold;
 }
-main .wrp .b_wrap .via .via_ul {
+main #wrp .b_wrap .via .via_ul {
   border-bottom: 1px solid black;
   padding: 0px 0.3rem;
 }
-main .wrp .b_wrap .via .via_ul .via_small {
+main #wrp .b_wrap .via .via_ul .via_small {
   padding-left: 0.2rem;
   font-size: 0.8rem;
   color: #333;
 }
-main .wrp .b_wrap .bustime {
+main #wrp .b_wrap .bustime {
   font-size: 4.5rem;
   text-align: left;
   margin-left: 1rem;
   font-weight: bold;
 }
-main .wrp .b_wrap .b_thank {
-  font-size: 2rem !important;
+main #wrp .b_wrap .b_thank {
+  font-size: 2.3rem !important;
 }
-main .wrp .b_wrap .more {
+main #wrp .b_wrap .more {
   font-size: 1.5rem;
   margin-left: 0rem;
   color: #f33;
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
-main .wrp .b_wrap .less {
+main #wrp .b_wrap .less {
   font-size: 2rem;
   margin-left: 0rem;
   color: #777;
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
-main .wrp .b_wrap .disp_none {
-  display: none;
+main #bustime_notice {
+  font-size: 1.2rem;
+  text-align: left;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
 }
 main .content {
   width: 100%;

@@ -30,11 +30,11 @@ header("Content-Security-Policy:
     <div class="wrapper">
         <main>
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
-            <p class="title">シャトルバス時間</p>
-            <div class="wrp">
+            <p id="nxt_bus_t" class="title">次のシャトルバス</p>
+            <div id="wrp" class="disp_none">
                 <div class="b_wrap">
                     <div class="via"><span class="via_ul">仙台高専広瀬<span class="via_small">行</span></span></div>
-                    <div id="bus11" class="bustime">本日の運行は終了しました</div>
+                    <div id="bus11" class="bustime b_thank">本日の運行は<br>終了しました</div>
                     <div id="bus12" class="more">最終便です</div>
                 </div>
                 <div class="b_wrap">
@@ -42,6 +42,9 @@ header("Content-Security-Policy:
                     <div id="bus21" class="bustime">16:20</div>
                     <div id="bus22" class="less">16:50</div>
                 </div>
+            </div>
+            <div id="bustime_notice">
+                読み込み中です...
             </div>
             <p class="title">シャトルバス時刻表</p>
             <div class="content">
