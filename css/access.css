@@ -420,6 +420,7 @@ main div.content_main {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  text-align: left;
 }
 main div.content_main a.time {
   display: block;
