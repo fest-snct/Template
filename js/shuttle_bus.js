@@ -16,8 +16,8 @@ const fest_date = ["2025-10-25", "2025-10-26"];
 
 
 /*
-const bus_time_to_kosen = ["22:12","22:09_","22:10__","22:11", "22:17_"];
-const bus_time_to_ayasi = ["22:12","22:09_","22:10__","22:11", "22:17_"];
+const bus_time_to_kosen = ["22:12","22:13_","22:14__","22:15", "22:17_"];
+const bus_time_to_ayasi = ["22:12_","22:13__","22:14_","22:15", "22:17_"];
 const fest_date = ["2025-10-05", "2025-10-06"];
 */
 // 要素の変数は最下部で一度だけ定義
@@ -129,5 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
     wrp = document.getElementById("wrp");
     nb_title = document.getElementById("nxt_bus_t");
     bustime = document.getElementById("bustime_notice");
+    refresh();
     interval = setInterval(refresh, 1000);
 });
