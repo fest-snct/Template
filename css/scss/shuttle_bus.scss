@@ -14,12 +14,18 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
 // --- 全体のレイアウト ---
-html{
-    
+html {
+
     max-width: 100vw;
     box-sizing: border-box;
 }
+
+.disp_none {
+    display: none !important;
+}
+
 main {
     // ページの主要コンテンツを中央に配置
     width: 85vw; // 少し幅を広めに調整
@@ -40,35 +46,105 @@ main {
         border-left: 4px solid variables.$blue-color;
     }
 
+    #wrp {
+
+        font-size: 3rem;
+        text-align: left;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .b_wrap {
+            padding: 0px 10px;
+            margin-top: 0.3rem;
+
+            .via {
+                font-size: 1.1rem;
+                font-weight: bold;
+
+                .via_ul {
+                    border-bottom: 1px solid black;
+                    padding: 0px 0.3rem;
+                    .via_small {
+                        padding-left: 0.2rem;
+                        font-size: 0.8rem;
+                        color: #333;
+                    }
+                }
+            }
+
+
+            .bustime {
+                font-size: 4.5rem;
+                text-align: left;
+                margin-left: 1rem;
+                font-weight: bold;
+            }
+            .b_thank {
+                font-size: 2.3rem !important;
+            }
+
+            .more {
+                font-size: 1.5rem;
+                margin-left: 0rem;
+                color: #f33;
+                font-weight: bold;
+                margin-bottom: 1.5rem;
+            }
+
+            .less {
+                font-size: 2rem;
+                margin-left: 0rem;
+                color: #777;
+                font-weight: bold;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    #bustime_notice {
+        font-size: 1.2rem;
+        text-align: left;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+    }
     .content {
         width: 100%;
-        
+
         .tables_flex {
             gap: 7px;
             display: flex;
             flex-wrap: wrap;
             width: 100%;
             justify-content: space-evenly;
+
             .tables_con {
                 margin-bottom: 2rem;
+
                 .main_table {
                     border-collapse: collapse;
                     table-layout: fixed;
                     max-width: 400px;
                     width: 100%;
+
                     tr {
                         background-color: white;
-                        td, th {
+
+                        td,
+                        th {
                             border: 0px solid black;
                             font-size: 1.5rem;
                             height: 2.5rem;
                             text-align: center;
+
                             .mark {
                                 text-decoration: underline;
                             }
+
                             .mark2 {
                                 text-decoration: underline double;
                             }
+
                             /*
                             .mark {
                                 background-image: radial-gradient(circle at center, black 20%, transparent 20%);
@@ -88,6 +164,7 @@ main {
                             }
                             */
                         }
+
                         .td_hour {
                             border-right: 2px solid black;
                         }
@@ -95,20 +172,24 @@ main {
                         .td_left {
                             border-left: 2px solid black;
                         }
+
                         .thead {
                             border-width: 0px 0px 1px 0px;
                             background-color: #000 !important;
                             color: white;
+
                             .tbl_small {
                                 font-size: 1rem;
                                 margin: 0px 2px;
                             }
                         }
                     }
+
                     .tr_stripe {
                         background-color: #ccc;
                     }
                 }
+
                 /*.mark_sample {
                     background-image: radial-gradient(circle at center, black 20%, transparent 20%);
                     background-position: center center;
@@ -118,6 +199,7 @@ main {
                 .mark_sample {
                     text-decoration: underline;
                 }
+
                 .mark_sample2 {
                     text-decoration: underline double;
                 }

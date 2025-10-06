@@ -23,12 +23,29 @@ header("Content-Security-Policy:
     <?php include '../includes/header-favicon.php'; ?>
     <link rel="stylesheet" href="../../css/shuttle_bus.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <script src="../../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
+    <script src="../../js/shuttle_bus.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
 <body>
     <?php include '../includes/header.php' ?>
     <div class="wrapper">
         <main>
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
+            <p id="nxt_bus_t" class="title">次のシャトルバス</p>
+            <div id="wrp" class="disp_none">
+                <div class="b_wrap">
+                    <div class="via"><span class="via_ul">仙台高専広瀬<span class="via_small">行</span></span></div>
+                    <div id="bus11" class="bustime b_thank">本日の運行は<br>終了しました</div>
+                    <div id="bus12" class="more">最終便です</div>
+                </div>
+                <div class="b_wrap">
+                    <div class="via"><span class="via_ul">愛子駅南口<span class="via_small">行</span></span></div>
+                    <div id="bus21" class="bustime">16:20</div>
+                    <div id="bus22" class="less">16:50</div>
+                </div>
+            </div>
+            <div id="bustime_notice">
+                読み込み中です...
+            </div>
             <p class="title">シャトルバス時刻表</p>
             <div class="content">
                 <div class="tables_flex">
