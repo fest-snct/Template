@@ -69,7 +69,7 @@ $stores = [
     [
         'id' => 'ennnichiIT2',
         'alt' => '縁日(IT2) 場所: 広場',
-        'description' => '一回100円の射的です。的に当てるとお菓子をし一掴みできます。',
+        'description' => '1回100円の射的です。狙ったお菓子に命中させてゲットしてください！',
         'image' => '/2025/images/stores/ennnichiIT2.webp'
     ],
     [
