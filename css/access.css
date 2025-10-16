@@ -420,6 +420,7 @@ main div.content_main {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  text-align: left;
 }
 main div.content_main a.time {
   display: block;
@@ -467,4 +468,19 @@ main div.center {
   justify-content: center;
   text-align: center;
   width: 100%;
+}
+main img.shirahagi {
+  width: 50vw;
+  max-width: 30vw;
+}
+
+@media (max-width: 1025px) {
+  img.shirahagi {
+    max-width: 80vw !important;
+  }
+}
+@media (max-width: 600px) {
+  img.shirahagi {
+    width: 80vw !important;
+  }
 }

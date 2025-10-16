@@ -41,7 +41,7 @@ function moveModal(e){
     const modal = document.getElementById("modal");
     const self_img = figs[glb_iIndex].getElementsByTagName("img")[0];
     const modal_txt = document.getElementById("modal_txt");
-    const matchRx = /[ 　]場所[:：][ 　]?\d{1,2}-\d{3}$/;
+    const matchRx = /[ 　]場所[:：][ 　]?.+?$/;
     const matchAlt = self_img.getAttribute("alt").match(matchRx);
     modal_place.innerText = matchAlt != null ? matchAlt[0].replace(/^[ 　]/, "", 1) : "";
     modal_title.innerText = self_img.getAttribute("alt").replace(matchRx, "");

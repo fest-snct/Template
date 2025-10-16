@@ -3,30 +3,40 @@
 @use 'header';
 @use 'footer';
 
-// --- 基本設定 ---
-body, html {
-    margin: 0;
-    padding: 0;
-}
-
-body {
+/*body {
     background-color: variables.$background-color;
     overflow-y: scroll; // スクロールバーの有無でレイアウトがガタつくのを防ぐ
+}*/
+body {
+    background-color: variables.$background-color;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 // --- 全体のレイアウト ---
-div.wrapper {
-    margin-top: variables.$header-height; // ヘッダーの高さ分コンテンツを下げる
+html {
+
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+.disp_none {
+    display: none !important;
 }
 
 main {
     // ページの主要コンテンツを中央に配置
     width: 85vw; // 少し幅を広めに調整
-    max-width: 1200px; // 最大幅を設定
     margin: 0 auto;
-    padding: 2rem 0 4rem 0; // 上下の余白を確保
+    padding: variables.$spacing-unit * 1.5;
+    margin-top: variables.$header-height;
+    padding: 10px 0px;
+    text-align: center;
 
     p.title {
+        box-sizing: border-box;
         width: 100%;
         font-weight: bold; // 'font: bold' は不完全な指定のため修正
         text-align: left;
@@ -36,63 +46,164 @@ main {
         border-left: 4px solid variables.$blue-color;
     }
 
+    #wrp {
+
+        font-size: 3rem;
+        text-align: left;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .b_wrap {
+            padding: 0px 10px;
+            margin-top: 0.3rem;
+
+            .via {
+                font-size: 1.1rem;
+                font-weight: bold;
+
+                .via_ul {
+                    border-bottom: 1px solid black;
+                    padding: 0px 0.3rem;
+                    .via_small {
+                        padding-left: 0.2rem;
+                        font-size: 0.8rem;
+                        color: #333;
+                    }
+                }
+            }
+
+
+            .bustime {
+                font-size: 4.5rem;
+                text-align: left;
+                margin-left: 1rem;
+                font-weight: bold;
+            }
+            .b_thank {
+                font-size: 2.3rem !important;
+            }
+
+            .more {
+                font-size: 1.5rem;
+                margin-left: 0rem;
+                color: #f33;
+                font-weight: bold;
+                margin-bottom: 1.5rem;
+            }
+
+            .less {
+                font-size: 2rem;
+                margin-left: 0rem;
+                color: #777;
+                font-weight: bold;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    #bustime_notice {
+        font-size: 1.2rem;
+        text-align: left;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+    }
     .content {
         width: 100%;
 
-        // --- ★平行レイアウトの核となるスタイル ---
-        .day-container {
+        .tables_flex {
+            gap: 7px;
             display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            align-items: flex-start; // テーブルの高さが異なっても上端を揃える
-            margin-bottom: 50px;
-        }
-
-        .timetable-section {
-            flex: 1;      // 利用可能なスペースを均等に分け合う
-            min-width: 0; // flexアイテムの縮小に関する問題を回避
-        }
-        
-        // --- 各パーツのスタイル ---
-        .date-title { // 'data-title' から 'date-title' に修正
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #333;
-            text-align: center;
-        }
-
-        .direction-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-align: left;
-        }
-
-        table {
+            flex-wrap: wrap;
             width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #000;
-        }
+            justify-content: space-evenly;
 
-        th, td {
-            border: 1px solid #000;
-            padding: 10px;
-            text-align: center;
-            vertical-align: middle;
-        }
+            .tables_con {
+                margin-bottom: 2rem;
 
-        th {
-            font-weight: bold;
-            background-color: transparent;
-        }
+                .main_table {
+                    border-collapse: collapse;
+                    table-layout: fixed;
+                    max-width: 400px;
+                    width: 100%;
 
-        td span {
-            font-size: 0.8em;
-            color: #555;
-            margin-left: 5px;
-            display: inline-block;
+                    tr {
+                        background-color: white;
+
+                        td,
+                        th {
+                            border: 0px solid black;
+                            font-size: 1.5rem;
+                            height: 2.5rem;
+                            text-align: center;
+
+                            .mark {
+                                text-decoration: underline;
+                            }
+
+                            .mark2 {
+                                text-decoration: underline double;
+                            }
+
+                            /*
+                            .mark {
+                                background-image: radial-gradient(circle at center, black 20%, transparent 20%);
+                                background-position: top center;
+                                background-repeat: no-repeat;
+                                background-size: 1em 0.3em;
+                                padding-top: 1px;
+                            }
+                            */
+                            /*
+                            .sqar {
+                                background-image: linear-gradient(black);
+                                background-position: top center;
+                                background-repeat: no-repeat;
+                                background-size: 0.2rem 0.2rem;
+                                padding-top: 0rem;
+                            }
+                            */
+                        }
+
+                        .td_hour {
+                            border-right: 2px solid black;
+                        }
+
+                        .td_left {
+                            border-left: 2px solid black;
+                        }
+
+                        .thead {
+                            border-width: 0px 0px 1px 0px;
+                            background-color: #000 !important;
+                            color: white;
+
+                            .tbl_small {
+                                font-size: 1rem;
+                                margin: 0px 2px;
+                            }
+                        }
+                    }
+
+                    .tr_stripe {
+                        background-color: #ccc;
+                    }
+                }
+
+                /*.mark_sample {
+                    background-image: radial-gradient(circle at center, black 20%, transparent 20%);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: 1em 0.3em;
+                }*/
+                .mark_sample {
+                    text-decoration: underline;
+                }
+
+                .mark_sample2 {
+                    text-decoration: underline double;
+                }
+            }
         }
     }
 }
@@ -101,13 +212,5 @@ main {
 @media (max-width: variables.$breakpoint-tablet) {
     main {
         width: 90vw; // スマホ表示では幅をさらに広げる
-
-        .content {
-            .day-container {
-                flex-direction: column; // 横並びを解除して縦並びにする
-                align-items: stretch;   // 幅を親要素に合わせる
-                gap: 40px;
-            }
-        }
     }
 }

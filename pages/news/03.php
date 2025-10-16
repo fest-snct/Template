@@ -1,4 +1,10 @@
 <?php
+// OGP settings
+$ogp_title = '松本紀生さんが高専祭にやってくる! | 高専祭2025';
+$ogp_description = '今年の高専祭では、アラスカ写真家の松本紀生さんにお越しいただきます！フォトライブなど様々な企画を予定しています。ぜひお越しください！';
+$ogp_type = 'article';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/guest.webp';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;
@@ -29,7 +35,7 @@ header("Content-Security-Policy:
             <div class="news_content">
                 <p>今年の高専祭では、アラスカ写真家の松本紀生さんにお越しいただきます！</p>
                 <p>フォトライブなど様々な企画を予定しています。ぜひお越しください！</p>
-                <img src="../../images/event/guest.jpg" alt="Profile Image" class="profile-image">
+                <img src="../../images/event/guest.webp" alt="Profile Image" class="profile-image">
             </div>
 
             <a href="../event/guest.php">詳しくはこちら<a>

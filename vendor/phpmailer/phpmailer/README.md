@@ -1,6 +1,6 @@
 [![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://supportukrainenow.org/)
 
-![PHPMailer](https://raw.github.com/PHPMailer/PHPMailer/master/examples/images/phpmailer.png)
+![PHPMailer](https://raw.github.com/PHPMailer/PHPMailer/master/examples/images/phpmailer.webp)
 
 # PHPMailer – A full-featured email creation and transfer class for PHP
 
@@ -123,7 +123,7 @@ try {
 
     //Attachments
     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+    $mail->addAttachment('/tmp/image.webp', 'new.webp');    //Optional name
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML

@@ -1,4 +1,9 @@
 <?php
+// OGP settings
+$ogp_title = 'イベント企画 | 高専祭2025';
+$ogp_description = '高専祭2025のイベント企画一覧。松本紀生さん特別企画やミニイベントなど、様々な企画を予定しています。';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/guest.webp';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;
@@ -25,7 +30,7 @@ header("Content-Security-Policy:
     <div class="wrapper">
         <main>
             <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
-            <p class="title">イベント企画</p>
+            <p class="title">メインイベント</p>
             <div class="events">
                 <div class="event">
                     <p class="event-title">松本紀生さん特別企画</p>
@@ -35,11 +40,54 @@ header("Content-Security-Policy:
                         <a href="./event/guest.php" class="detail">詳細はこちら</a>
                     </div>
                 </div>
+                <div class="event">
+                    <p class="event-title">ゲーム大会</p>
+                    <div class="description">
+                        <p>会場：第一体育館</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">カラオケ</p>
+                    <div class="description">
+                        <p>会場：屋外ステージ</p>
+                        <p>雨天時：第一体育館</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">コスプレ大会</p>
+                    <div class="description">
+                        <p>会場：屋外ステージ</p>
+                        <p>雨天時：第一体育館</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">カードゲーム大会</p>
+                    <div class="description">
+                        <p>会場：AL-B（8-303）</p>
+                    </div>
+                </div>
             </div>
             <div class="border"></div>
             <p class="title">ミニイベント</p>
             <div class="events">
-                <p>準備中です。</p>
+                <div class="event">
+                    <p class="event-title">高専クイズ</p>
+                    <div class="description">
+                        <p>会場：受付</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">気配切り</p>
+                    <div class="description">
+                        <p>会場：グラウンド</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">スタンプラリー</p>
+                    <div class="description">
+                        <p>会場：受付</p>
+                    </div>
+                </div>
             </div>
         </main>
     </div>

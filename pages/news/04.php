@@ -1,4 +1,10 @@
 <?php
+// OGP settings
+$ogp_title = 'しらはぎ号が今年も走る! | 高専祭2025';
+$ogp_description = '今年度の高専祭でも、名取キャンパス後援会及び広瀬キャンパス後援会より運行費用のご支援を賜り、名取－広瀬間を結ぶシャトルバス「急行しらはぎ号」を運行いたします。';
+$ogp_type = 'article';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/sirahagi.webp';
+
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;
@@ -17,7 +23,7 @@ header("Content-Security-Policy:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>しらはぎ号が今年も走る! | 高専祭2025</title>
     <link rel="stylesheet" href="../../css/news.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
-    <?php include '/2025/pages/includes/header-favicon.php'; ?>
+    <?php include '../includes/header-favicon.php'; ?>
     <script src="../../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
 </head>
 <body>
@@ -95,7 +101,7 @@ header("Content-Security-Policy:
                     </div>
                 </div>
                 <div>
-                    <img src="../../images/sirahagi.png" alt="しらはぎ号" class="sirahagi">
+                    <img src="../../images/sirahagi.webp" alt="しらはぎ号" class="sirahagi">
                 </div>
                 </div>
             </div>
