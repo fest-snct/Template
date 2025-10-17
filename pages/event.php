@@ -47,13 +47,6 @@ header("Content-Security-Policy:
                     </div>
                 </div>
                 <div class="event">
-                    <p class="event-title">カラオケ</p>
-                    <div class="description">
-                        <p>会場：屋外ステージ</p>
-                        <p>雨天時：第一体育館</p>
-                    </div>
-                </div>
-                <div class="event">
                     <p class="event-title">コスプレ大会</p>
                     <div class="description">
                         <p>会場：屋外ステージ</p>
