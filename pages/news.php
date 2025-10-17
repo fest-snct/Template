@@ -32,6 +32,39 @@ header("Content-Security-Policy:
             <p class="title">ニュース一覧</p>
             <div class="news_list">
                 <div class="news_item">
+                    <a href="./news/07.php">
+                        <div class="news_item_top">
+                            <img src="../images/event/puyoteko.png" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.17</p>
+                        <p class="news_title"><a href="./news/07.php">ぷよテト大会を開催します!</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
+                    <a href="./news/06.php">
+                        <div class="news_item_top">
+                            <img src="../images/event/yuugi_poster.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.17</p>
+                        <p class="news_title"><a href="./news/06.php">遊戯王大会を開催します!</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
+                    <a href="./news/05.php">
+                        <div class="news_item_top">
+                            <img src="../images/event/duel_poster.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.17</p>
+                        <p class="news_title"><a href="./news/05.php">デュエマ大会を開催します!</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
                     <a href="./news/04.php">
                         <div class="news_item_top">
                             <img src="../images/sirahagi.webp" alt="News Image">
