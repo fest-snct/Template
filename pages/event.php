@@ -45,6 +45,7 @@ header("Content-Security-Policy:
                     <div class="description">
                         <p>会場: 第一体育館</p>
                         <p>日程: 10月25日（土）11:00-13:00</p>
+                        <a href="./event/puyoteto.php" class="detail">詳細はこちら</a>
                     </div>
                 </div>
                 <div class="event">
@@ -67,13 +68,15 @@ header("Content-Security-Policy:
                     <div class="description">
                         <p>会場: AL-B（8-303）</p>
                         <p>日程: 10月25日（土）9:00-16:00</p>
+                        <a href="./event/card_yuugi.php" class="detail">詳細はこちら</a>
                     </div>
                 </div>
-                <div classe="event">
+                <div class="event">
                     <p class="event-title">デュエマ大会</p>
                     <div class="description">
                         <p>会場: AL-B（8-303）</p>
                         <p>日程: 10月25日（土）9:00-16:00</p>
+                        <a href="./event/card_duel.php" class="detail">詳細はこちら</a>
                     </div>
                 </div>
             </div>
