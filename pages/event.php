@@ -41,7 +41,7 @@ header("Content-Security-Policy:
                     </div>
                 </div>
                 <div class="event">
-                    <p class="event-title">ゲーム大会</p>
+                    <p class="event-title">ぷよテト大会</p>
                     <div class="description">
                         <p>会場: 第一体育館</p>
                         <p>日程: 10月25日（土）11:00-13:00</p>
@@ -85,6 +85,39 @@ header("Content-Security-Policy:
                     <div class="description">
                         <p>会場: グラウンド</p>
                         <p>日程: 10月25日（土）9:00-16:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border"></div>
+            <p class="title">文化部演奏</p>
+            <div class="events">
+                <div class="event">
+                    <p class="event-title">筝曲部</p>
+                    <div class="description">
+                        <p>会場: 体育館</p>
+                        <p>日程: 10月25日（土）16:00-17:00</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">吹奏楽部</p>
+                    <div class="description">
+                        <p>会場: 体育館</p>
+                        <p>日程: 10月25日（土）9:00-10:00</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">軽音楽部</p>
+                    <div class="description">
+                        <p>会場: 体育館 (合奏所では演奏可!!)</p>
+                        <p>日程: 10月26日（日）9:00-11:30</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <p class="event-title">【急行しらはぎ号特別企画！】</p>
+                    <div class="description">
+                        <p>広瀬の軽音楽部が名取キャンパスで演奏！</p>
+                        <p>10月25日 13時～14時　仙台高専名取 ステージにて</p>
+                        <img src="../images/keionn_natori.webp" alt="Keionn Natori" class="poster-image">
                     </div>
                 </div>
             </div>
