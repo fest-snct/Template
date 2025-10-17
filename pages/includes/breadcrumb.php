@@ -18,6 +18,9 @@ function render_breadcrumb() {
         '03' => '松本紀生さんが高専祭にやってくる!',
         '04' => 'しらはぎ号が今年も走る!',
         'guest' => '松本紀生オーロラフォトライブ',
+        'card_yuugi' => '遊戯王大会',
+        'card_duel' => 'デュエマ大会',
+        'puyoteto' => 'ぷよテト大会',
     ];
 
     // 現在のURLパスを取得（例: /about/greeting.php）

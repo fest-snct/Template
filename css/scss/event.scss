@@ -80,6 +80,10 @@ main {
             text-decoration: underline;
         }
     }
+    .time-table {
+        margin: auto;
+        margin-top: 1rem;
+    }
 }
 
 @media (max-width: variables.$breakpoint-phone) {
