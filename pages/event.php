@@ -54,6 +54,7 @@ header("Content-Security-Policy:
                         <p>会場: 屋外ステージ</p>
                         <p>雨天時: 第一体育館</p>
                         <p>日程: 10月25日（土）14:00-15:30</p>
+                        <a href="./event/cosplay.php" class="detail">詳細はこちら</a>
                     </div>
                 </div>
                 <div class="event">
