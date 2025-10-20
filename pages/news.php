@@ -32,6 +32,17 @@ header("Content-Security-Policy:
             <p class="title">ニュース一覧</p>
             <div class="news_list">
                 <div class="news_item">
+                    <a href="./news/08.php">
+                        <div class="news_item_top">
+                            <img src="../images/event/kosupure.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.20</p>
+                        <p class="news_title"><a href="./news/08.php">コスプレ大会を開催します!</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
                     <a href="./news/07.php">
                         <div class="news_item_top">
                             <img src="../images/event/puyoteko.png" alt="News Image">
