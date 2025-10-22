@@ -52,8 +52,8 @@ header("Content-Security-Policy:
                     <p class="event-title">コスプレ大会</p>
                     <div class="description">
                         <p>会場: 屋外ステージ</p>
-                        <p>雨天時: 第一体育館</p>
-                        <p>日程: 10月25日（土）14:00-15:30</p>
+                        <p>晴天時: 10月25日（土）9:00-12:00</p>
+                        <p>雨天時: 10月25日（土）14:00-15:30</p>
                     </div>
                 </div>
                 <div class="event">
