@@ -31,8 +31,10 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="event-title">コスプレ大会</p>
             <div class="description">
-                <p>日時：10月25日(土) 14:00~15:30</p>
-                <p>会場: 屋外ステージ (雨天時: 第一体育館)</p>
+                <p>日程：10月25日(土) </p>
+                <p>時間：晴天時は 9:00-12:00</p>
+                <p>時間：雨天時は 14:00-15:30</p>
+                <p>会場：晴天時は屋外ステージ (雨天時は第一体育館)</p>
                 <p>参加費は無料です。</p>
                 <p>お気に入りのキャラクターになりきって、高専祭を盛り上げよう！</p>
                 <p>参加希望者は事前に<a href="https://forms.office.com/r/C4fEMzykkk?origin=QRCode">リンク</a>から申し込みし、当日参加してください。</p>
