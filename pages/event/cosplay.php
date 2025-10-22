@@ -1,9 +1,9 @@
 <?php
 // OGP settings
-$ogp_title = '遊戯王大会 | 高専祭2025';
-$ogp_description = '高専祭2025で遊戯王大会を開催します!奮ってご参加ください。';
+$ogp_title = 'コスプレ大会 | 高専祭2025';
+$ogp_description = '高専祭2025でコスプレ大会を開催します!奮ってご参加ください。';
 $ogp_type = 'article';
-$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/poster.webp';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/kosupure.webp';
 
 session_start();
 $nonce = base64_encode(random_bytes(16));
@@ -20,7 +20,7 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>遊戯王大会 | 高専祭2025</title>
+    <title>コスプレ大会 | 高専祭2025</title>
     <link rel="stylesheet" href="../../css/event.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <?php include '../includes/header-favicon.php'; ?>
     <script src="../../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
@@ -29,17 +29,15 @@ header("Content-Security-Policy:
     <?php include '../includes/header.php' ?>
         <main>
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
-            <p class="event-title">遊戯王大会</p>
+            <p class="event-title">コスプレ大会</p>
             <div class="description">
-                <p>日時：10月25日(土) 9:00~16:00</p>
-                <p>会場：AL-B（8-303）</p>
+                <p>日時：10月25日(土) 14:00~15:30</p>
+                <p>会場: 屋外ステージ (雨天時: 第一体育館)</p>
                 <p>参加費は無料です。</p>
-                <p>自慢のデッキでデュエルしよう！</p>
-                <p>大会形式：トーナメント形式</p>
-                <p>参加希望者は当日、会場までお越しください。</p>
-                <p>以下のリンクから申し込みしてください。</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSewJGuuIuniq1awxzmSJ9kqL4PXb1MWhdE-3REx3hYMVu8SQQ/viewform">参加申し込みForms</a>
-                <img src="../../images/event/yuugi_poster.webp" alt="Yuugi Poster" class="poster-image">
+                <p>お気に入りのキャラクターになりきって、高専祭を盛り上げよう！</p>
+                <p>参加希望者は事前に<a href="https://forms.office.com/r/C4fEMzykkk?origin=QRCode">リンク</a>から申し込みし、当日参加してください。</p>
+                <p>※このイベントへの申し込みは仙台高専広瀬キャンパス在学生限定となります。</p>
+                <img src="../../images/event/kosupure.webp" alt="Cosplay Poster" class="poster-image">
             </div>
         </main>
     <?php include '../includes/footer.php' ?>
