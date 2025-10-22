@@ -92,20 +92,20 @@ header("Content-Security-Policy:
                     <p class="event-title">筝曲部</p>
                     <div class="description">
                         <p>会場: 体育館</p>
-                        <p>日程: 10月25日（土）16:00-17:00</p>
+                        <p>日程: 10月25日（土）16:30-17:00 （入場は16:00～可能です）</p>
                     </div>
                 </div>
                 <div class="event">
                     <p class="event-title">吹奏楽部</p>
                     <div class="description">
                         <p>会場: 体育館</p>
-                        <p>日程: 10月25日（土）9:00-10:00</p>
+                        <p>日程: 10月25日（土）9:30-10:00 （入場は9:00～可能です）</p>
                     </div>
                 </div>
                 <div class="event">
                     <p class="event-title">軽音楽部</p>
                     <div class="description">
-                        <p>会場: 体育館 (合奏所では演奏可!!)</p>
+                        <p>会場: 体育館 (土曜午後に合奏所でも演奏!!)</p>
                         <p>日程: 10月26日（日）9:00-11:30</p>
                     </div>
                 </div>
