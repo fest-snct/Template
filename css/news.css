@@ -606,3 +606,11 @@ img.profile-image {
   -o-object-position: bottom !important;
      object-position: bottom !important;
 }
+
+.duel-poster-image {
+  width: 80vw;
+}
+
+.cosplay-poster-image {
+  width: 80vw;
+}
