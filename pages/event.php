@@ -129,7 +129,7 @@ header("Content-Security-Policy:
                 </div>
                 <div class="event">
                     <p class="event-title">free カラオケ</p>
-                    <div class="event-title">
+                    <div class="description">
                         <p>会場: 屋外ステージ</p>
                     </div>
                 </div>

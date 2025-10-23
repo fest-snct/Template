@@ -465,6 +465,7 @@ main a:hover {
 main .time-table {
   margin: auto;
   margin-top: 1rem;
+  max-width: 100%;
 }
 
 @media (max-width: 600px) {
