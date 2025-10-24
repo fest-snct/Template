@@ -33,7 +33,6 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">絶品焼きそば、ここにあり！</p>
             <div class="news_content">
-                <img src="../../images/news/yakisobaya_news.jpg" alt="焼きそば" style="margin-bottom: 1rem; width: 100%;">
                 <p>厳選した食材とソースが織りなす、深みある味わい。</p>
                 <p>噛むほどに広がる旨味と、深く濃いコク。たくさんの具。</p>
                 <p>その瞬間、心の中でつぶやく──</p>
@@ -42,6 +41,7 @@ header("Content-Security-Policy:
                 <br>
                 <p>一個400円</p>
                 <p>二個セット750円</p>
+                <img src="../../images/news/yakisobaya_news.jpg" alt="焼きそば" style="margin-bottom: 1rem; width: 100%;">
             </div>
         </main>
      </div>
