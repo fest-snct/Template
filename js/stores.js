@@ -12,6 +12,15 @@ function showModal(e) {
     modal_place.innerText = matchAlt != null ? matchAlt[0].replace(/^[ 　]/, "", 1) : "";
     modal_title.innerText = self_img.getAttribute("alt").replace(matchRx, "");
     modal_txt.innerText = figs[this.img_id].getAttribute("data-description");
+    const newsLink = figs[this.img_id].getAttribute("data-news-link");
+    if (newsLink) {
+        const link = document.createElement("a");
+        link.href = newsLink;
+        link.textContent = "ニュースはこちら";
+        const br = document.createElement("br");
+        modal_txt.appendChild(br);
+        modal_txt.appendChild(link);
+    }
     modal_img.src = self_img.src;
     modal_img.alt = self_img.alt;
     modal.removeAttribute("class");
@@ -46,6 +55,15 @@ function moveModal(e){
     modal_place.innerText = matchAlt != null ? matchAlt[0].replace(/^[ 　]/, "", 1) : "";
     modal_title.innerText = self_img.getAttribute("alt").replace(matchRx, "");
     modal_txt.innerText = figs[glb_iIndex].getAttribute("data-description");
+    const newsLink = figs[glb_iIndex].getAttribute("data-news-link");
+    if (newsLink) {
+        const link = document.createElement("a");
+        link.href = newsLink;
+        link.textContent = "ニュースはこちら";
+        const br = document.createElement("br");
+        modal_txt.appendChild(br);
+        modal_txt.appendChild(link);
+    }
     modal_img.src = self_img.src;
     modal_img.alt = self_img.alt;
     modal.removeAttribute("class");

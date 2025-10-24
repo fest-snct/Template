@@ -32,6 +32,83 @@ header("Content-Security-Policy:
             <p class="title">ニュース一覧</p>
             <div class="news_list">
                 <div class="news_item">
+                    <a href="./news/15.php">
+                        <div class="news_item_top">
+                            <img src="../images/icon_yoko.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.24</p>
+                        <p class="news_title"><a href="./news/15.php">河北新報でご紹介いただきました！</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
+                    <a href="./news/14.php">
+                        <div class="news_item_top">
+                            <img src="../images/news/probu_news.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.24</p>
+                        <p class="news_title"><a href="./news/14.php">プログラミング部です</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
+                    <a href="./news/13.php">
+                        <div class="news_item_top">
+                            <img src="../images/stores/kousenjoshipurojekuto.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.24</p>
+                        <p class="news_title"><a href="./news/13.php">高専女子プロジェクトです</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
+                    <a href="./news/12.php">
+                        <div class="news_item_top">
+                            <img src="../images/news/suisougaku.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.24</p>
+                        <p class="news_title"><a href="./news/12.php">吹奏楽部より皆様へ</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
+                    <a href="./news/11.php">
+                        <div class="news_item_top">
+                            <img src="../images/news/keionn_news.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.24</p>
+                        <p class="news_title"><a href="./news/11.php">軽音楽部ライブのお知らせ</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
+                    <a href="./news/10.php">
+                        <div class="news_item_top">
+                            <img src="../images/stores/DTMbu.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.24</p>
+                        <p class="news_title"><a href="./news/10.php">部員制作CDとグッズの販売！（DTM部）</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
+                    <a href="./news/09.php">
+                        <div class="news_item_top">
+                            <img src="../images/stores/nazotokiaikoukai.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.24</p>
+                        <p class="news_title"><a href="./news/09.php">謎解き愛好会からのお知らせ</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
                     <a href="./news/08.php">
                         <div class="news_item_top">
                             <img src="../images/event/kosupure.webp" alt="News Image">
