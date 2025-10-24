@@ -31,7 +31,7 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="event-title">遊戯王大会</p>
             <div class="description">
-                <p>日時：10月25日(土) 9:00~16:00</p>
+                <p>日時：10月26日(日) 9:00~15:00</p>
                 <p>会場：AL-B（8-303）</p>
                 <p>参加費は無料です。</p>
                 <p>自慢のデッキでデュエルしよう！</p>
