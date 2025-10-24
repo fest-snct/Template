@@ -38,7 +38,7 @@ header("Content-Security-Policy:
                 <p>大会形式：トーナメント形式</p>
                 <p>参加希望者は以下のリンクから申し込み完了後、当日会場へお越しください。</p>
                 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=XYP-cpVeEkWK4KezivJfyE-ptyii6zlJj-PM44-6mdJUOEtCTEpRM0pFSzJUUUk5UkhUWVQwMUpGNy4u&origin=QRCode" class="link">参加申し込みForms</a>
-                <img src="../../images/event/puyoteko.png" alt="PuyoTeto Poster" class="poster-image">
+                <img src="../../images/event/puyoteto.webp" alt="PuyoTeto Poster" class="poster-image">
             </div>
         </main>
     <?php include '../includes/footer.php' ?>

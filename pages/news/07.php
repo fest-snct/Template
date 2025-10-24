@@ -3,7 +3,7 @@
 $ogp_title = 'ぷよテト大会を開催します! | 高専祭2025';
 $ogp_description = '高専祭2025でぷよテト大会を開催します!奮ってご参加ください。';
 $ogp_type = 'article';
-$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/puyoteko.png';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/puyoteto.webp';
 
 session_start();
 $nonce = base64_encode(random_bytes(16));
@@ -40,7 +40,7 @@ header("Content-Security-Policy:
                 <p>大会形式：トーナメント形式</p>
                 <p>参加希望者は以下のリンクから申し込み完了後、当日会場へお越しください。</p>
                 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=XYP-cpVeEkWK4KezivJfyE-ptyii6zlJj-PM44-6mdJUOEtCTEpRM0pFSzJUUUk5UkhUWVQwMUpGNy4u&origin=QRCode" class="link">参加申し込みForms</a>
-                <img src="../../images/event/puyoteko.png" alt="PuyoTeto Poster" class="poster-image">
+                <img src="../../images/event/puyoteto.webp" alt="PuyoTeto Poster" class="poster-image">
             </div>
         </main>
     </div>

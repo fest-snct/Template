@@ -34,7 +34,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/17.php">
                         <div class="news_item_top">
-                            <img src="../images/news/syashinbu_news.png" alt="News Image">
+                            <img src="../images/news/syashinbu_news.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">
@@ -45,7 +45,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/16.php">
                         <div class="news_item_top">
-                            <img src="../images/news/yakisobaya_news.jpg" alt="News Image">
+                            <img src="../images/news/yakisobaya_news.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">
@@ -144,7 +144,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/07.php">
                         <div class="news_item_top">
-                            <img src="../images/event/puyoteko.png" alt="News Image">
+                            <img src="../images/event/puyoteto.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">

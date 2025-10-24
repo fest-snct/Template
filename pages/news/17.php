@@ -3,7 +3,7 @@
 $ogp_title = '写真部の展示・グッズ販売・フォトスポット | 高専祭2025';
 $ogp_description = '写真部では、部員が撮った写真展示、グッズ販売、フォトスポットの設置を行います！';
 $ogp_type = 'article';
-$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/news/syashinbu_news.png';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/news/syashinbu_news.webp';
 
 session_start();
 $nonce = base64_encode(random_bytes(16));
@@ -46,7 +46,7 @@ header("Content-Security-Policy:
                 <p>ぜひ来てください📸</p>
                 <br>
                 <p>※グッズの販売は12:00~</p>
-                <img src="../../images/news/syashinbu_news.png" alt="Photobooth" class="cosplay-poster-image">
+                <img src="../../images/news/syashinbu_news.webp" alt="Photobooth" class="cosplay-poster-image">
             </div>
         </main>
      </div>
