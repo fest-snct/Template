@@ -36,7 +36,7 @@ include './includes/stores_array.php';
         <p class="title">出店一覧</p>
         <div id="s_container">
             <?php foreach ($stores as $store) : ?>
-                <figure id="<?= htmlspecialchars($store['id'], ENT_QUOTES, 'UTF-8') ?>" class="s_items" data-description='<?= htmlspecialchars($store['description'], ENT_QUOTES, 'UTF-8') ?>'>
+                <figure id="<?= htmlspecialchars($store['id'], ENT_QUOTES, 'UTF-8') ?>" class="s_items" data-description='<?= htmlspecialchars($store['description'], ENT_QUOTES, 'UTF-8') ?>' data-news-link='<?= htmlspecialchars($store['news_link'] ?? '', ENT_QUOTES, 'UTF-8') ?>'>
                     <img src="<?= htmlspecialchars($store['image'], ENT_QUOTES, 'UTF-8') ?>" class="s_pic" alt="<?= htmlspecialchars($store['alt'], ENT_QUOTES, 'UTF-8') ?>" />
                 </figure>
             <?php endforeach; ?>
