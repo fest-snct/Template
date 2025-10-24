@@ -32,6 +32,17 @@ header("Content-Security-Policy:
             <p class="title">ニュース一覧</p>
             <div class="news_list">
                 <div class="news_item">
+                    <a href="./news/16.php">
+                        <div class="news_item_top">
+                            <img src="../images/news/yakisobaya_news.jpg" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.24</p>
+                        <p class="news_title"><a href="./news/16.php">絶品焼きそば、ここにあり！</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
                     <a href="./news/15.php">
                         <div class="news_item_top">
                             <img src="../images/icon_yoko.webp" alt="News Image">
