@@ -152,7 +152,7 @@ $stores = [
         'alt' => '焼きそば屋けんすぃん 場所: 広場',
         'description' => '厳選した食材とソースが織りなす、深みのある味わい。噛むほどに広がる旨味と深い濃いコク。その瞬間、心の中でつぶやく＿＿「焼きそば、正直舐めてました。」そして確信する、これは別次元にうまい！！',
         'image' => '/2025/images/stores/yakisobayakennsulin.webp',
-        'news_link' => null
+        'news_link' => '/2025/pages/news/16.php'
     ],
     [
         'id' => 'dosyudoudagashihannbaiki',
