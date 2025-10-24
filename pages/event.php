@@ -148,7 +148,7 @@ header("Content-Security-Policy:
             </div>
             <div class="border"></div>
             <p class="title">タイムテーブル</p>
-            <img class="time-table" src="../images/time-table.png" alt="タイムテーブル">
+            <img class="time-table" src="../images/time-table.webp" alt="タイムテーブル">
         </main>
     </div>
     <?php include './includes/footer.php'; ?>

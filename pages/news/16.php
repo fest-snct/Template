@@ -3,7 +3,7 @@
 $ogp_title = '絶品焼きそば、ここにあり！ | 高専祭2025';
 $ogp_description = '厳選した食材とソースが織りなす、深みある味わい。噛むほどに広がる旨味と、深く濃いコク。たくさんの具。その瞬間、心の中でつぶやく──「焼きそば、正直なめてました。」そして確信する、これは別次元にうまい！！';
 $ogp_type = 'article';
-$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/news/yakisobaya_news.jpg';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/news/yakisobaya_news.webp';
 
 session_start();
 $nonce = base64_encode(random_bytes(16));
@@ -41,7 +41,7 @@ header("Content-Security-Policy:
                 <br>
                 <p>一個400円</p>
                 <p>二個セット750円</p>
-                <img src="../../images/news/yakisobaya_news.jpg" alt="焼きそば" style="margin-bottom: 1rem; width: 100%;">
+                <img src="../../images/news/yakisobaya_news.webp" alt="焼きそば" style="margin-bottom: 1rem; width: 100%;">
             </div>
         </main>
      </div>

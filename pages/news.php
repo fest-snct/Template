@@ -32,9 +32,20 @@ header("Content-Security-Policy:
             <p class="title">ニュース一覧</p>
             <div class="news_list">
                 <div class="news_item">
+                    <a href="./news/17.php">
+                        <div class="news_item_top">
+                            <img src="../images/news/syashinbu_news.webp" alt="News Image">
+                        </div>
+                    </a>
+                    <div class="news_item_bottom">
+                        <p class="news_date">2025.10.24</p>
+                        <p class="news_title"><a href="./news/17.php">写真部の展示・グッズ販売・フォトスポット</a></p>
+                    </div>
+                </div>
+                <div class="news_item">
                     <a href="./news/16.php">
                         <div class="news_item_top">
-                            <img src="../images/news/yakisobaya_news.jpg" alt="News Image">
+                            <img src="../images/news/yakisobaya_news.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">
@@ -133,7 +144,7 @@ header("Content-Security-Policy:
                 <div class="news_item">
                     <a href="./news/07.php">
                         <div class="news_item_top">
-                            <img src="../images/event/puyoteko.png" alt="News Image">
+                            <img src="../images/event/puyoteto.webp" alt="News Image">
                         </div>
                     </a>
                     <div class="news_item_bottom">
