@@ -35,7 +35,7 @@ header("Content-Security-Policy:
                 <div class="event">
                     <p class="event-title">松本紀生さん特別企画</p>
                     <div class="description">
-                        <p>二日目: 10月26日(日)13:30から第一体育館で開催!</p>
+                        <p>二日目: 10月26日(日)13:00から第一体育館で開催!</p>
                         <p>写真家の松本紀生さんが高専祭にやってくる!</p>
                         <a href="./event/guest.php" class="detail">詳細はこちら</a>
                     </div>
@@ -51,9 +51,9 @@ header("Content-Security-Policy:
                 <div class="event">
                     <p class="event-title">コスプレ大会</p>
                     <div class="description">
-                        <p>会場: 屋外ステージ</p>
-                        <p>雨天時: 第一体育館</p>
-                        <p>日程: 10月25日（土）14:00-15:30</p>
+                        <p>会場: 晴天時は屋外ステージ、雨天時は第一体育館</p>
+                        <p>晴天時: 10月25日（土）9:00-12:00</p>
+                        <p>雨天時: 10月25日（土）14:00-15:30</p>
                         <a href="./event/cosplay.php" class="detail">詳細はこちら</a>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ header("Content-Security-Policy:
                     <p class="event-title">遊戯王大会</p>
                     <div class="description">
                         <p>会場: AL-B（8-303）</p>
-                        <p>日程: 10月25日（土）9:00-16:00</p>
+                        <p>日程: 10月26日（日）9:00-15:00</p>
                         <a href="./event/card_yuugi.php" class="detail">詳細はこちら</a>
                     </div>
                 </div>
@@ -92,28 +92,28 @@ header("Content-Security-Policy:
                     <p class="event-title">筝曲部</p>
                     <div class="description">
                         <p>会場: 体育館</p>
-                        <p>日程: 10月25日（土）16:00-17:00</p>
+                        <p>日程: 10月25日（土）16:30-17:00 （入場は16:00～可能です）</p>
                     </div>
                 </div>
                 <div class="event">
                     <p class="event-title">吹奏楽部</p>
                     <div class="description">
                         <p>会場: 体育館</p>
-                        <p>日程: 10月25日（土）9:00-10:00</p>
+                        <p>日程: 10月25日（土）9:30-10:00 （入場は9:00～可能です）</p>
                     </div>
                 </div>
                 <div class="event">
                     <p class="event-title">軽音楽部</p>
                     <div class="description">
-                        <p>会場: 体育館 (合奏所では演奏可!!)</p>
-                        <p>日程: 10月26日（日）9:00-11:30</p>
+                        <p>会場: 体育館 (土曜午後に合奏所でも演奏!!)</p>
+                        <p>日程: 10月26日（日）10:00-11:30（入場は9:00～可能です）</p>
                     </div>
                 </div>
                 <div class="event">
                     <p class="event-title">【急行しらはぎ号特別企画！】</p>
                     <div class="description">
                         <p>広瀬の軽音楽部が名取キャンパスで演奏！</p>
-                        <p>10月25日 13時～14時　仙台高専名取 ステージにて</p>
+                        <p>10月25日 13:00-14:00　仙台高専名取 ステージにて</p>
                         <img src="../images/keionn_natori.webp" alt="Keionn Natori" class="poster-image">
                     </div>
                 </div>
@@ -130,7 +130,7 @@ header("Content-Security-Policy:
                 <div class="event">
                     <p class="event-title">free カラオケ</p>
                     <div class="event-title">
-                        <p>会場: 屋外ステージ</p>
+                        <p>会場: 屋外ステージ （コスプレ大会中は開催しません）</p>
                     </div>
                 </div>
                 <div class="event">
