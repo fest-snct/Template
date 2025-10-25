@@ -183,6 +183,14 @@ foreach ($recent_event as $event_file) {
         </div>
         <div class="border"></div>
         <div class="main_menu">
+            <p class="main_menus">パンフレット</p>
+            <div class="greetings_content">
+                <p>パンフレットをスマホからも見ることができます。</p>
+            </div>
+            <a href="./attachment/kosensai2025_pamphlet.pdf" class="about">パンフレットはこちら</a>
+        </div>
+        <div class="border"></div>
+        <div class="main_menu">
             <p class="main_menus">イベント</p>
             <div class="event_content">
                 <?php foreach ($event_list as $event) : ?>
