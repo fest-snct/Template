@@ -60,7 +60,7 @@ header("Content-Security-Policy:
                         </div>
                     </a>
                     <div class="news_item_bottom">
-                        <p class="news_date">2025.10.24</p>
+                        <p class="news_date">2025.10.25</p>
                         <p class="news_title"><a href="./news/15.php">河北新報でご紹介いただきました！</a></p>
                     </div>
                 </div>

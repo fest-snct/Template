@@ -33,10 +33,10 @@ header("Content-Security-Policy:
             <?php include '../includes/breadcrumb.php'; render_breadcrumb(); ?>
             <p class="title">河北新報でご紹介いただきました！</p>
             <div class="news_content">
-                <p>2025年10月22日の河北新報の夕刊に、松本紀生オーロラフォトライブイベントについての記事を掲載いただきました。</p>
+                <p>2025年10月22日の河北新報の夕刊及び10月25日の朝刊に、松本紀生オーロラフォトライブイベントについての記事を掲載いただきました。</p>
                 <p>オンライン版は<a href="https://kahoku.news/articles/20251022khn000015.html" target="_blank">こちら</a>から閲覧可能です。</p>
                 <br>
-                <p>本イベントは10月25日（日）に開催されます。</p>
+                <p>本イベントは10月26日（日）に開催されます。</p>
                 <p>入場無料で、最寄り駅からのシャトルバスもご用意しております。</p>
                 <p>ぜひ、お越しください！</p>
                 <br>
