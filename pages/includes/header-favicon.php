@@ -1,15 +1,21 @@
-<link rel="icon" href="/2025/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/2025/favicon.ico" type="image/x-icon">
-
 <?php
-// OGP (Open Graph Protocol)
-$ogp_title = isset($ogp_title) ? $ogp_title : '仙台高等専門学校広瀬キャンパス高専祭2025';
-$ogp_description = isset($ogp_description) ? $ogp_description : '仙台高専広瀬キャンパスで2025年に開催される高専祭の公式ウェブサイトです。イベント情報、出店一覧、アクセス情報などを掲載しています。';
-$ogp_type = isset($ogp_type) ? $ogp_type : 'website';
-$ogp_url = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$ogp_image = isset($ogp_image) ? $ogp_image : (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/hp_icon.webp';
-$ogp_site_name = '仙台高等専門学校広瀬キャンパス高専祭2025';
+require_once __DIR__ . '/../../config/site.php';
+$base            = $site_config['base_path'];
+$festival_label  = $site_config['festival_name'] . $site_config['year'];
+$school_label    = $site_config['school_name'] . $festival_label;
+$protocol        = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://');
+$default_ogp_img = $protocol . $_SERVER['HTTP_HOST'] . $base . ltrim($site_config['ogp_image_default'], '/');
+
+// OGP 変数（各ページで事前に設定されていなければデフォルト値を使用）
+$ogp_title       = isset($ogp_title)       ? $ogp_title       : $school_label;
+$ogp_description = isset($ogp_description) ? $ogp_description : $school_label . 'のイベント情報、出店一覧、アクセス情報などを掲載しています。';
+$ogp_type        = isset($ogp_type)        ? $ogp_type        : 'website';
+$ogp_url         = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$ogp_image       = isset($ogp_image)       ? $ogp_image       : $default_ogp_img;
+$ogp_site_name   = $school_label;
 ?>
+<link rel="icon" href="<?= $base ?>favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="<?= $base ?>favicon.ico" type="image/x-icon">
 
 <meta property="og:title" content="<?= htmlspecialchars($ogp_title, ENT_QUOTES, 'UTF-8') ?>">
 <meta property="og:description" content="<?= htmlspecialchars($ogp_description, ENT_QUOTES, 'UTF-8') ?>">

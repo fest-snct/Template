@@ -1,9 +1,10 @@
 <?php
+require_once __DIR__ . '/../../config/site.php';
+
 $current_file_path = $_SERVER['SCRIPT_NAME'];
-$project_root_path = '/2025/';
+$base              = $site_config['base_path'];
 
-$levels_up = substr_count($current_file_path, '/') - substr_count($project_root_path, '/');
-
+$levels_up = substr_count($current_file_path, '/') - substr_count($base, '/');
 $path_to_root = '';
 for ($i = 0; $i < $levels_up; $i++) {
     $path_to_root .= '../';
@@ -26,13 +27,13 @@ if (empty($path_to_root)) {
                 <a class="subtitle" href="<?= $path_to_root ?>pages/contact.php">お問い合わせ</a>
                 <a class="subtitle" href="<?= $path_to_root ?>pages/privacypolicy.php">プライバシーポリシー</a>
                 <div class="SNS">
-                    <a class="subtitle" href="https://x.com/Kosensai_Zitsui">X</a>
-                    <a class="subtitle" href="https://www.instagram.com/hirosekousensai/">Instagram</a>
+                    <a class="subtitle" href="<?= htmlspecialchars($site_config['sns']['x'], ENT_QUOTES, 'UTF-8') ?>">X</a>
+                    <a class="subtitle" href="<?= htmlspecialchars($site_config['sns']['instagram'], ENT_QUOTES, 'UTF-8') ?>">Instagram</a>
                 </div>
             </div>
         </div>
         <div>
-            <P>© 2025 高専祭実行委員会 - 仙台高等専門学校広瀬キャンパス</P>
+            <p>© <?= htmlspecialchars($site_config['year'], ENT_QUOTES, 'UTF-8') ?> <?= htmlspecialchars($site_config['committee_name'], ENT_QUOTES, 'UTF-8') ?> - <?= htmlspecialchars($site_config['school_name'], ENT_QUOTES, 'UTF-8') ?></p>
         </div>
     </div>
 </footer>

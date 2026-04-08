@@ -1,10 +1,11 @@
 <?php
-// OGP settings
-$ogp_title = '仙台高等専門学校広瀬キャンパス高専祭2025';
-$ogp_description = '仙台高専広瀬キャンパスで2025年に開催される高専祭の公式ウェブサイトです。開催日時、ニュース、イベント情報、出店一覧などを確認できます。';
-// $ogp_type is 'website' by default
-// $ogp_url is set automatically
-// $ogp_image is set automatically to the default
+require_once __DIR__ . '/config/site.php';
+
+// ── OGP ─────────────────────────────────────────────────────
+$ogp_title       = $site_config['school_name'] . $site_config['festival_name'] . $site_config['year'];
+$ogp_description = $site_config['school_name'] . 'で' . $site_config['year']
+                 . '年に開催される' . $site_config['festival_name']
+                 . 'の公式ウェブサイトです。開催日時、ニュース、イベント情報、出店一覧などを確認できます。';
 
 session_start();
 $nonce = base64_encode(random_bytes(16));
@@ -16,88 +17,50 @@ header("Content-Security-Policy:
     frame-ancestors 'none';
 ");
 
-
-include './pages/includes/stores_array.php';
-
-// Randomly select 6 stores
+// ── 出店一覧（ランダム6件） ──────────────────────────────────
+$stores = json_decode(file_get_contents(__DIR__ . '/data/stores.json'), true);
 shuffle($stores);
 $random_stores = array_slice($stores, 0, 6);
 
-// Get dates from news.php
-$news_page_content = file_get_contents('./pages/news.php');
-$date_map = [];
-if (preg_match_all('/<div class="news_item">.*?<p class="news_date">(.*?)<\/p>.*?<a href="(.*?)">/s', $news_page_content, $matches, PREG_SET_ORDER)) {
-    foreach ($matches as $match) {
-        $date = str_replace('2025.', '', $match[1]);
-        $date_map[$match[2]] = $date;
+// ── ニュース（JSON から最新5件） ─────────────────────────────
+$news_json_files = glob(__DIR__ . '/data/news/*.json');
+$all_news = [];
+foreach ($news_json_files as $file) {
+    $item = json_decode(file_get_contents($file), true);
+    if ($item) {
+        $all_news[] = $item;
     }
 }
+usort($all_news, function ($a, $b) {
+    $cmp = strcmp($b['date'], $a['date']);
+    return $cmp !== 0 ? $cmp : strcmp($b['id'], $a['id']);
+});
+$recent_news = array_slice($all_news, 0, 5);
 
-// Get news files
-$news_files = glob('./pages/news/*.php');
-// Sort files in reverse order by filename
-rsort($news_files, SORT_STRING);
-// Get the 5 most recent news
-$recent_news = array_slice($news_files, 0, 5);
-
-$news_list = [];
-foreach ($recent_news as $news_file) {
-    $content = file_get_contents($news_file);
-    $title = '';
-    if (preg_match('/<p class="title">(.*?)<\/p>/', $content, $matches)) {
-        $title = $matches[1];
-        // Clean up the title
-        $title = str_replace(' | 高専祭2025', '', $title);
-        $title = str_replace('2025年度', '', $title);
-        $title = trim($title);
-    }
-
-    $map_key = str_replace('./pages', '.', $news_file);
-
-    if ($title) {
-        $news_list[] = [
-            'link' => $news_file,
-            'title' => $title,
-            'date' => isset($date_map[$map_key]) ? $date_map[$map_key] : ''
-        ];
-    }
-}
-
-// Get event files
+// ── イベント一覧（event/*.php から収集） ────────────────────
 $event_files = glob('./pages/event/*.php');
-// Sort files in reverse order by filename
 rsort($event_files, SORT_STRING);
-// Get the 5 most recent event
-$recent_event = array_slice($event_files, 0, 5);
-
 $event_list = [];
-foreach ($recent_event as $event_file) {
+foreach ($event_files as $event_file) {
     $content = file_get_contents($event_file);
-    $title = '';
     if (preg_match('/<p class="event-title">(.*?)<\/p>/', $content, $matches)) {
-        $title = $matches[1];
-        // Clean up the title
-        $title = str_replace(' | 高専祭2025', '', $title);
-        $title = str_replace('2025年度', '', $title);
-        $title = str_replace('高専祭', '', $title);
-        $title = trim($title);
-    }
-    $map_key = str_replace('./pagews', '.', $event_file);
-    if ($title) {
-        $event_list[] = [
-            'link' => $event_file,
-            'title' => $title
-        ];
+        $title = trim(strip_tags($matches[1]));
+        if ($title) {
+            $event_list[] = ['link' => $event_file, 'title' => $title];
+        }
     }
 }
+$event_list = array_slice($event_list, 0, 5);
 
+$base = $site_config['base_path']; // e.g. '/2025/'
+$festival_label = $site_config['festival_name'] . $site_config['year'];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>仙台高等専門学校広瀬キャンパス高専祭2025</title>
+    <title><?= htmlspecialchars($ogp_title, ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="./css/home.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <?php include './pages/includes/header-favicon.php'; ?>
     <script src="./js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
@@ -105,43 +68,41 @@ foreach ($recent_event as $event_file) {
 </head>
 <body>
     <header>
-        <?php $currentPage = $_SERVER['SCRIPT_NAME']; // 現在のファイル名（例: /pages/stores.php）?>
+        <?php $currentPage = $_SERVER['SCRIPT_NAME']; ?>
         <div class="mini_logo">
             <img src="./images/logo.webp" />
         </div>
         <div class="index">
-            <a class="title" href="./home.php">高専祭2025</a>
+            <a class="title" href="<?= $base ?>home.php"><?= htmlspecialchars($festival_label, ENT_QUOTES, 'UTF-8') ?></a>
             <div class="subtitles">
-                <a class="subtitle <?= $currentPage == './pages/greeting.php' ? 'is-current' : '' ?>" href="./pages/greeting.php">ご挨拶</a>
-                <a class="subtitle <?= $currentPage == './pages/event.php' ? 'is-current' : '' ?>" href="./pages/event.php">イベント企画</a>
-                <a class="subtitle <?= $currentPage == './pages/stores.php' ? 'is-current' : '' ?>" href="./pages/stores.php">出店一覧</a>
-                <a class="subtitle <?= $currentPage == './pages/access.php' ? 'is-current' : '' ?>" href="./pages/access.php">アクセス</a>
-                <a class="subtitle <?= $currentPage == './pages/news.php' ? 'is-current' : '' ?>" href="./pages/news.php">ニュース</a>
-                <a class="subtitle <?= $currentPage == './pages/Q&A.php' ? 'is-current' : '' ?>" href="./pages/Q&A.php">Q&A</a>
-                <a class="subtitle <?= $currentPage == './pages/contact.php' ? 'is-current' : '' ?>" href="./pages/contact.php">お問い合わせ</a>
-                <a class="subtitle <?= $currentPage == './pages/privacypolicy.php' ? 'is-current' : '' ?>" href="./pages/privacypolicy.php">プライバシーポリシー</a>
+                <a class="subtitle <?= $currentPage == $base . 'pages/greeting.php'     ? 'is-current' : '' ?>" href="./pages/greeting.php">ご挨拶</a>
+                <a class="subtitle <?= $currentPage == $base . 'pages/event.php'        ? 'is-current' : '' ?>" href="./pages/event.php">イベント企画</a>
+                <a class="subtitle <?= $currentPage == $base . 'pages/stores.php'       ? 'is-current' : '' ?>" href="./pages/stores.php">出店一覧</a>
+                <a class="subtitle <?= $currentPage == $base . 'pages/access.php'       ? 'is-current' : '' ?>" href="./pages/access.php">アクセス</a>
+                <a class="subtitle <?= $currentPage == $base . 'pages/news.php'         ? 'is-current' : '' ?>" href="./pages/news.php">ニュース</a>
+                <a class="subtitle <?= $currentPage == $base . 'pages/Q&A.php'          ? 'is-current' : '' ?>" href="./pages/Q&A.php">Q&A</a>
+                <a class="subtitle <?= $currentPage == $base . 'pages/contact.php'      ? 'is-current' : '' ?>" href="./pages/contact.php">お問い合わせ</a>
+                <a class="subtitle <?= $currentPage == $base . 'pages/privacypolicy.php'? 'is-current' : '' ?>" href="./pages/privacypolicy.php">プライバシーポリシー</a>
             </div>
         </div>
         <div class="menu">
             <img src="./images/menu.webp" alt="Menu Icon" />
         </div>
         <nav id="hamburger-menu" class="hamburger-menu">
-            <!-- アニメーション部分 -->
             <div class="drop"></div>
             <div class="wave"></div>
-
             <div class="hamburger-menu__inner">
-                <a href="./home.php" class="hamburger-menu__item title">ホーム</a>
-                <a href="./pages/greeting.php" class="hamburger-menu__item">ご挨拶</a>
-                <a href="./pages/event.php" class="hamburger-menu__item">イベント企画</a>
-                <a href="./pages/stores.php" class="hamburger-menu__item">出店一覧</a>
-                <a href="./pages/access.php" class="hamburger-menu__item">アクセス</a>
-                <a href="./pages/news.php" class="hamburger-menu__item">ニュース</a>
-                <a href="./pages/Q&A.php" class="hamburger-menu__item">Q&A</a>
-                <a href="./pages/contact.php" class="hamburger-menu__item">お問い合わせ</a>
-                <a href="./pages//privacypolicy.php" class="hamburger-menu__item">プライバシーポリシー</a>
-                <a href="https://x.com/Kosensai_Zitsui" class="hamburger-menu__item">X</a>
-                <a href="https://www.instagram.com/hirosekousensai/" class="hamburger-menu__item">Instagram</a>
+                <a href="<?= $base ?>home.php" class="hamburger-menu__item title">ホーム</a>
+                <a href="<?= $base ?>pages/greeting.php" class="hamburger-menu__item">ご挨拶</a>
+                <a href="<?= $base ?>pages/event.php" class="hamburger-menu__item">イベント企画</a>
+                <a href="<?= $base ?>pages/stores.php" class="hamburger-menu__item">出店一覧</a>
+                <a href="<?= $base ?>pages/access.php" class="hamburger-menu__item">アクセス</a>
+                <a href="<?= $base ?>pages/news.php" class="hamburger-menu__item">ニュース</a>
+                <a href="<?= $base ?>pages/Q&A.php" class="hamburger-menu__item">Q&A</a>
+                <a href="<?= $base ?>pages/contact.php" class="hamburger-menu__item">お問い合わせ</a>
+                <a href="<?= $base ?>pages/privacypolicy.php" class="hamburger-menu__item">プライバシーポリシー</a>
+                <a href="<?= htmlspecialchars($site_config['sns']['x'], ENT_QUOTES, 'UTF-8') ?>" class="hamburger-menu__item">X</a>
+                <a href="<?= htmlspecialchars($site_config['sns']['instagram'], ENT_QUOTES, 'UTF-8') ?>" class="hamburger-menu__item">Instagram</a>
             </div>
         </nav>
     </header>
@@ -153,22 +114,28 @@ foreach ($recent_event as $event_file) {
         <div class="main_menu">
             <p class="main_menus">開催日時</p>
             <div class="fest_date">
-                <p>一日目：10月25日(土)　　9:30-16:00</p>
-                <p>二日目：10月26日(日)　　9:30-15:00</p>
+                <?php foreach ($site_config['dates'] as $d): ?>
+                <p><?= htmlspecialchars($d['label'] . '：' . $d['date'] . '　　' . $d['time'], ENT_QUOTES, 'UTF-8') ?></p>
+                <?php endforeach; ?>
             </div>
-            <p>※時間は変更になる可能性があります。</p>
+            <p><?= htmlspecialchars($site_config['dates_note'], ENT_QUOTES, 'UTF-8') ?></p>
         </div>
         <div class="border"></div>
         <div class="main_menu">
             <p class="main_menus">ニュース</p>
             <div class="news_content">
-                <?php foreach ($news_list as $news) : ?>
-                    <p>
-                        <a href="<?= htmlspecialchars($news['link'], ENT_QUOTES, 'UTF-8') ?>">
-                            <span class="news-date"><?= htmlspecialchars($news['date'], ENT_QUOTES, 'UTF-8') ?></span>
-                            <?= htmlspecialchars($news['title'], ENT_QUOTES, 'UTF-8') ?>
-                        </a>
-                    </p>
+                <?php foreach ($recent_news as $news):
+                    $display_date = str_replace('-', '.', $news['date']);
+                    // 年を省いて月日だけ表示（従来の動作に合わせる）
+                    $short_date = substr($display_date, 5); // MM.DD
+                    $link = './pages/news/' . $news['id'] . '.php';
+                ?>
+                <p>
+                    <a href="<?= htmlspecialchars($link, ENT_QUOTES, 'UTF-8') ?>">
+                        <span class="news-date"><?= htmlspecialchars($short_date, ENT_QUOTES, 'UTF-8') ?></span>
+                        <?= htmlspecialchars($news['title'], ENT_QUOTES, 'UTF-8') ?>
+                    </a>
+                </p>
                 <?php endforeach; ?>
             </div>
             <a href="./pages/news.php" class="about">詳しくはこちら</a>
@@ -177,7 +144,7 @@ foreach ($recent_event as $event_file) {
         <div class="main_menu">
             <p class="main_menus">校長挨拶</p>
             <div class="greetings_content">
-                <p>　今年の⾼専祭のテーマは「彩風」（あやかぜ）です。このテーマには「個性豊かな出店や企画の彩りが、それぞれの色を持ちながらも一つに重なり合い、秋風のように心地よく⾼専祭全体を包み込む、そんなあたたかく一体感のあるイベントにしたい」という思いが込められています。</p>
+                <p>　今年の<?= htmlspecialchars($site_config['festival_name'], ENT_QUOTES, 'UTF-8') ?>のテーマは「<?= htmlspecialchars($site_config['theme'], ENT_QUOTES, 'UTF-8') ?>」（<?= htmlspecialchars($site_config['theme_reading'], ENT_QUOTES, 'UTF-8') ?>）です。<?= htmlspecialchars($site_config['theme_description'], ENT_QUOTES, 'UTF-8') ?>という思いが込められています。</p>
             </div>
             <a href="./pages/greeting.php" class="about">詳しくはこちら</a>
         </div>
@@ -187,18 +154,18 @@ foreach ($recent_event as $event_file) {
             <div class="greetings_content">
                 <p>パンフレットをスマホからも見ることができます。</p>
             </div>
-            <a href="./attachment/kosensai2025_pamphlet.pdf" class="about">パンフレットはこちら</a>
+            <a href="./attachment/<?= htmlspecialchars($site_config['pamphlet_file'], ENT_QUOTES, 'UTF-8') ?>" class="about">パンフレットはこちら</a>
         </div>
         <div class="border"></div>
         <div class="main_menu">
             <p class="main_menus">イベント</p>
             <div class="event_content">
-                <?php foreach ($event_list as $event) : ?>
-                    <p>
-                        <a href="<?= htmlspecialchars($event['link'], ENT_QUOTES, 'UTF-8') ?>">
-                            <?= htmlspecialchars($event['title'], ENT_QUOTES, 'UTF-8') ?>
-                        </a>
-                    </p>
+                <?php foreach ($event_list as $event): ?>
+                <p>
+                    <a href="<?= htmlspecialchars($event['link'], ENT_QUOTES, 'UTF-8') ?>">
+                        <?= htmlspecialchars($event['title'], ENT_QUOTES, 'UTF-8') ?>
+                    </a>
+                </p>
                 <?php endforeach; ?>
             </div>
             <a href="./pages/event.php" class="about">詳しくはこちら</a>
@@ -207,12 +174,12 @@ foreach ($recent_event as $event_file) {
         <div class="main_menu">
             <p class="main_menus">出店一覧</p>
             <div class="stores_content" id="home_stores_container">
-                <?php foreach ($random_stores as $store) : ?>
-                    <a href="./pages/stores.php?store=<?= htmlspecialchars($store['id'], ENT_QUOTES, 'UTF-8') ?>">
-                        <figure class="store_item">
-                            <img src="<?= htmlspecialchars($store['image'], ENT_QUOTES, 'UTF-8') ?>" class="s_pic" alt="<?= htmlspecialchars($store['alt'], ENT_QUOTES, 'UTF-8') ?>" />
-                        </figure>
-                    </a>
+                <?php foreach ($random_stores as $store): ?>
+                <a href="./pages/stores.php?store=<?= htmlspecialchars($store['id'], ENT_QUOTES, 'UTF-8') ?>">
+                    <figure class="store_item">
+                        <img src="<?= htmlspecialchars($store['image'], ENT_QUOTES, 'UTF-8') ?>" class="s_pic" alt="<?= htmlspecialchars($store['alt'], ENT_QUOTES, 'UTF-8') ?>" />
+                    </figure>
+                </a>
                 <?php endforeach; ?>
             </div>
             <a href="./pages/stores.php" class="about">詳しくはこちら</a>
@@ -222,8 +189,9 @@ foreach ($recent_event as $event_file) {
             <p class="main_menus">アクセス</p>
             <div class="access_content">
                 <p>公共交通機関</p>
-                <p>JR仙山線　愛子駅より徒歩15分</p>
-                <p>仙台市営バス 仙台高専広瀬キャンパス入口より徒歩5分</p>
+                <?php foreach ($site_config['access'] as $line): ?>
+                <p><?= htmlspecialchars($line, ENT_QUOTES, 'UTF-8') ?></p>
+                <?php endforeach; ?>
                 <a href="./pages/access.php" class="about">詳しくはこちら</a>
             </div>
         </div>
@@ -232,23 +200,23 @@ foreach ($recent_event as $event_file) {
         <div class="footer-content">
             <div class="footer_menu">
                 <div class="subtitles">
-                    <a class="subtitle" href="./home.php">ホーム</a>
-                    <a class="subtitle" href="./pages/greeting.php">ご挨拶</a>
-                    <a class="subtitle" href="./pages/event.php">イベント企画</a>
-                    <a class="subtitle" href="./pages/stores.php">出店一覧</a>
-                    <a class="subtitle" href="./pages/access.php">アクセス</a>
-                    <a class="subtitle" href="./pages/news.php">ニュース</a>
-                    <a class="subtitle" href="./pages/Q&A.php">Q&A</a>
-                    <a class="subtitle" href="./pages/contact.php">お問い合わせ</a>
-                    <a class="subtitle" href="./pages/privacypolicy.php">プライバシーポリシー</a>
+                    <a class="subtitle" href="<?= $base ?>home.php">ホーム</a>
+                    <a class="subtitle" href="<?= $base ?>pages/greeting.php">ご挨拶</a>
+                    <a class="subtitle" href="<?= $base ?>pages/event.php">イベント企画</a>
+                    <a class="subtitle" href="<?= $base ?>pages/stores.php">出店一覧</a>
+                    <a class="subtitle" href="<?= $base ?>pages/access.php">アクセス</a>
+                    <a class="subtitle" href="<?= $base ?>pages/news.php">ニュース</a>
+                    <a class="subtitle" href="<?= $base ?>pages/Q&A.php">Q&A</a>
+                    <a class="subtitle" href="<?= $base ?>pages/contact.php">お問い合わせ</a>
+                    <a class="subtitle" href="<?= $base ?>pages/privacypolicy.php">プライバシーポリシー</a>
                     <div class="SNS">
-                        <a class="subtitle" href="https://x.com/Kosensai_Zitsui">X</a>
-                        <a class="subtitle" href="https://www.instagram.com/hirosekousensai/">Instagram</a>
+                        <a class="subtitle" href="<?= htmlspecialchars($site_config['sns']['x'], ENT_QUOTES, 'UTF-8') ?>">X</a>
+                        <a class="subtitle" href="<?= htmlspecialchars($site_config['sns']['instagram'], ENT_QUOTES, 'UTF-8') ?>">Instagram</a>
                     </div>
                 </div>
             </div>
             <div>
-                <P>© 2025 高専祭実行委員会 - 仙台高等専門学校広瀬キャンパス</P>
+                <p>© <?= htmlspecialchars($site_config['year'], ENT_QUOTES, 'UTF-8') ?> <?= htmlspecialchars($site_config['committee_name'], ENT_QUOTES, 'UTF-8') ?> - <?= htmlspecialchars($site_config['school_name'], ENT_QUOTES, 'UTF-8') ?></p>
             </div>
         </div>
     </footer>
