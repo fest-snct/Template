@@ -2,7 +2,7 @@
 /**
  * site.php — サイト全体の設定ファイル
  *
- * 新年度対応時はこのファイルだけ編集してください。
+ * 基本値を定義しつつ、年度ごとの可変データは data/config.json から上書きします。
  * Do `require __DIR__ . '/../config/site.php';` to load $site_config.
  */
 $site_config = [
@@ -46,5 +46,42 @@ $site_config = [
     'base_path' => '/2025/',
 
     // ── OGP デフォルト ──────────────────────────────────────────
-    'ogp_image_default' => '/2025/images/hp_icon.webp',
+    'ogp_image_default' => 'images/hp_icon.webp',
 ];
+
+$config_path = __DIR__ . '/../data/config.json';
+if (is_file($config_path)) {
+    $json = json_decode(file_get_contents($config_path), true);
+    if (is_array($json)) {
+        if (!empty($json['year'])) {
+            $site_config['year'] = (string) $json['year'];
+        }
+        if (!empty($json['school_name'])) {
+            $site_config['school_name'] = (string) $json['school_name'];
+        }
+        if (!empty($json['theme'])) {
+            $site_config['theme'] = (string) $json['theme'];
+        }
+        if (!empty($json['theme_kana'])) {
+            $site_config['theme_reading'] = (string) $json['theme_kana'];
+        }
+
+        $dates = [];
+        if (!empty($json['date_day1'])) {
+            [$date, $time] = array_pad(explode(' ', (string) $json['date_day1'], 2), 2, '');
+            $dates[] = ['label' => '一日目', 'date' => $date, 'time' => $time];
+        }
+        if (!empty($json['date_day2'])) {
+            [$date, $time] = array_pad(explode(' ', (string) $json['date_day2'], 2), 2, '');
+            $dates[] = ['label' => '二日目', 'date' => $date, 'time' => $time];
+        }
+        if ($dates !== []) {
+            $site_config['dates'] = $dates;
+        }
+    }
+}
+
+$site_config['festival_label'] = $site_config['festival_name'] . $site_config['year'];
+$site_config['base_path'] = '/' . trim($site_config['year'], '/') . '/';
+$site_config['pamphlet_file'] = 'kosensai' . $site_config['year'] . '_pamphlet.pdf';
+$site_config['ogp_image_default'] = 'images/hp_icon.webp';

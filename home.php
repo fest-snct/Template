@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/config/site.php';
+require_once __DIR__ . '/lib/content.php';
 
 // ── OGP ─────────────────────────────────────────────────────
 $ogp_title       = $site_config['school_name'] . $site_config['festival_name'] . $site_config['year'];
@@ -18,42 +19,15 @@ header("Content-Security-Policy:
 ");
 
 // ── 出店一覧（ランダム6件） ──────────────────────────────────
-$stores = json_decode(file_get_contents(__DIR__ . '/data/stores.json'), true);
+$stores = load_stores();
 shuffle($stores);
 $random_stores = array_slice($stores, 0, 6);
 
-// ── ニュース（JSON から最新5件） ─────────────────────────────
-$news_json_files = glob(__DIR__ . '/data/news/*.json');
-$all_news = [];
-foreach ($news_json_files as $file) {
-    $item = json_decode(file_get_contents($file), true);
-    if ($item) {
-        $all_news[] = $item;
-    }
-}
-usort($all_news, function ($a, $b) {
-    $cmp = strcmp($b['date'], $a['date']);
-    return $cmp !== 0 ? $cmp : strcmp($b['id'], $a['id']);
-});
-$recent_news = array_slice($all_news, 0, 5);
-
-// ── イベント一覧（event/*.php から収集） ────────────────────
-$event_files = glob('./pages/event/*.php');
-rsort($event_files, SORT_STRING);
-$event_list = [];
-foreach ($event_files as $event_file) {
-    $content = file_get_contents($event_file);
-    if (preg_match('/<p class="event-title">(.*?)<\/p>/', $content, $matches)) {
-        $title = trim(strip_tags($matches[1]));
-        if ($title) {
-            $event_list[] = ['link' => $event_file, 'title' => $title];
-        }
-    }
-}
-$event_list = array_slice($event_list, 0, 5);
+$recent_news = array_slice(load_news_articles(), 0, 5);
+$event_list = array_slice(load_events(), 0, 5);
 
 $base = $site_config['base_path']; // e.g. '/2025/'
-$festival_label = $site_config['festival_name'] . $site_config['year'];
+$festival_label = $site_config['festival_label'];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -128,7 +102,7 @@ $festival_label = $site_config['festival_name'] . $site_config['year'];
                     $display_date = str_replace('-', '.', $news['date']);
                     // 年を省いて月日だけ表示（従来の動作に合わせる）
                     $short_date = substr($display_date, 5); // MM.DD
-                    $link = './pages/news/' . $news['id'] . '.php';
+                    $link = build_news_url($news['slug']);
                 ?>
                 <p>
                     <a href="<?= htmlspecialchars($link, ENT_QUOTES, 'UTF-8') ?>">
@@ -162,7 +136,7 @@ $festival_label = $site_config['festival_name'] . $site_config['year'];
             <div class="event_content">
                 <?php foreach ($event_list as $event): ?>
                 <p>
-                    <a href="<?= htmlspecialchars($event['link'], ENT_QUOTES, 'UTF-8') ?>">
+                    <a href="<?= htmlspecialchars($event['detail_slug'] ? './pages/event/' . $event['detail_slug'] . '.php' : './pages/event.php', ENT_QUOTES, 'UTF-8') ?>">
                         <?= htmlspecialchars($event['title'], ENT_QUOTES, 'UTF-8') ?>
                     </a>
                 </p>

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/site.php';
+require_once __DIR__ . '/../lib/content.php';
 
 $ogp_title       = 'ニュース | ' . $site_config['festival_name'] . $site_config['year'];
 $ogp_description = $site_config['festival_name'] . $site_config['year'] . 'の最新ニュース一覧。';
@@ -15,20 +16,7 @@ header("Content-Security-Policy:
     frame-ancestors 'none';
 ");
 
-// ── ニュース JSON を全件読み込み、日付降順にソート ─────────────
-$news_json_files = glob(__DIR__ . '/../data/news/*.json');
-$news_list = [];
-foreach ($news_json_files as $file) {
-    $item = json_decode(file_get_contents($file), true);
-    if ($item) {
-        $news_list[] = $item;
-    }
-}
-usort($news_list, function ($a, $b) {
-    // 日付降順、同日は id 降順
-    $cmp = strcmp($b['date'], $a['date']);
-    return $cmp !== 0 ? $cmp : strcmp($b['id'], $a['id']);
-});
+$news_list = load_news_articles();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -50,11 +38,8 @@ usort($news_list, function ($a, $b) {
                 <?php foreach ($news_list as $news):
                     // 表示用日付: YYYY-MM-DD → YYYY.MM.DD
                     $display_date = str_replace('-', '.', $news['date']);
-                    // サムネイル画像: ogp_image があればそれ、なければデフォルトアイコン
-                    $thumb = $news['ogp_image']
-                        ? '../images' . substr($news['ogp_image'], strlen('/images'))
-                        : '../images/icon_yoko.webp';
-                    $link = './news/' . $news['id'] . '.php';
+                    $thumb = $news['image'];
+                    $link = build_news_url($news['slug']);
                 ?>
                 <div class="news_item">
                     <a href="<?= htmlspecialchars($link, ENT_QUOTES, 'UTF-8') ?>">

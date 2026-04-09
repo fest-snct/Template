@@ -1,7 +1,9 @@
 <?php
+require_once __DIR__ . '/../config/site.php';
+
 // OGP settings
-$ogp_title = 'アクセス | 高専祭2025';
-$ogp_description = '高専祭2025へのアクセス情報です。周辺地図、シャトルバス、急行しらはぎ号の情報を確認できます。';
+$ogp_title = 'アクセス | ' . $site_config['festival_label'];
+$ogp_description = $site_config['festival_label'] . 'へのアクセス情報です。周辺地図、シャトルバス、急行しらはぎ号の情報を確認できます。';
 
 session_start();
 $nonce = base64_encode(random_bytes(16));
@@ -19,7 +21,7 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アクセス | 高専祭2025</title>
+    <title><?= htmlspecialchars($ogp_title, ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="../css/access.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <?php include './includes/header-favicon.php'; ?>
     <script src="../js/access.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
@@ -57,7 +59,7 @@ header("Content-Security-Policy:
         </div>
         <div class="content_main center">
             <img class="shirahagi" src="../images/sirahagi.webp" alt="急行しらはぎ号">
-            <a class="time" href="./news/04.php">詳しくはこちら</a>
+            <a class="time" href="./news_article.php?slug=04">詳しくはこちら</a>
         </div>
     </main>
     <?php include_once './includes/footer.php'; ?>

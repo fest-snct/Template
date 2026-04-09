@@ -13,6 +13,7 @@ function render_breadcrumb() {
         'stores'        => '出店一覧',
         'access'        => 'アクセス',
         'news'          => 'ニュース',
+        'news_article'  => 'ニュース',
         'contact'       => 'お問い合わせ',
         'privacypolicy' => 'プライバシーポリシー',
         'shuttle_bus'   => 'シャトルバス時刻表',
@@ -23,16 +24,17 @@ function render_breadcrumb() {
         'cosplay'       => 'コスプレ大会',
     ];
 
-    // ニュース記事タイトルを JSON から動的に取得
+    // ニュース記事タイトルを Markdown から動的に取得
     $news_labels = [];
     $news_dir = __DIR__ . '/../../data/news/';
     if (is_dir($news_dir)) {
-        foreach (glob($news_dir . '*.json') as $file) {
-            $item = json_decode(file_get_contents($file), true);
-            if ($item && isset($item['id'], $item['title'])) {
-                // ゼロ埋め ID と非ゼロ埋め ID 両方に対応（例: '01' と '1'）
-                $news_labels[$item['id']] = $item['title'];
-                $news_labels[ltrim($item['id'], '0') ?: '0'] = $item['title'];
+        foreach (glob($news_dir . '*.md') as $file) {
+            $raw = file_get_contents($file);
+            if (preg_match('/\A---\n.*?title:\s*(.+)\n.*?---\n/s', str_replace(["\r\n", "\r"], "\n", $raw), $matches)) {
+                $slug = pathinfo($file, PATHINFO_FILENAME);
+                $title = trim($matches[1], "\"' ");
+                $news_labels[$slug] = $title;
+                $news_labels[ltrim($slug, '0') ?: '0'] = $title;
             }
         }
     }
@@ -44,6 +46,16 @@ function render_breadcrumb() {
 
     $home_href   = $base_path . 'home.php';
     $breadcrumbs = ['<li><a href="' . htmlspecialchars($home_href, ENT_QUOTES, 'UTF-8') . '">ホーム</a></li>'];
+
+    if (basename($path) === 'news_article.php') {
+        $slug = $_GET['slug'] ?? '';
+        $breadcrumbs[] = '<li><a href="' . htmlspecialchars($base_path . 'pages/news.php', ENT_QUOTES, 'UTF-8') . '">ニュース</a></li>';
+        $breadcrumbs[] = '<li class="bold">' . htmlspecialchars($label_map[$slug] ?? $slug, ENT_QUOTES, 'UTF-8') . '</li>';
+        echo '<nav class="breadcrumb" aria-label="Breadcrumb"><ol>'
+           . implode('', $breadcrumbs)
+           . '</ol></nav>';
+        return;
+    }
 
     foreach ($parts as $index => $part) {
         $clean = preg_replace('/\.php$/', '', $part);
