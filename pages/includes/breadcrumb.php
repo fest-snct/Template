@@ -1,5 +1,9 @@
 <?php
 function render_breadcrumb() {
+    // 無視したいスラップ
+    $ignoreList = ['2025', 'pages'];
+
+    // ラベル変換
     $labelMap = [
         'greeting' => 'ご挨拶',
         'event' => 'イベント企画',
@@ -32,132 +36,47 @@ function render_breadcrumb() {
         'card_yuugi' => '遊戯王大会',
         'card_duel' => 'デュエマ大会',
         'puyoteto' => 'ぷよテト大会',
-        'cosplay' => 'コスプレ大会',
     ];
 
-    $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '';
-    $parts = array_values(array_filter(explode('/', trim($path, '/')), static function ($part) {
-        return $part !== '' && $part !== '2025' && $part !== 'pages';
-    }));
+    // 現在のURLパスを取得（例: /about/greeting.php）
+    $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+    $parts = explode('/', trim($path, '/'));
 
-    $breadcrumbs = [
-        [
-            'label' => 'ホーム',
-            'href' => '/2025/home.php',
-        ],
-    ];
+    $breadcrumbs = ['<li><a href="/2025/home.php">ホーム</a></li>'];
+    $link = '';
+    $displayParts = [];
 
-    if ($parts === []) {
-        echo '<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li class="bold">ホーム</li></ol></nav>';
-        return;
-    }
+    foreach ($parts as $index => $part) {
+        $cleanPart = preg_replace('/\.php/', '', $part);
+        $isLast = ($index === array_key_last($parts));
 
-    $normalizedPath = implode('/', $parts);
-
-    $routeMap = [
-        'greeting.php' => [
-            ['label' => $labelMap['greeting']],
-        ],
-        'event.php' => [
-            ['label' => $labelMap['event']],
-        ],
-        'stores.php' => [
-            ['label' => $labelMap['stores']],
-        ],
-        'access.php' => [
-            ['label' => $labelMap['access']],
-        ],
-        'access/shuttle_bus.php' => [
-            ['label' => $labelMap['access'], 'href' => '/2025/pages/access.php'],
-            ['label' => $labelMap['shuttle_bus']],
-        ],
-        'news.php' => [
-            ['label' => $labelMap['news']],
-        ],
-        'contact.php' => [
-            ['label' => $labelMap['contact']],
-        ],
-        'privacypolicy.php' => [
-            ['label' => $labelMap['privacypolicy']],
-        ],
-        'Q&A.php' => [
-            ['label' => 'Q&A'],
-        ],
-        'event/guest.php' => [
-            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
-            ['label' => $labelMap['guest']],
-        ],
-        'event/card_yuugi.php' => [
-            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
-            ['label' => $labelMap['card_yuugi']],
-        ],
-        'event/card_duel.php' => [
-            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
-            ['label' => $labelMap['card_duel']],
-        ],
-        'event/puyoteto.php' => [
-            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
-            ['label' => $labelMap['puyoteto']],
-        ],
-        'event/cosplay.php' => [
-            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
-            ['label' => $labelMap['cosplay']],
-        ],
-    ];
-
-    foreach (array_keys($labelMap) as $newsSlug) {
-        if (preg_match('/^\d+$/', $newsSlug) !== 1) {
+        // 無視対象ならスキップ
+        if (in_array($cleanPart, $ignoreList)) {
+            $link .= '/' . $part;
             continue;
         }
 
-        $routeMap['news/' . $newsSlug . '.php'] = [
-            ['label' => $labelMap['news'], 'href' => '/2025/pages/news.php'],
-            ['label' => $labelMap[$newsSlug]],
-        ];
-    }
+        $displayParts[] = $cleanPart;
 
-    $items = $routeMap[$normalizedPath] ?? [];
-    if ($items === []) {
-        foreach ($parts as $index => $part) {
-            $cleanPart = preg_replace('/\.php$/', '', $part);
-            $items[] = [
-                'label' => $labelMap[$cleanPart] ?? ucfirst($cleanPart),
-                'href' => $index === array_key_last($parts) ? null : '/2025/' . implode('/', array_slice($parts, 0, $index + 1)),
-            ];
+        // ラベル取得
+        $label = $labelMap[$cleanPart] ?? ucfirst($cleanPart);
+
+        if ($isLast) {
+            $breadcrumbs[] = "<li class='bold'>$label</li>";
+        } else {
+            // 中間パーツに対応する .php があるかを仮定
+            $phpPath = $_SERVER['DOCUMENT_ROOT'] . '/' . implode('/', array_slice($parts, 0, $index + 1)) . '.php';
+            if (file_exists($phpPath)) {
+                // ファイルがあれば .php にリンク
+                $href = '/' . implode('/', array_slice($parts, 0, $index + 1)) . '.php';
+            } else {
+                // そうでなければディレクトリリンク
+                $href = '/' . implode('/', array_slice($parts, 0, $index + 1)) . '/';
+            }
+            $breadcrumbs[] = "<li><a href=\"$href\">$label</a></li>";
         }
     }
 
-    foreach ($items as $index => $item) {
-        $label = htmlspecialchars($item['label'], ENT_QUOTES, 'UTF-8');
-        $isLast = $index === array_key_last($items);
-
-        if ($isLast || empty($item['href'])) {
-            $breadcrumbs[] = [
-                'label' => $label,
-                'href' => null,
-            ];
-            continue;
-        }
-
-        $breadcrumbs[] = [
-            'label' => $label,
-            'href' => $item['href'],
-        ];
-    }
-
-    $html = '';
-    foreach ($breadcrumbs as $index => $breadcrumb) {
-        $isLast = $index === array_key_last($breadcrumbs);
-
-        if ($isLast || empty($breadcrumb['href'])) {
-            $html .= "<li class='bold'>{$breadcrumb['label']}</li>";
-            continue;
-        }
-
-        $href = htmlspecialchars($breadcrumb['href'], ENT_QUOTES, 'UTF-8');
-        $html .= "<li><a href=\"{$href}\">{$breadcrumb['label']}</a></li>";
-    }
-
-    echo '<nav class="breadcrumb" aria-label="Breadcrumb"><ol>' . $html . '</ol></nav>';
+    echo '<nav class="breadcrumb" aria-label="Breadcrumb"><ol>' . implode('', $breadcrumbs) . '</ol></nav>';
 }
 ?>
