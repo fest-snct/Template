@@ -1,5 +1,7 @@
 <?php
 function render_breadcrumb() {
+    global $site_config;
+
     require_once __DIR__ . '/../../config/site.php';
 
     $base_path = $site_config['base_path']; // e.g. '/2025/'
@@ -30,16 +32,15 @@ function render_breadcrumb() {
     if (is_dir($news_dir)) {
         foreach (glob($news_dir . '*.md') as $file) {
             $raw = file_get_contents($file);
-            if (preg_match('/\A---\n.*?title:\s*(.+)\n.*?---\n/s', str_replace(["\r\n", "\r"], "\n", $raw), $matches)) {
+            if (preg_match('/\A---\n.*?^title:\s*(.+?)$(?=.*?---\n)/sm', str_replace(["\r\n", "\r"], "\n", $raw), $matches)) {
                 $slug = pathinfo($file, PATHINFO_FILENAME);
                 $title = trim($matches[1], "\"' ");
                 $news_labels[$slug] = $title;
-                $news_labels[ltrim($slug, '0') ?: '0'] = $title;
             }
         }
     }
 
-    $label_map = array_merge($page_labels, $news_labels);
+    $label_map = $page_labels + $news_labels;
 
     $path  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $parts = explode('/', trim($path, '/'));
