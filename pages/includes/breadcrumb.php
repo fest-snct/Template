@@ -1,87 +1,163 @@
 <?php
 function render_breadcrumb() {
-    require_once __DIR__ . '/../../config/site.php';
-
-    $base_path = $site_config['base_path']; // e.g. '/2025/'
-    // base_path の先頭スラッシュを除いたセグメント群（例: ['2025']）
-    $base_segments = array_filter(explode('/', trim($base_path, '/')));
-
-    // ラベル変換マップ（ページ固有のラベル）
-    $page_labels = [
-        'greeting'      => 'ご挨拶',
-        'event'         => 'イベント企画',
-        'stores'        => '出店一覧',
-        'access'        => 'アクセス',
-        'news'          => 'ニュース',
-        'news_article'  => 'ニュース',
-        'contact'       => 'お問い合わせ',
+    $labelMap = [
+        'greeting' => 'ご挨拶',
+        'event' => 'イベント企画',
+        'stores' => '出店一覧',
+        'access' => 'アクセス',
+        'news' => 'ニュース',
+        'contact' => 'お問い合わせ',
         'privacypolicy' => 'プライバシーポリシー',
-        'shuttle_bus'   => 'シャトルバス時刻表',
-        'guest'         => '松本紀生オーロラフォトライブ',
-        'card_yuugi'    => '遊戯王大会',
-        'card_duel'     => 'デュエマ大会',
-        'puyoteto'      => 'ぷよテト大会',
-        'cosplay'       => 'コスプレ大会',
+        'shuttle_bus' => 'シャトルバス時刻表',
+        '01' => '2025年度高専祭webサイト公開!',
+        '02' => '出店一覧を公開しました!',
+        '03' => '松本紀生さんが高専祭にやってくる!',
+        '04' => 'しらはぎ号が今年も走る!',
+        '05' => 'デュエマ大会を開催します!',
+        '06' => '遊戯王大会を開催します!',
+        '07' => 'ぷよテト大会を開催します!',
+        '08' => 'コスプレ大会を開催します!',
+        '09' => '謎解き愛好会からのお知らせ',
+        '10' => '部員制作CDとグッズの販売！（DTM部）',
+        '11' => '軽音楽部ライブのお知らせ',
+        '12' => '吹奏楽部より皆様へ',
+        '13' => '高専女子プロジェクトです',
+        '14' => 'プログラミング部です',
+        '15' => '河北新報でご紹介いただきました！',
+        '16' => '絶品焼きそば、ここにあり！',
+        '17' => '写真部の展示・グッズ販売・フォトスポット',
+        '18' => 'Freeカラオケ中止のお知らせ',
+        '19' => '高専祭Award!!',
+        'guest' => '松本紀生オーロラフォトライブ',
+        'card_yuugi' => '遊戯王大会',
+        'card_duel' => 'デュエマ大会',
+        'puyoteto' => 'ぷよテト大会',
+        'cosplay' => 'コスプレ大会',
     ];
 
-    // ニュース記事タイトルを Markdown から動的に取得
-    $news_labels = [];
-    $news_dir = __DIR__ . '/../../data/news/';
-    if (is_dir($news_dir)) {
-        foreach (glob($news_dir . '*.md') as $file) {
-            $raw = file_get_contents($file);
-            if (preg_match('/\A---\n.*?title:\s*(.+)\n.*?---\n/s', str_replace(["\r\n", "\r"], "\n", $raw), $matches)) {
-                $slug = pathinfo($file, PATHINFO_FILENAME);
-                $title = trim($matches[1], "\"' ");
-                $news_labels[$slug] = $title;
-                $news_labels[ltrim($slug, '0') ?: '0'] = $title;
-            }
-        }
-    }
+    $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '';
+    $parts = array_values(array_filter(explode('/', trim($path, '/')), static function ($part) {
+        return $part !== '' && $part !== '2025' && $part !== 'pages';
+    }));
 
-    $label_map = array_merge($page_labels, $news_labels);
+    $breadcrumbs = [
+        [
+            'label' => 'ホーム',
+            'href' => '/2025/home.php',
+        ],
+    ];
 
-    $path  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $parts = explode('/', trim($path, '/'));
-
-    $home_href   = $base_path . 'home.php';
-    $breadcrumbs = ['<li><a href="' . htmlspecialchars($home_href, ENT_QUOTES, 'UTF-8') . '">ホーム</a></li>'];
-
-    if (basename($path) === 'news_article.php') {
-        $slug = $_GET['slug'] ?? '';
-        $breadcrumbs[] = '<li><a href="' . htmlspecialchars($base_path . 'pages/news.php', ENT_QUOTES, 'UTF-8') . '">ニュース</a></li>';
-        $breadcrumbs[] = '<li class="bold">' . htmlspecialchars($label_map[$slug] ?? $slug, ENT_QUOTES, 'UTF-8') . '</li>';
-        echo '<nav class="breadcrumb" aria-label="Breadcrumb"><ol>'
-           . implode('', $breadcrumbs)
-           . '</ol></nav>';
+    if ($parts === []) {
+        echo '<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li class="bold">ホーム</li></ol></nav>';
         return;
     }
 
-    foreach ($parts as $index => $part) {
-        $clean = preg_replace('/\.php$/', '', $part);
+    $normalizedPath = implode('/', $parts);
 
-        // base_path のセグメント（例: '2025'）と 'pages' はスキップ
-        if (in_array($clean, $base_segments) || $clean === 'pages') {
+    $routeMap = [
+        'greeting.php' => [
+            ['label' => $labelMap['greeting']],
+        ],
+        'event.php' => [
+            ['label' => $labelMap['event']],
+        ],
+        'stores.php' => [
+            ['label' => $labelMap['stores']],
+        ],
+        'access.php' => [
+            ['label' => $labelMap['access']],
+        ],
+        'access/shuttle_bus.php' => [
+            ['label' => $labelMap['access'], 'href' => '/2025/pages/access.php'],
+            ['label' => $labelMap['shuttle_bus']],
+        ],
+        'news.php' => [
+            ['label' => $labelMap['news']],
+        ],
+        'contact.php' => [
+            ['label' => $labelMap['contact']],
+        ],
+        'privacypolicy.php' => [
+            ['label' => $labelMap['privacypolicy']],
+        ],
+        'Q&A.php' => [
+            ['label' => 'Q&A'],
+        ],
+        'event/guest.php' => [
+            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
+            ['label' => $labelMap['guest']],
+        ],
+        'event/card_yuugi.php' => [
+            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
+            ['label' => $labelMap['card_yuugi']],
+        ],
+        'event/card_duel.php' => [
+            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
+            ['label' => $labelMap['card_duel']],
+        ],
+        'event/puyoteto.php' => [
+            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
+            ['label' => $labelMap['puyoteto']],
+        ],
+        'event/cosplay.php' => [
+            ['label' => $labelMap['event'], 'href' => '/2025/pages/event.php'],
+            ['label' => $labelMap['cosplay']],
+        ],
+    ];
+
+    foreach (array_keys($labelMap) as $newsSlug) {
+        if (preg_match('/^\d+$/', $newsSlug) !== 1) {
             continue;
         }
 
-        $is_last = ($index === array_key_last($parts));
-        $label   = $label_map[$clean] ?? ucfirst($clean);
+        $routeMap['news/' . $newsSlug . '.php'] = [
+            ['label' => $labelMap['news'], 'href' => '/2025/pages/news.php'],
+            ['label' => $labelMap[$newsSlug]],
+        ];
+    }
 
-        if ($is_last) {
-            $breadcrumbs[] = '<li class="bold">' . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</li>';
-        } else {
-            $php_path = $_SERVER['DOCUMENT_ROOT'] . '/' . implode('/', array_slice($parts, 0, $index + 1)) . '.php';
-            $href = file_exists($php_path)
-                ? '/' . implode('/', array_slice($parts, 0, $index + 1)) . '.php'
-                : '/' . implode('/', array_slice($parts, 0, $index + 1)) . '/';
-            $breadcrumbs[] = '<li><a href="' . htmlspecialchars($href, ENT_QUOTES, 'UTF-8') . '">'
-                           . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</a></li>';
+    $items = $routeMap[$normalizedPath] ?? [];
+    if ($items === []) {
+        foreach ($parts as $index => $part) {
+            $cleanPart = preg_replace('/\.php$/', '', $part);
+            $items[] = [
+                'label' => $labelMap[$cleanPart] ?? ucfirst($cleanPart),
+                'href' => $index === array_key_last($parts) ? null : '/2025/' . implode('/', array_slice($parts, 0, $index + 1)),
+            ];
         }
     }
 
-    echo '<nav class="breadcrumb" aria-label="Breadcrumb"><ol>'
-       . implode('', $breadcrumbs)
-       . '</ol></nav>';
+    foreach ($items as $index => $item) {
+        $label = htmlspecialchars($item['label'], ENT_QUOTES, 'UTF-8');
+        $isLast = $index === array_key_last($items);
+
+        if ($isLast || empty($item['href'])) {
+            $breadcrumbs[] = [
+                'label' => $label,
+                'href' => null,
+            ];
+            continue;
+        }
+
+        $breadcrumbs[] = [
+            'label' => $label,
+            'href' => $item['href'],
+        ];
+    }
+
+    $html = '';
+    foreach ($breadcrumbs as $index => $breadcrumb) {
+        $isLast = $index === array_key_last($breadcrumbs);
+
+        if ($isLast || empty($breadcrumb['href'])) {
+            $html .= "<li class='bold'>{$breadcrumb['label']}</li>";
+            continue;
+        }
+
+        $href = htmlspecialchars($breadcrumb['href'], ENT_QUOTES, 'UTF-8');
+        $html .= "<li><a href=\"{$href}\">{$breadcrumb['label']}</a></li>";
+    }
+
+    echo '<nav class="breadcrumb" aria-label="Breadcrumb"><ol>' . $html . '</ol></nav>';
 }
 ?>
