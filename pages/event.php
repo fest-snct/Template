@@ -1,8 +1,12 @@
 <?php
+require_once __DIR__ . '/../config/site.php';
+require_once __DIR__ . '/../lib/content.php';
+
 // OGP settings
-$ogp_title = 'イベント企画 | 高専祭2025';
-$ogp_description = '高専祭2025のイベント企画一覧。松本紀生さん特別企画やミニイベントなど、様々な企画を予定しています。';
-$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/guest.webp';
+$ogp_title = 'イベント企画 | ' . $site_config['festival_label'];
+$ogp_description = $site_config['festival_label'] . 'のイベント企画一覧。';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $site_config['base_path'] . 'images/event/guest.webp';
+$events_by_category = group_events_by_category(load_events());
 
 session_start();
 $nonce = base64_encode(random_bytes(16));
@@ -20,7 +24,7 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>イベント企画 | 高専祭2025</title>
+    <title><?= htmlspecialchars($ogp_title, ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="../css/event.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <?php include './includes/header-favicon.php'; ?>
     <script src="../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
@@ -30,122 +34,38 @@ header("Content-Security-Policy:
     <div class="wrapper">
         <main>
             <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
-            <p class="title">メインイベント</p>
-            <div class="events">
-                <div class="event">
-                    <p class="event-title">松本紀生さん特別企画</p>
-                    <div class="description">
-                        <p>二日目: 10月26日(日)13:00から第一体育館で開催!</p>
-                        <p>写真家の松本紀生さんが高専祭にやってくる!</p>
-                        <a href="./event/guest.php" class="detail">詳細はこちら</a>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">ぷよテト大会</p>
-                    <div class="description">
-                        <p>会場: 第一体育館</p>
-                        <p>日程: 10月25日（土）11:00-13:00</p>
-                        <a href="./event/puyoteto.php" class="detail">詳細はこちら</a>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">コスプレ大会</p>
-                    <div class="description">
-                        <p>会場: 晴天時は屋外ステージ、雨天時は第一体育館</p>
-                        <p>晴天時: 10月25日（土）9:00-12:00</p>
-                        <p>雨天時: 10月25日（土）14:00-15:30</p>
-                        <a href="./event/cosplay.php" class="detail">詳細はこちら</a>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">遊戯王大会</p>
-                    <div class="description">
-                        <p>会場: AL-B（8-303）</p>
-                        <p>日程: 10月26日（日）9:00-15:00</p>
-                        <a href="./event/card_yuugi.php" class="detail">詳細はこちら</a>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">デュエマ大会</p>
-                    <div class="description">
-                        <p>会場: AL-B（8-303）</p>
-                        <p>日程: 10月25日（土）9:00-16:00</p>
-                        <a href="./event/card_duel.php" class="detail">詳細はこちら</a>
-                    </div>
-                </div>
-            </div>
+            <?php $is_first_category = true; ?>
+            <?php foreach ($events_by_category as $category => $events): ?>
+            <?php if (!$is_first_category): ?>
             <div class="border"></div>
-            <p class="title">ミニイベント</p>
+            <?php endif; ?>
+            <p class="title"><?= htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?></p>
             <div class="events">
+                <?php foreach ($events as $event): ?>
                 <div class="event">
-                    <p class="event-title">気配切り</p>
+                    <p class="event-title"><?= htmlspecialchars($event['title'], ENT_QUOTES, 'UTF-8') ?></p>
                     <div class="description">
-                        <p>会場: グラウンド</p>
-                        <p>日程: 10月25日（土）9:00-16:00</p>
+                        <?php if (!empty($event['description'])): ?>
+                        <p><?= htmlspecialchars($event['description'], ENT_QUOTES, 'UTF-8') ?></p>
+                        <?php endif; ?>
+                        <?php if (!empty($event['venue'])): ?>
+                        <p>会場: <?= htmlspecialchars($event['venue'], ENT_QUOTES, 'UTF-8') ?></p>
+                        <?php endif; ?>
+                        <?php if (!empty($event['date'])): ?>
+                        <p>日程: <?= htmlspecialchars($event['date'], ENT_QUOTES, 'UTF-8') ?></p>
+                        <?php endif; ?>
+                        <?php if (!empty($event['detail_slug'])): ?>
+                        <a href="./event/<?= htmlspecialchars($event['detail_slug'], ENT_QUOTES, 'UTF-8') ?>.php" class="detail">詳細はこちら</a>
+                        <?php endif; ?>
+                        <?php if (!empty($event['image'])): ?>
+                        <img src="../images/<?= htmlspecialchars($event['image'], ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($event['title'], ENT_QUOTES, 'UTF-8') ?>" class="poster-image">
+                        <?php endif; ?>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </div>
-            <div class="border"></div>
-            <p class="title">文化部演奏</p>
-            <div class="events">
-                <div class="event">
-                    <p class="event-title">筝曲部</p>
-                    <div class="description">
-                        <p>会場: 体育館</p>
-                        <p>日程: 10月25日（土）16:30-17:00 （入場は16:00～可能です）</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">吹奏楽部</p>
-                    <div class="description">
-                        <p>会場: 体育館</p>
-                        <p>日程: 10月25日（土）9:30-10:00 （入場は9:00～可能です）</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">軽音楽部</p>
-                    <div class="description">
-                        <p>会場: 体育館 (土曜午後に合奏所でも演奏!!)</p>
-                        <p>日程: 10月26日（日）10:00-11:30（入場は9:00～可能です）</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">【急行しらはぎ号特別企画！】</p>
-                    <div class="description">
-                        <p>広瀬の軽音楽部が名取キャンパスで演奏！</p>
-                        <p>10月25日 13:00-14:00　仙台高専名取 ステージにて</p>
-                        <img src="../images/keionn_natori.webp" alt="Keionn Natori" class="poster-image">
-                    </div>
-                </div>
-            </div>
-            <div class="border"></div>
-            <p class="title">常時開催イベント</p>
-            <div class="events">
-                <div class="event">
-                    <p class="event-title">松本紀生写真展</p>
-                    <div class="description">
-                        <p>会場: 武道場</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">free カラオケ</p>
-                    <div class="event-title">
-                        <p>会場: 屋外ステージ （コスプレ大会中は開催しません）</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">スタンプラリー</p>
-                    <div class="description">
-                        <p>会場: 校内and受付</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <p class="event-title">高専クイズ</p>
-                    <div class="description">
-                        <p>会場: 校内and受付</p>
-                    </div>
-                </div>
-            </div>
+            <?php $is_first_category = false; ?>
+            <?php endforeach; ?>
             <div class="border"></div>
             <p class="title">タイムテーブル</p>
             <img class="time-table" src="../images/time-table.webp" alt="タイムテーブル">

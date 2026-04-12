@@ -1,0 +1,210 @@
+[
+    {
+        "id": "shashinnbu",
+        "name": "写真部",
+        "location": "8-204教室",
+        "description": "写真部では部員が撮影した写真の展示をしたり、オリジナルグッズの販売を行っています。また、フォトスポットも設営しています。お気軽に寄ってみてください！お待ちしています！",
+        "image": "shashinnbu.webp",
+        "news_slug": null
+    },
+    {
+        "id": "gakuseitoshoiinkai",
+        "name": "学生図書委員会",
+        "location": "ピロティ",
+        "description": "本図書室で不要となった蔵書のほか、地域の方々や仙台市広瀬図書館様が寄贈してくださった本の無償譲渡を行います。",
+        "image": "gakuseitoshoiinkai.webp",
+        "news_slug": null
+    },
+    {
+        "id": "suurikagakuaikoukai",
+        "name": "数理科学愛好会",
+        "location": "8-206教室",
+        "description": "私たち数理科学愛好会では、皆さんに科学への興味を持ってもらえるよう様々な現象の実演や展示をします。ぜひ気軽にお越しください。",
+        "image": "suurikagakuaikoukai.webp",
+        "news_slug": null
+    },
+    {
+        "id": "DTMbu",
+        "name": "DTM部",
+        "location": "広場",
+        "description": "部員が作成した楽曲を収録したCDと、オリジナルMVに登場するかわいいイラストのグッズを販売します！ぜひ、一度ブースへお越しください！",
+        "image": "DTMbu.webp",
+        "news_slug": "10"
+    },
+    {
+        "id": "puroguraminngubu",
+        "name": "プログラミング部",
+        "location": "松韻会館2階",
+        "description": "プログラミング部では、おなじみの弾幕ゲームや過去のプログラミングコンテスト出場作品などを展示しています。また、入力したテキストで学習するLLMも設置中です。どんなAIになるかは皆さん次第！",
+        "image": "puroguraminngubu.webp",
+        "news_slug": "14"
+    },
+    {
+        "id": "kagakubu",
+        "name": "科学部",
+        "location": "第2体育館",
+        "description": "科学部は毎年、高専ロボコンに参加しています。高専祭では、ロボットの展示、ロボットの操縦体験、ロボコンの競技説明を行い、科学部の活動やロボコンについて紹介します。",
+        "image": "kagakubu.webp",
+        "news_slug": null
+    },
+    {
+        "id": "kousenjoshipurojekuto",
+        "name": "高専女子プロジェクト",
+        "location": "8-306教室",
+        "description": "高専女子プロジェクトでは、映えるエモいドリンクを販売します！また、フォトスポットや、活動内容を知っていただける展示もご用意しておりますので、ぜひお越しください！",
+        "image": "kousenjoshipurojekuto.webp",
+        "news_slug": "13"
+    },
+    {
+        "id": "sakadoubu",
+        "name": "茶華道部",
+        "location": "松陰会館2階",
+        "description": "無料でお茶と和菓子をおもてなしいたします。華道の展示会も行っているのでぜひ足を運んでくれると嬉しいです。",
+        "image": "sakadoubu.webp",
+        "news_slug": null
+    },
+    {
+        "id": "zaiseria",
+        "name": "ザイセリア",
+        "location": "8-302教室",
+        "description": "1年3組の個性豊かな仲間たちがコスプレをして提供します！　???「やっぱ高専祭といえばコスプレですよねー。え行かない?世間は許してくｒえゃすぇんよ」",
+        "image": "zaiseria.webp",
+        "news_slug": null
+    },
+    {
+        "id": "daiettoasukaraya",
+        "name": "ダイエット明日から屋",
+        "location": "広場",
+        "description": "歩き回って疲れた時は、アツアツたい焼き、香ばしくて大容量のポップコーン、そして冷たいドリンクで一休み！美味しさ満点でエネルギーチャージ！ぜひお立ち寄りください！",
+        "image": "daiettoasukaraya.webp",
+        "news_slug": null
+    },
+    {
+        "id": "kissaten.pdf",
+        "name": "喫茶店.pdf",
+        "location": "8号棟1階",
+        "description": "三種のパンケーキにほろにがコーヒーゼリーと爽やかレモンティーをご用意！ぜひお立ち寄りください！",
+        "image": "kissaten.pdf.webp",
+        "news_slug": null
+    },
+    {
+        "id": "ennnichiIT2",
+        "name": "縁日(IT2)",
+        "location": "広場",
+        "description": "1回100円の射的です。狙ったお菓子に命中させてゲットしてください！",
+        "image": "ennnichiIT2.webp",
+        "news_slug": null
+    },
+    {
+        "id": "imonigorou",
+        "name": "芋煮五郎",
+        "location": "広場",
+        "description": "山形生まれ山形育ちの店主がプロヂュースした完璧な芋煮です！シンプルな具材と味付けに秘められた可能性は無限大です！ぜひご賞味ください！【山形の芋煮を全国に】",
+        "image": "imonigorou.webp",
+        "news_slug": null
+    },
+    {
+        "id": "nazotokiaikoukai",
+        "name": "謎解き愛好会",
+        "location": "8-202教室",
+        "description": "体験型謎解きイベント『一生脱出できない運命からの脱出～開運！脱出みくじ～』を開催！第4回リアル脱出ゲーム甲子園本選出場作品の再演です！脱出の運勢を掴み取れ！",
+        "image": "nazotokiaikoukai.webp",
+        "news_slug": "09"
+    },
+    {
+        "id": "gekijouhananobare-bu",
+        "name": "激情　華のバレー部",
+        "location": "5号棟前渡り廊下",
+        "description": "絶対に楽しむことができる縁日です。ほんとのお祭りに来た気分で楽しんでいってねー",
+        "image": "gekijouhananobare-bu.webp",
+        "news_slug": null
+    },
+    {
+        "id": "nasusennassennburo-ka",
+        "name": "那須セン斡旋ブローカ",
+        "location": "広場",
+        "description": "フルーツ飴とチョコバナナを売ってます。仮進級並みにおいしいデザートをお届けします。",
+        "image": "nasusennassennburo-ka.webp",
+        "news_slug": null
+    },
+    {
+        "id": "monodukurikennkyuukai",
+        "name": "ものづくり研究会",
+        "location": "第2体育館",
+        "description": "【高専生の技術集めました】 プログラミング？電子回路？モデリング？ もちろん全部あります！3Dプリンター製のキーホルダーや光る基板ストラップ、左手デバイスまでも販売中…!? 是非お越しください！",
+        "image": "monodukurikennkyuukai.webp",
+        "news_slug": null
+    },
+    {
+        "id": "watagashi",
+        "name": "わたがし",
+        "location": "5号棟前渡り廊下",
+        "description": "みんな大好きお祭りなどにあるわたあめです",
+        "image": "watagashi.webp",
+        "news_slug": null
+    },
+    {
+        "id": "amatyuamusennbu",
+        "name": "アマチュア無線部",
+        "location": "8-208教室",
+        "description": "無線に関する機材や展示などをしています！体験コーナーもあるので無線について気になっている方はぜひ見に来てネ",
+        "image": "amatyuamusennbu.webp",
+        "news_slug": null
+    },
+    {
+        "id": "kuragefakutori-",
+        "name": "クラゲファクトリー",
+        "location": "8-308教室",
+        "description": "クラゲファクトリーでは、ハンドクリーム・バスボム・クラゲのキーホルダーを自分好みに手作りできます。世界にひとつだけの作品を作ってみよう！",
+        "image": "kuragefakutori-.webp",
+        "news_slug": null
+    },
+    {
+        "id": "yakipotesarakaihatuiinnkai",
+        "name": "焼ポテサラ開発委員会",
+        "location": "広場",
+        "description": "『焼きポテサラ』ポテトサラダを鉄板でジュワッと焼き上げた香ばしい逸品。外カリッ、中ホクホクの芋のうま味をたっぷり詰め込んだ一味違うポテサラはいかが？5種のトッピングも併せてご賞味あれ。カルメ焼きもあｒ",
+        "image": "yakipotesarakaihatuiinnkai.webp",
+        "news_slug": null
+    },
+    {
+        "id": "yakisobayakennsulin",
+        "name": "焼きそば屋けんすぃん",
+        "location": "広場",
+        "description": "厳選した食材とソースが織りなす、深みのある味わい。噛むほどに広がる旨味と深い濃いコク。その瞬間、心の中でつぶやく＿＿「焼きそば、正直舐めてました。」そして確信する、これは別次元にうまい！！",
+        "image": "yakisobayakennsulin.webp",
+        "news_slug": "16"
+    },
+    {
+        "id": "dosyudoudagashihannbaiki",
+        "name": "ド手動駄菓子販売機",
+        "location": "8-205教室",
+        "description": "駄菓子屋と休憩スペースで一息ついていってください❤️ゲーム機設置予定(スマブラ、マリカ、マリパetc…)長居も大歓迎ですヾ(:3ﾉｼヾ)ﾉｼ",
+        "image": "dosyudoudagashihannbaiki.webp",
+        "news_slug": null
+    },
+    {
+        "id": "IS4yuushi",
+        "name": "IS4有志",
+        "location": "8-304教室",
+        "description": "いつもは味わえない非日常のスリルを体験してみませんか？景品を求め、様々なゲームに挑戦しよう！楽しいカジノの世界へようこそ...",
+        "image": "IS4yuushi.webp",
+        "news_slug": null
+    },
+    {
+        "id": "kitakatakousennra-mennka",
+        "name": "喜多方高専ラーメン科",
+        "location": "広場",
+        "description": "本場、喜多方から直送した多加水縮れ麺、醤油ベースのスープ、やわらかいチャーシューを使った喜多方ラーメン。さらに仙台辛味噌スープと喜多方の麺を掛け合わせた当店オリジナルの一杯もお試しください！",
+        "image": "kitakatakousennra-mennka.webp",
+        "news_slug": null
+    },
+    {
+        "id": "ouendan",
+        "name": "応援団",
+        "location": "広場",
+        "description": "我ら応援団、心も胃袋も熱くする応援団伝統のお好み焼き\"焼蔵\"を提供いたします。とても美味しく、元気が出るので、お一つ食べに来てはいかがでしょうか。",
+        "image": "ouendan.webp",
+        "news_slug": null
+    }
+]

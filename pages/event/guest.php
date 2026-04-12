@@ -1,9 +1,11 @@
 <?php
+require_once __DIR__ . '/../../config/site.php';
+
 // OGP settings
-$ogp_title = '松本紀生オーロラフォトライブ | 高専祭2025';
+$ogp_title = '松本紀生オーロラフォトライブ | ' . $site_config['festival_label'];
 $ogp_description = '写真家 松本紀生氏によるオーロラフォトライブを高専祭にて開催します。日時：10月26日(日) 13:00開場 13:30開演 会場：仙台高専第一体育館';
 $ogp_type = 'article';
-$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/2025/images/event/poster.webp';
+$ogp_image = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $site_config['base_path'] . 'images/event/poster.webp';
 
 session_start();
 $nonce = base64_encode(random_bytes(16));
@@ -20,7 +22,7 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>松本紀生オーロラフォトライブ | 高専祭2025</title>
+    <title><?= htmlspecialchars($ogp_title, ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="../../css/event.css" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>">
     <?php include '../includes/header-favicon.php'; ?>
     <script src="../../js/hamburger.js" nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, 'UTF-8') ?>" defer></script>
@@ -36,7 +38,7 @@ header("Content-Security-Policy:
                 <p>入場料は無料です。</p>
                 <p>未就学児も入場可ですが、他のお客様のご迷惑にならないようにお願いいたします。</p>
                 <p>イベントへご来場の際は、公共交通機関のご利用にご協力くださいますようお願いいたします。お車でのご来場はご遠慮ください。</p>
-                <p>会場へのアクセスは、<a href="https://fest-snct.jp/2025/pages/access.php" target="_blank">こちら</a>をご覧ください。</p>
+                <p>会場へのアクセスは、<a href="<?= htmlspecialchars($site_config['base_path'] . 'pages/access.php', ENT_QUOTES, 'UTF-8') ?>" target="_blank">こちら</a>をご覧ください。</p>
                 <div>
                     <img src="../../images/event/poster.webp" alt="Event Poster" class="poster-image">
                 </div>

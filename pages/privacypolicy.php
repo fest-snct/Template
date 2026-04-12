@@ -1,7 +1,9 @@
 <?php
+require_once __DIR__ . '/../config/site.php';
+
 // OGP settings
-$ogp_title = 'プライバシーポリシー | 高専祭2025';
-$ogp_description = '高専祭2025のプライバシーポリシーです。';
+$ogp_title = 'プライバシーポリシー | ' . $site_config['festival_label'];
+$ogp_description = $site_config['festival_label'] . 'のプライバシーポリシーです。';
 
 session_start();
 $nonce = base64_encode(random_bytes(16));
@@ -18,7 +20,7 @@ header("Content-Security-Policy:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プライバシーポリシー | 高専祭2025</title>
+    <title><?= htmlspecialchars($ogp_title, ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="../css/privacypolicy.css">
     <?php include './includes/header-favicon.php'; ?>
     <script src="../js/hamburger.js"nonce="<?= htmlspecialchars($nonce, ENT_QUOTES, "UTF-8"); ?>" defer></script>
@@ -29,7 +31,7 @@ header("Content-Security-Policy:
         <?php include './includes/breadcrumb.php'; render_breadcrumb(); ?>
         <p class="title">プライバシーポリシー</p>
         <p class="privacy-content">
-            このプライバシーポリシーは、2025年度仙台高専広瀬キャンパス高専祭ウェブサイト（以下、「当サイト」と称します）の訪問者の個人情報の取り扱いに関するものです。当サイトを利用することにより、本プライバシーポリシーに同意したものとみなされます。
+            このプライバシーポリシーは、<?= htmlspecialchars($site_config['year'], ENT_QUOTES, 'UTF-8') ?>年度<?= htmlspecialchars($site_config['school_name'], ENT_QUOTES, 'UTF-8') ?>高専祭ウェブサイト（以下、「当サイト」と称します）の訪問者の個人情報の取り扱いに関するものです。当サイトを利用することにより、本プライバシーポリシーに同意したものとみなされます。
         </p>
 
         <h2 class="privacy-menu">個人情報の使用目的</h2>

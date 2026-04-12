@@ -6,13 +6,12 @@ function showModal(e) {
     const self_img = e.currentTarget.getElementsByTagName("img")[0];
     const modal_txt = document.getElementById("modal_txt");
     const figs = document.getElementsByTagName("main")[0].getElementsByClassName("s_items");
-    const matchRx = /[ 　]場所[:：][ 　]?.+?$/;
-    const matchAlt = self_img.getAttribute("alt").match(matchRx);
+    const currentFigure = figs[this.img_id];
     glb_iIndex = this.img_id;
-    modal_place.innerText = matchAlt != null ? matchAlt[0].replace(/^[ 　]/, "", 1) : "";
-    modal_title.innerText = self_img.getAttribute("alt").replace(matchRx, "");
-    modal_txt.innerText = figs[this.img_id].getAttribute("data-description");
-    const newsLink = figs[this.img_id].getAttribute("data-news-link");
+    modal_place.innerText = currentFigure.getAttribute("data-location");
+    modal_title.innerText = currentFigure.getAttribute("data-name");
+    modal_txt.innerText = currentFigure.getAttribute("data-description");
+    const newsLink = currentFigure.getAttribute("data-news-link");
     if (newsLink) {
         const link = document.createElement("a");
         link.href = newsLink;
@@ -50,10 +49,8 @@ function moveModal(e){
     const modal = document.getElementById("modal");
     const self_img = figs[glb_iIndex].getElementsByTagName("img")[0];
     const modal_txt = document.getElementById("modal_txt");
-    const matchRx = /[ 　]場所[:：][ 　]?.+?$/;
-    const matchAlt = self_img.getAttribute("alt").match(matchRx);
-    modal_place.innerText = matchAlt != null ? matchAlt[0].replace(/^[ 　]/, "", 1) : "";
-    modal_title.innerText = self_img.getAttribute("alt").replace(matchRx, "");
+    modal_place.innerText = figs[glb_iIndex].getAttribute("data-location");
+    modal_title.innerText = figs[glb_iIndex].getAttribute("data-name");
     modal_txt.innerText = figs[glb_iIndex].getAttribute("data-description");
     const newsLink = figs[glb_iIndex].getAttribute("data-news-link");
     if (newsLink) {

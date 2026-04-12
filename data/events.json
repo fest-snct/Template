@@ -1,0 +1,103 @@
+[
+    {
+        "category": "メインイベント",
+        "title": "松本紀生さん特別企画",
+        "date": "10月26日(日)13:00",
+        "venue": "第一体育館",
+        "description": "写真家の松本紀生さんが高専祭にやってくる!",
+        "detail_slug": "guest"
+    },
+    {
+        "category": "メインイベント",
+        "title": "ぷよテト大会",
+        "date": "10月25日(土)11:00-13:00",
+        "venue": "第一体育館",
+        "detail_slug": "puyoteto"
+    },
+    {
+        "category": "メインイベント",
+        "title": "コスプレ大会",
+        "date": "10月25日(土) 晴天時 9:00-12:00 / 雨天時 14:00-15:30",
+        "venue": "晴天時は屋外ステージ、雨天時は第一体育館",
+        "detail_slug": "cosplay"
+    },
+    {
+        "category": "メインイベント",
+        "title": "遊戯王大会",
+        "date": "10月26日(日)9:00-15:00",
+        "venue": "AL-B（8-303）",
+        "detail_slug": "card_yuugi"
+    },
+    {
+        "category": "メインイベント",
+        "title": "デュエマ大会",
+        "date": "10月25日(土)9:00-16:00",
+        "venue": "AL-B（8-303）",
+        "detail_slug": "card_duel"
+    },
+    {
+        "category": "ミニイベント",
+        "title": "気配切り",
+        "date": "10月25日(土)9:00-16:00",
+        "venue": "グラウンド",
+        "detail_slug": null
+    },
+    {
+        "category": "文化部演奏",
+        "title": "筝曲部",
+        "date": "10月25日(土)16:30-17:00 （入場は16:00～可能です）",
+        "venue": "体育館",
+        "detail_slug": null
+    },
+    {
+        "category": "文化部演奏",
+        "title": "吹奏楽部",
+        "date": "10月25日(土)9:30-10:00 （入場は9:00～可能です）",
+        "venue": "体育館",
+        "detail_slug": null
+    },
+    {
+        "category": "文化部演奏",
+        "title": "軽音楽部",
+        "date": "10月26日(日)10:00-11:30（入場は9:00～可能です）",
+        "venue": "体育館 (土曜午後に合奏所でも演奏!!)",
+        "detail_slug": null
+    },
+    {
+        "category": "文化部演奏",
+        "title": "【急行しらはぎ号特別企画！】",
+        "date": "10月25日 13:00-14:00",
+        "venue": "仙台高専名取 ステージ",
+        "description": "広瀬の軽音楽部が名取キャンパスで演奏！",
+        "detail_slug": null,
+        "image": "keionn_natori.webp"
+    },
+    {
+        "category": "常時開催イベント",
+        "title": "松本紀生写真展",
+        "date": "",
+        "venue": "武道場",
+        "detail_slug": null
+    },
+    {
+        "category": "常時開催イベント",
+        "title": "free カラオケ",
+        "date": "",
+        "venue": "屋外ステージ （コスプレ大会中は開催しません）",
+        "detail_slug": null
+    },
+    {
+        "category": "常時開催イベント",
+        "title": "スタンプラリー",
+        "date": "",
+        "venue": "校内and受付",
+        "detail_slug": null
+    },
+    {
+        "category": "常時開催イベント",
+        "title": "高専クイズ",
+        "date": "",
+        "venue": "校内and受付",
+        "detail_slug": null
+    }
+]
