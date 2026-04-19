@@ -372,18 +372,23 @@ function extract_date_only(string $dateString): string
     if ($dateString === '') {
         return '';
     }
-    
-    // ISO 8601 形式 (2026-04-20T15:00:00.000Z) → YYYY-MM-DD
-    if (preg_match('/^(\d{4}-\d{2}-\d{2})/', $dateString, $matches)) {
-        return $matches[1];
+
+    try {
+        // 1. 文字列から日時オブジェクトを作成
+        // ISO 8601形式（末尾Zなど）であれば自動的にUTCとして認識されます
+        $date = new DateTimeImmutable($dateString);
+
+        // 2. タイムゾーンをJST（Asia/Tokyo）に変更
+        // これにより、UTCで夜遅い時間だった場合に翌日の日付へ正しく繰り上がります
+        $jstDate = $date->setTimezone(new DateTimeZone('Asia/Tokyo'));
+
+        // 3. YYYY.MM.DD 形式で返す
+        return $jstDate->format('Y.m.d');
+
+    } catch (Exception $e) {
+        // 日付として解析できない文字列（不正な形式）が渡された場合は空文字を返す
+        return '';
     }
-    
-    // すでに YYYY-MM-DD 形式
-    if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $dateString)) {
-        return $dateString;
-    }
-    
-    return '';
 }
 function split_front_matter(string $raw): array
 {
