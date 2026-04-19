@@ -304,7 +304,7 @@ function normalize_store_item(array $store): array
         $newsLink = build_news_url($newsSlug);
     }
 
-    $id = pick_first_string($store, ['id', 'slug']) ?? slugify_fallback($name);
+    $id = pick_first_string($store, ['store_id', 'slug']) ?? slugify_fallback($name);
 
     return [
         'id' => $id,
@@ -320,7 +320,7 @@ function normalize_store_item(array $store): array
 
 function normalize_event_item(array $event): array
 {
-    $detailSlug = pick_first_string($event, ['detail_slug']);
+    $detailSlug = pick_first_string($event, ['detail_slug'])  ?? '詳細はこちら';
     $detailUrl = pick_first_string($event, ['detail_url', 'url', 'link']);
 
     return [
@@ -341,7 +341,12 @@ function normalize_news_item(array $article, bool $includeContent): array
     $title = pick_first_string($article, ['title', 'name']) ?? $slug;
     $markdown = pick_first_string($article, ['markdown', 'body_markdown']);
     $body = pick_first_string($article, ['body_html', 'content_html', 'content', 'body']);
-    $date = pick_first_string($article, ['date']) ?? pick_date_string($article, ['publishedAt', 'createdAt', 'updatedAt']);
+    
+    // 日付パース修正
+    $dateString = pick_first_string($article, ['date']) ?? 
+                  pick_date_string($article, ['publishedAt', 'createdAt', 'updatedAt']);
+    $date = extract_date_only($dateString);  // ← 新しいヘルパー関数
+    
     $image = pick_asset_url($article, ['image', 'thumbnail', 'eyecatch']);
     $summary = pick_first_string($article, ['ogp_description', 'summary', 'excerpt']) ?? '';
 
@@ -361,6 +366,25 @@ function normalize_news_item(array $article, bool $includeContent): array
     return $normalized;
 }
 
+// 新規追加
+function extract_date_only(string $dateString): string
+{
+    if ($dateString === '') {
+        return '';
+    }
+    
+    // ISO 8601 形式 (2026-04-20T15:00:00.000Z) → YYYY-MM-DD
+    if (preg_match('/^(\d{4}-\d{2}-\d{2})/', $dateString, $matches)) {
+        return $matches[1];
+    }
+    
+    // すでに YYYY-MM-DD 形式
+    if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $dateString)) {
+        return $dateString;
+    }
+    
+    return '';
+}
 function split_front_matter(string $raw): array
 {
     $raw = str_replace(["\r\n", "\r"], "\n", $raw);
@@ -563,6 +587,7 @@ function microcms_fetch_content(string $endpoint, string $contentId): array
 
 function microcms_get_json(string $url, array $queries = []): array
 {
+
     $query = $queries !== [] ? '?' . http_build_query($queries) : '';
     $headers = [
         'X-MICROCMS-API-KEY: ' . microcms_api_key(),
@@ -576,7 +601,6 @@ function microcms_get_json(string $url, array $queries = []): array
             'timeout' => 10,
         ],
     ]);
-
     $response = @file_get_contents($url . $query, false, $context);
     if ($response === false) {
         return [

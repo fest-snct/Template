@@ -45,7 +45,7 @@ MICROCMS_EVENTS_ENDPOINT="events"
 - `body_markdown` 複数行テキスト（Markdown運用したい場合のみ）
 
 ### `stores`
-- `id` 文字列
+- `store_id` 文字列
 - `name` 文字列
 - `location` 文字列
 - `description` 複数行テキスト
