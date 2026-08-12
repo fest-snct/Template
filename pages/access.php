@@ -11,7 +11,7 @@ header("Content-Security-Policy: " .
     "default-src 'self'; " .
     "script-src 'self' 'nonce-" . $nonce . "'; " .
     "style-src 'self' 'nonce-" . $nonce . "'; " .
-    "frame-src 'self' https://google.com; " .
+    "frame-src 'self' https://*.google.com; " .
     "frame-ancestors 'none';"
 );
 ?>
