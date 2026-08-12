@@ -11,13 +11,13 @@ $events_by_category = group_events_by_category(load_events());
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;
-header("Content-Security-Policy:
-    default-src 'self';
-    script-src 'self' 'nonce-" . $nonce . "';
-    style-src 'self' 'nonce-" . $nonce . "';
-    frame-src 'self';
-    frame-ancestors 'none';
-");
+header("Content-Security-Policy: " .
+    "default-src 'self'; " .
+    "script-src 'self' 'nonce-" . $nonce . "'; " .
+    "style-src 'self' 'nonce-" . $nonce . "'; " .
+    "frame-src 'self'; " .
+    "frame-ancestors 'none';"
+);
 ?>
 <!DOCTYPE html>
 <html lang="ja">

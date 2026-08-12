@@ -8,13 +8,13 @@ $ogp_description = $site_config['festival_name'] . $site_config['year'] . 'ã®æœ
 session_start();
 $nonce = base64_encode(random_bytes(16));
 $_SESSION['nonce'] = $nonce;
-header("Content-Security-Policy:
-    default-src 'self';
-    script-src 'self' 'nonce-" . $nonce . "';
-    style-src 'self' 'nonce-" . $nonce . "';
-    frame-src 'self';
-    frame-ancestors 'none';
-");
+header("Content-Security-Policy: " .
+    "default-src 'self'; " .
+    "script-src 'self' 'nonce-" . $nonce . "'; " .
+    "style-src 'self' 'nonce-" . $nonce . "'; " .
+    "frame-src 'self'; " .
+    "frame-ancestors 'none';"
+);
 
 $news_list = load_news_articles();
 ?>

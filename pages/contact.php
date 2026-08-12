@@ -4,7 +4,15 @@ require_once __DIR__ . '/../config/site.php';
 // OGP settings
 $ogp_title = 'お問い合わせ | ' . $site_config['festival_label'];
 $ogp_description = $site_config['festival_label'] . 'へのお問い合わせフォームです。ご不明な点などございましたら、お気軽にお問い合わせください。';
-
+session_start();
+$nonce = base64_encode(random_bytes(16));
+header("Content-Security-Policy: " .
+    "default-src 'self'; " .
+    "script-src 'self' 'nonce-" . $nonce . "'; " .
+    "style-src 'self' 'nonce-" . $nonce . "'; " .
+    "frame-src 'self'; " .
+    "frame-ancestors 'none';"
+);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
